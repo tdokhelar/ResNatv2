@@ -1,0 +1,73 @@
+abouts:
+  fields:
+    content: Dalc'had
+    name: Anv
+  _label: Popups doare 'Diwar-benn'
+bulk:
+  automaticMerge: Kendeuziñ emgefre
+  delete: Dilemel an elfennoù ha n'eus ket anezho ken
+  deleteElement: '{count, plural,  =0 {Elfenn ebet dilamet} =1 {# elfenn zo bet dilamet}
+    other {# elfennoù zo bet dilamet} }'
+  detectDuplicatesAction: Klask an doublennoù
+  duplicateDeleted: Doublenn dilamet
+  done: An oll elfennoù zo bet graet war o zro digudenn
+  continue: Kendelc'her d'ober war-dro an elfennoù da heul (encore {count} à traiter)
+  batchDone: An holl elfennoù zo bet graet war o zro
+  _label: Ober a-stroll
+  analyse: Dielfennañ an elfennoù eus {first} da {last}
+  duplicateKept: Doublenn dalc'het
+  isDuplicateAction: Klask an doublennoù
+  managed: Ober war-dro an doublennoù kavet
+  results: Disoc'hoù
+  update_gamification: Nevesaat an disoc'hoù (niver ar mouezhiadennoù, ar pennadoù,
+    ha disoc'h hollek dre implijer)
+  errorElement: 'Fazi en ur ober war-dro an elfenn {id} : {error} FILE {file} LINE
+    {line}'
+  return: Distro war-zu ar merañ doublonoù
+  updateUser: '{count, plural, =0 {Implijer ebet nevesaet} =1 {# implijer zo bet nevesaet}
+    other {# implijer zo bet nevesaet} }'
+  manualMerge: Doublennoù posupl kavet
+
+js:
+  element_form:
+    geocoded_marker_text: Diblasit ac'hanon evit resisaat al lec'h<br/>(e kreiz ar
+      savadur)
+  admin:
+    categories:
+      fields:
+        customId: ID personelaet
+        displayInInfoBar: Er fichenn munud
+        displayInMenu: Er roll
+        displayInMenu_help: Anv ar strollad ne vo ket lakaet war wel, met ar rummadoù
+          vo
+        displayInInfoBar_help: Anv ar strollad ne vo ket lakaet war wel, met ar rummadoù
+          vo
+        displaySuboptionsInline: Lakaat war wel an is-rummadoù war ul linenn
+        displayInForm: Er furmskrid
+        displayInForm_help: N'eus na strollad na rummad lakaet war wel er furmskrid
+        descriptionLabel: Label evit an takad diskrivañ
+        enableDescription: Lakaat da dalvezout deskrivadenn ar rummadoù
+      _label: Rummadoù
+projects:
+  initialize:
+    plainPassword-1: Ger-tremen
+config_duplicates:
+  fields:
+    duplicates:
+      useGlobalSearch: Implijout ar c'hlask dre vras evit klask an doublennoù (klask
+        aes e {fields})
+      fieldsToBeUsedForComparaison: Takadoù all bet implijet evit klask doublennoù
+        (enklask resis)
+      sourcesToDetectFrom: Klask an doublennoù etre an tarzhioù (leuskel goullo evit
+        klask en diaz en e bezh)
+      sourcesToDetectWith: Hag an tarzhioù (leuskel goullo evit klask en diaz en e
+        bezh)
+config_menu:
+  form:
+    groups:
+      search: Klask
+  _label: Roll / Siloù / Klask
+config_api:
+  fields:
+    gogo_api_elements_from_text: Klask un titour
+    text: ho_testenn_enklask

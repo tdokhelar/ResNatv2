@@ -1,0 +1,434 @@
+action:
+  cancel: Nullañ
+  element:
+    report:
+      email:
+        content: Demat deoc'h !<br/><br/>                     Eus ar gartenn {appUrl}
+          ez eus bet embannet un ditour gant {userEmail} diwar-benn  ar fichenn «
+          {elementName} » (anaoueder ho tiaz titouriñ -> {elementId}) :<br/><br/>
+          {valueLabel}. {comment}<br/><br/> Ken ar c'hentañ tro, Skipailh {appName}
+        subject: Ditour deuet eus {appName}
+      done: Trugarez, enrollet eo bet ho titour !
+      unallowed: Digarezit, n'ho peus ket an aotre da ziskleriañ fazioù !
+      from_origin: An ditour-mañ a zeu eus {appUrl}.
+    sendMail:
+      emailContent: <p>Demat deoc'h <i>{element}</i>,</p> <p>Resevet ho peus ur gemennadenn
+        digant <a href="mailto:{sender}">{sender}</a><br/> </p> <p><b>Titl ar gemennadenn</b></p><p>
+        {subject}</p> <p><b>Kaoz zo eus</b></p><p>{content}</p>
+      done: Kaset eo bet ar mail
+      emailSubject: Kemennadenn resevet digant {appName}
+      uncomplete: Diglok eo an arventennoù
+    subscribe:
+      already: Ar c'houmanant da nevezentioù ar fichenn « {element} » zo stag ouzh
+        ar postel-mañ {email}
+      done: Kadarnaet eo bet ar c'houmanant d'an nevezentioù stag ouzh ar fichenn
+        « {element} »
+      uncomplete: Diglok eo an arventennoù
+      email:
+        subject: Ar c'houmanant {appName} da neventioù {elementName}
+        content: "Demat deoc'h !<br/><br/>                     Gant ar gartenn {appUrl},
+          oc'h koumanantet diwar-vremañ da nevezentioù ar fichenn  « {elementName}
+          ». Gallout a rit bezañ digoumanantet en ur glikañ war al liamm-mañ : {unsubscribeUniqueUrl}
+          <br/><br/> Ken ar c'hentañ tro. Skipailh {appName}"
+    unsubscribe:
+      done: Kadarnaet eo bet an digoumanant da nevezentioù ar fichenn "{element}"
+      already: N'eo ket koumanantet ar postel-mañ {email} ken evit resev nevezentioù
+        ar fichenn « {element} »
+      uncomplete: Diglok eo an arventennoù
+    not_found: Fichenn ebet bet kavet gant an anaouder-mañ
+    delete:
+      done: Ar fichenn zo bet dilamet
+      unallowed: Digarezit, n'ho peus ket an aotre da zilemel ur fichenn !
+      uncomplete: An arventennoù zo diglok
+    resolveReports:
+      done: Moderet eo bet ar fichenn
+      unallowed: Digarezit, n'ho peus ket an aotre da voderiñ ar fichenn-mañ !
+      uncomplete: Diglok eo an arventennoù
+    sendEditLink:
+      done: Kaset eo bet ul liamm embann da {email}
+      emailContent: <p>Demat deoc'h <i>'{{ element '}}</i>,</p> <p><a href="'{{ directEditElementUniqueUrl
+        '}}">Klikit amañ</a> evit cheñch ho fichenn</p>
+    stamp:
+      done: Cheñchet eo bet an dikedenn
+      unallowed: N'ho peus ket an aotre da implijout an dikedenn-mañ
+      uncomplete: Diglok eo an arventennoù
+    vote:
+      unallowed: Digarezit, n'oc'h ket aotreet da reiñ ho mouezh !
+      uncomplete: Diglok eo an arventennoù evit reiñ e vouezh
+  search: Klask
+  registration:
+    unallowed: Digarezit, n'ho peus ket an aotre da grouiñ ur c'hont.
+    need_address: Ma fell deoc'h resev keloù diwar-benn an nevezentioù e rankit reiñ
+      ur postel
+    geo_error: Dibosupl eo lec'hiañ ar chomlec'h-mañ
+  error: 'Fazi : {message}'
+  geolocalize_me: Lec'hiañ ac'hanon
+  continue: Kenderc'hel
+  create: Krouiñ
+  ok: Mat eo
+  send: Kas
+  send_stay: Kas ha chom war ar skrid
+  submit: Enrollañ
+duplicates:
+  merged_with_duplicate: Kendeuzet eo bet ar fichennoù. Gwiriit ha mat eo c'hoazh
+    ar roadennoù
+  duplicated_element: Hennezh eo !
+  controller:
+    merged: Ar fichenn-mañ zo bet kendeuzet en unan all hag a c'hallfe bezañ un doublenn
+      anezhi
+    marked: N'eo ket un doublenn avat
+    marked_long: Ar fichennoù n'int ket doublennoù anezho
+  label: Klask an doublennoù
+  merged_with_new_element: Kendeuzet gant ur fichenn nevez krouet
+  new_element: N'eo ket, ur fichenn nevez eo, bec'h dezhi !
+  see_on_map: (Sellet ouzh OpenStreetMap)
+  subtitle: Fichennoù nevez zo bet kavet, marteze ho poa c'hoant da ouzhpennañ unan
+    anezho ?
+  title: Klask doublennoù
+commons:
+  continue_browsing: Gallout a rit kenderc'hel da bourmen war al lec'hienn !
+  email: Postel
+  errors:
+    bad_email: Roit ur postel hag a ya en-dro
+    bad_number: N'eo ket un niver !
+    bad_url: Skrivit un URL o kregiñ gant http://…
+    file-too-big: Re bounner eo ar fichennaoueg-mañ, ne c'hell ket bezañ pounneroc'h
+      eget {size} Mo
+    too_long: Ma biskoazh, un tammig re hir eo an destenn-mañ !
+  category_placeholder: Resisaat diouzh an ezhomm
+  check_password: Skrivañ en-dro ho ker-tremen
+  choose_category: Dibabit {cat}
+  choose_one_option: Grit un dibab d'an nebeutañ
+  click_here: Klikit amañ
+  every:
+    month: Bep miz
+    week: Bep sizhun
+  location: Ho chomlec'h pe ho kêr
+  menu: Roll
+  never: Morse
+  newsletter-explanation: Bezit kelaouet dre bostel diwar-benn al lec'hioù nevez kinniget
+    nepell diouzh ho ti !
+  optional: Diouzh ho c'hoant
+  password: Ger-tremen
+  register: Krouiñ ur c'hont
+  username: Anv implijer
+  validation: Kadarnaat
+  or: pe
+contributor-login:
+  error:
+    invalid_email: Skrivit ur postel hag a ya en-dro
+    inactive_feature: Na c'haller ket ober an dra-mañ war ar gartenn-mañ
+    admin_only: Diwallit ! Na c'hall bezañ graet an dra-mañ nemet gant ar verourien
+    used_email: Ma biskoaz, bez ez eus ur c'hont gant ar postel-mañ stag outañ, c'hoazh
+      ! En em lugit pe implijit ur postel all !
+    inactive_iframe: Na c'haller ket ober an dra-mañ en un IFRAME betek-henn
+    title: Ober dibosupl
+  _label: Anavezout
+  communs: LesCommuns.org
+  email: Skrivit ur postel traken
+  login: En em lugañ
+  oauth: En em lugit gant ho kont
+  printemps: Nevezamzer an deskadurezh
+api_ui:
+  _label: Kefluniañ un API
+  api_url: URL an API
+  format: 'Furmad :'
+  include_external: Degemer mammennoù diavaez an diaz roadennoù
+  jsonld: JSON-LD (Steroniezh)
+  test: Testiñ
+  title: Kit d'ar roadennoù dre un API
+  use_bounds: Bevennañ un dachenn (tresit ur skouergorneg war ar gartenn)
+  json: JSON
+  use_categories: Bevennañ dre rummadoù
+  use_limit: Termeniñ niver an disoc'hoù
+directory:
+  _label: Ar gartenn
+element:
+  form:
+    admin_section:
+      _label: Kadarnaat
+      custom_message: Resisadur ar cheñchamant, an destenn-mañ a gemero plas '{{ customMessage
+        '}} er c'hemennadennoù
+      recopy_info: Kopiañ en-dro an ditouroù er furmskrid nevez
+      send_mail:
+        add: Kelaouiñ {the_element} ez eus bet ouzhpennet un nevezenti en ur gas ur
+          postel dezhañ pe dezhi
+        modify: Kelaouiñ {the_element} ez eus bet cheñchamantoù en ur gas ur postel
+          dezhañ pe dezhi
+    controller:
+      error_dont_exist: N'eus ket eus ar fichenn goulennet…
+      error_unauthorized: Digarezit, met n'ho peus ket an aotre da cheñch ar fichenn-mañ
+        !
+      pending: Ho kinnig zo en gortoz da vezañ kadarnaet evit c'hoazh
+      pending_collaborative: evit gouzout hiroc'h diwar-benn an doare da gas ar moderiñ
+        a-stroll da benn !
+      see_on_map: Sellet ouzh an disoc'h war ar gartenn
+      success: Krouet eo bet ho kont ! Gallout a rit leuniañ <a href="{url}" >ho profil</a>
+        bremañ !
+      thankyou:
+        added: Trugarez deoc'h evit ho skoazell ! {name} zo bet ouzhpennet
+        edited: Trugarez deoc'h evit ho skoazell ! Kemeret eo bet e kont ar cheñchamantoù
+          !
+      user_contributions: Adkavit ha cheñchit ho pennadoù war ar bajenn <a href="{url}">Ma
+        fennadoù</a>
+    create_user: Ger-tremen evit krouiñ ho kont
+    error_becomeOwner: Digarezit, da unan bennak emañ ar fichenn-mañ !
+    error_geocode: Dibosupl eo lec'hiañ ar chomlec'h-mañ
+    error_missing_adress: Ma fell deoc'h resev ar c'hinnigoù nevez eo ret deoc'h reiñ
+      ur postel
+    error_username: Kemeret eo bet an anv implijer-mañ !
+    info_saved: Cheñchamantoù enrollet !
+    localize: Lec'hiañ
+    need_help: Un tamm skoazell ?
+    open_hours:
+      add_tooltip: Ouzhpenniñ ur tachad eurioù
+      and: Ha
+      days_of_week:
+        "0": Lun
+        "1": Meurzh
+        "2": Merc'her
+        "3": Yaou
+        "4": Gwener
+        "5": Sadorn
+        "6": Sul
+      days_of_week_short:
+        "0": Lun
+        "1": Meu
+        "2": Mer
+        "3": Yaou
+        "4": Gwen
+        "5": Sad
+        "6": Sul
+      from: Eus
+      recopy_tooltip: Adkopiañ an eurioù a-raok
+      to: da
+    success_becomeOwner: Bremañ oc'h perc'henn ar fichenn {name} !
+    title_add: Ouzhpennañ {element}
+    title_edit: Cheñchamant ar roadennoù
+  status:
+    modifications: Cheñchamantoù
+    more_to_discover: … Ha {nb} all de zizoleiñ war al lec'hienn !
+    pending: War c'hortoz
+    view: Gwelet
+    vote: Mouezhiañ !
+vote:
+  vote_added: Trugarez deoc'h evit ho fichenn !
+  admin:
+    positive: Kadarnaet eo bet {element}
+    negative: Nac'het eo bet {element}
+  pending:
+    admin_validated:
+      positive: Degemeret eo bet ar cheñchamantoù
+      negative: Nac'het eo bet ar cheñchamantoù
+    user_validated:
+      negative: A-walc'h a vouezhiadennoù enep en deus bet ar cheñchamant kinniget,
+        dilamet e vo neuze.
+      positive: Gourc'hemennoù, a-walc'h a vouezhiadennoù a-du zo bet resevet evit
+        ma vefe kadarnaet ar cheñchamantoù !
+  user_vote_for_him: Ha c'hoant ho poa da reiñ ho mouezh d'ur fichenn bet savet ganeoc'h
+    hoc'h-unan evit doare ! Laoskit ar re all d'ober avat !<br/> Ha ma implijit unan
+    all eus ho posteloù e vezoc'h gwelet ivez ! N'eus den fin n'en deus e goulz, kea
+    !
+  vote_modified: "Trugarez deoc'h, {user} : Cheñchet eo bet ho mouezhiadenn !"
+  collaborative:
+    negative: A-walc'h a vouezhiadennoù enep en deus bet {element}, dilamet e vo.
+    positive: Gourc'hemennoù, {element} en deus bet mouezhiadennoù a-walc'h evit bezañ
+      kadarnaet !
+js:
+  api_ui:
+    categories_placeholder: Dibabit ur rummad pe meur a hini
+  element_form:
+    category_add: Ouzhpennit {cat}
+    category_choose: Dibabit {cat}
+    geocoded_marker_text: Diblasit ac'hanon evit resisaat al lec'h<br/>(e kreiz ar
+      savadur)
+  login:
+    exception: Ur fazi zo bet p'ho peus klasket en em lugañ
+    wrong_id: N'eo ket mat ar gerioù-tremen
+load_configuration:
+  ElementFormGeocodingHelp: Arabat lakaat poentadur ebet, an anvioù e lizherennoù
+    bras, n'int ket anavezet kennebeut. Ma ne 'z a ket en-dro al lec'hiañ (gwech-ha-gwech
+    all ne vez ket anavezet ar chomlec'h-mañ-chomlec'h), skrivit anv ar gêr/ar gêriadenn
+    a zo an tostañ, klikit war « lec'hiañ », ha, goude-se, diblasit ar poent gant
+    al logodenn. Skrivit en-dro ar chomlec'h en e bezh er varrenn ha kendalc'hit da
+    leuniañ ar bajenn hep klikañ en-dro war « lec'hiañ ».
+  AppBaseline: Savit kartennoù e-leizh
+  PartnerPageTitle: Kevelerien
+  SeeMoreButtonText: Gouzout hiroc'h
+  AboutHeaderTitle: Diwar-benn
+  AddElementHintText: Kemerit perzh evit pinvidikaat an diaz roadennoù !
+  CollaborativeModerationExplanations: " <p> Pa vez ouzhpennet pe cheñchet un elfenn,
+    ne zeu ket war wel diouzhtu. Da gentañ penn e vo « e griz » war ar gartenn hag
+    an holl implijidi enrollet a c'hello votiñ ur wech hag ur wech nemetken evit an
+    elfenn-mañ. Votiñ ne dalv ket reiñ e soñj, met rannañ gouiziegezhioù. Ma anavezit
+    an elfenn-mañ peotramant ma ouzit n'eus ket anezhi ken, kasit keloù deomp evel
+    just ! </p> <p> Goude bezañ bet votet eviti meur a wech e c'hello bezañ kadarnaet
+    pe nac'het war-eeun. Ma vefe ur gudenn (re a vouezhioù a-du hag a-enep mesk-ha-mesk)
+    ez eo ar merour a raio war-dro ar buanañ ar gwellañ. Kontañ a reomp warnoc'h !
+    </p>"
+my_contributions:
+  element_contributed: Fichennoù all am eus kemeret perzh enno
+  edit: Embann
+  element: Fichenn
+  me: Me
+  my_elements: Ma fichennoù
+  my_reports: Ma evezhiadennoù
+  my_votes: Ma mouezhiadennoù
+  name: Anv
+  none: N'ho peus kinniget fichenn ebet betek-henn
+  owner: Perc'henn
+  show: Gwelet
+  _label: Ma fennadoù
+  action: Ober
+  become_owner: Dont da vezañ perc'henn
+  confirmation: Kadarnaat
+  confirmation_button: Kadarnaat a ran
+  confirmation_cancel: Nullañ
+  confirmation_hint: Evit dont da vezañ perc'henn ur fichenn e rankit prouiñ e kemerit
+    perzh e mererezh ar framm-mañ
+  date: Deiziad
+  history: Roll ma fennadoù
+  status: Statud
+  type: Seurt
+notifications:
+  moderation:
+    subject: Fichennoù zo da voderiñ war {appname}
+    content: Demat deoc'h !<br/><br/>{count, plural, =1 {# {element_singular} est
+      } other {# {element_plural} sont } }da voderiñ war ar gartenn « {appname} »<br/><br/><a
+      href="{url}">Sellet ouzh ar gartenn</a><br/><br/> Evit cheñch ho tibaboù kemenn,
+      <a href="{edit_url}">klikit amañ</a>.
+  import_mapping:
+    content: Demat deoc'h !<br/><br/> Taolit ur sell war an enporzh {import}, takadoù
+      pe rummadoù nevez stag outañ...<a href="{url}">Klikit amañ</a> evit sellet ouzh
+      an taolennoù kenglotañ.
+    subject: Ober dre ret evit un enporzh war {appname}
+  import_error:
+    content: Demat deoc'h !<br/><br/> Un gudenn bennak zo bet gant {import}. <a href="{url}">Klikit
+      amañ</a> evit klask renkañ ar gudenn.
+    subject: Fazioù zo bet da vare an enporzh war {appname}
+pending-contributions:
+  _label: Ma fichennoù war c'hortoz
+  rejected: Nac'het eo bet ar fichenn gant mont en-dro ar moderiñ a-stroll
+  empty_section: N'ho peus fichenn ebet war c'hortoz. Arabat deoc'h chom da dortal
+    evit <a href="{url}">ouzhpennañ ur fichenn</a> !
+  form: Fichenn
+  approved: Kadarnaet eo bet ar fichenn-mañ gant mont en-dro ar moderiñ a-stroll
+project.create:
+  accept_cgu: Degemer a ran divizoù hollek an implij
+  cgu: Divizoù hollek an implij
+  title: Krouiñ ar raktres
+  _label: GoGoCarto – Kartennoù e-leizh
+  contribHints:
+    closed: N'eus nemet ar verourien a c'hell kemer perzh
+    inherit: Implijout arventennoù dre ziouer an {base_url}
+    intermediate: An holl implijerien a c'hell kemer perzh, met ar verourien eo a
+      ranko moderiñ ar fichennoù
+    open: An holl implijerien a c'hell ouzhpennañ, cheñch ha dilemel diouzh o c'hoant
+  contrib: Digor ar c'hemer perzh a-stroll
+  contribOptions:
+    intermediate: Hanterour
+    open: Digor
+    closed: Serret
+    inherit: Dre ziouer
+  data-error: Ma biskoazh, re hir eo an anv-mañ !
+  domaine_name: Anv an domani
+  project_name: Anv ar raktres
+  message: Ho raktres zo o vont da vezañ krouet, Gortozit ur pennadig…
+projects:
+  form:
+    accept_cgu: Degemer a ran divizoù hollek an implij
+    cgu: Divizoù an implij
+    _label: Krouiñ ur raktres
+    contrib: Digor d'ar c'hemer perzh a-stroll
+    contribHints:
+      closed: N'eus nemet ar verourien a c'hell kemer perzh
+      inherit: Implijout an arventennoù dre ziouer {base_url}
+      intermediate: An holl implijerien a c'hell kemer perzh, met ar fichennoù a rank
+        bezañ moderet gant ar verourien
+      open: An holl implijerien a c'hell ouzhpennañ/cheñch/dilemel diouzh o c'hoant
+    contribOptions:
+      closed: Serret
+      inherit: Dre ziouer
+      intermediate: Hanterour
+      open: Digor
+    data-error: Ma biskoazh, re hir eo an anv-mañ !
+    domaine_name: Anv an domani
+    message: Ho raktres zo o vont da vezañ krouet, gortozit ur pennadig…
+    project_name: Anv ar raktres
+  controller:
+    main_categories: Rummadoù pennañ
+    main_category: Ur rummad pennañ
+  initialize:
+    _label: Krouiñ ur c'hont merour
+    email: Postel
+    plainPassword-1: Ger-tremen
+    username: Anv an implijer
+    plainPassword-2: Skrivit en-dro ho ker-tremen
+  pitch: Krouit kartennoù e-leizh !
+reports:
+  report: Evezhiadenn
+  _label: Ma evezhiadennoù
+  date: Deiziad
+  element: Anv
+  empty: N'ho peus lakaet war-wel fazi ebet c'hoazh. Ha ken mat e vefe hon diaz roadennoù
+    ? :P
+  pending_moderation: Da vezañ moderet
+  reportValues:
+    v0: N'eus ket eus ar fichenn ken
+    v1: N'eo ket mat an ditouroù
+    v3: Meur a wech eo meneget ar fichenn
+    v2: Ne glot ket ar fichenn gant ar garta
+  status: Statud
+votes:
+  status: Statud
+  vote: Mouezhiadenn
+  _label: Ma mouezhiadennoù
+  date: Deiziad
+  element: Anv
+  empty: N'ho peus ket votet c'hoazh ! Bec'h dezhi :) <br/>A-drugarez d'ar mouezhiadennoù
+    e c'heller lakaat ar moderiñ a-stroll da vont en-dro !
+login:
+  _label: En em lugañ
+  login_with: En em lugañ gant {provider}
+  register: Ur c'hont ho peus ezhomm ? <a href="{url}">Lakaat e anv</a>
+  remember_me: Chom luget
+  forgotten_password: Ger-kuzh disoñjet ?
+my_parameters:
+  _label: Ma arventennoù
+  input_location: Ho chomlec'h pe ho kumun
+  range: 'Tachenn an enklask :'
+  unit: Kilometroù
+  delete: Dilemel ma c'hont
+  delete_success: Dilammet eo bet ho kont
+error:
+  generic:
+    file_line: "{file} d'al linenn {line}"
+    text: Ma 'z eus deus ar gudenn c'hoazh, kasit keloù deomp, mar plij, war <br/>
+      <a href="https://framateam.org/gogocarto/channels/town-square" target="blank">Tchat
+      GoGoCarto</a> pe gant ar postell-mañ {email} en ur gopiañ ar gemenadenn fazi
+      amañ dindan.
+  "404":
+    text: N'eus ket (pe ken !) eus ar bajenn goulennet…
+  header: Ma biskoazh ! Ur fazi zo bet
+  title: Fazi !
+home:
+  search:
+    category: ur rummad
+    address: ur chomlec'h
+    all: An holl
+    placeholder: Klaskit
+  search_placeholder: Klask dre anv, dre dikedenn
+  admin_interface: Etrefas merour
+  all_projects: An holl raktresoù ({length})
+  credits: Kaset en-dro gant {ggc}
+  discover: Dizoleiñ
+  documentation: Teuliadur
+  donate: Reiñ ur gwenneg bennak
+  geolocalize: Lavarit pelec'h emaoc'h
+  logout: En em zilugañ
+  my_space: Ma zakad
+  pick_category: 'Dibabit ur rummad (dre ziouer : an holl)'
+  pinned_projects: Raktresoù lakaet war wel
+  sort_by_date: Dibab dre an deiziad embann
+  sort_by_points: Dibab dre an niver a boentoù
+  source_code: Kod mammenn

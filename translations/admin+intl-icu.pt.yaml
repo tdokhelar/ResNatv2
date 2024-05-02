@@ -1,0 +1,7 @@
+projects:
+  initialize:
+    email: Endereço de e-mail
+    plainPassword-1: Palavra-passe
+js:
+  element_form:
+    geocoded_marker_text: Move-me para especificar a posição <br/> (no centro do edifício)

@@ -1,0 +1,5 @@
+import:
+  edit_constraints: "Difennet eo implijout ar gerioù-mañ : new , process, mongo, this,\
+    \ symfony, exec, passthru, shell_exec, system, proc_open, popen, curl_exec, curl_multi_exec,\
+    \ parse_ini_file, show_source, var_dump, print_r… Trugarez deoc'h da chom hep\
+    \ faziañ !"

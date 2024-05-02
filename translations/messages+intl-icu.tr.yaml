@@ -1,0 +1,400 @@
+action:
+  element:
+    delete:
+      unallowed: Üzgünüz, bir öğeyi silme izniniz yok!
+      done: Öğe silme işlemi onaylandı
+      uncomplete: Eksik parametreler
+    not_found: Bu kimlik için hiçbir öğe bulunamadı
+    stamp:
+      unallowed: Bu etiketi kullanmanıza izin verilmiyor
+      done: Etiket değişikliği onaylandı
+      uncomplete: Parametreler tamamlanmamış
+    resolveReports:
+      unallowed: Üzgünüz, bu öğeyi yönetme izniniz yok!
+      uncomplete: Eksik parametreler
+      done: Öğe moderasyonu onaylandı
+    sendEditLink:
+      done: Sürüm bağlantısı {email} adresine başarıyla gönderildi
+      emailContent: <p> Merhaba <i>'{{ element '}}</i>,</p> <p><a href="'{{ directEditElementUniqueUrl
+        '}}">Bilgilerinizi güncellemek için buraya tıklayın</a></p>
+    sendMail:
+      done: E-posta gönderildi
+      emailContent: <p>Merhaba<i>{element}</i>,</p> 5<p>Şu adresten <a href="mailto:{sender}">{sender}</a><br/>
+        </p> <p><b>Mesajın başlığı</b></p><p> {subject}</p> <p><b>içerik</b></p><p>{content}</p>
+        bir mesaj aldınız
+      emailSubject: '{appName} örneğinden alınan mesaj'
+      uncomplete: Ayarlar tamamlanmamış
+    subscribe:
+      done: '"{element}" öğesinin değişikliklerine abonelik kaydedildi'
+      already: Bu e-posta {email} için "{element}" öğesinin değişikliklerine abonelik
+        zaten mevcut
+      uncomplete: Ayarlar tamamlanmamış
+      email:
+        subject: '{elementName} değişikliklerine {appName} için abonelik'
+        content: 'Merhaba!<br/><br/> {appUrl} adresinden, artık "{elementName}" öğesi
+          değişikliklerine abone oldunuz. Bu bağlantıyı takip ederek aboneliğinizi
+          iptal edebilirsiniz: {unsubscribeUniqueUrl} <br/><br/> Saygılarımla, {appName}
+          ekibi'
+    unsubscribe:
+      done: Eleman "{element}" değişikliklerine abonelik iptali kaydedildi
+      already: Bu e-posta {email} zaten "{element}" öğesinin değişikliklerinin aboneliğinden
+        çıkmış durumda
+      uncomplete: Ayarlar tamamlanmamış
+    vote:
+      unallowed: Üzgünüm, oy kullanmanıza izin verilmiyor!
+      uncomplete: Oylama parametreleri eksik
+    report:
+      done: Teşekkürler, rapor kaydedildi!
+      unallowed: Üzgünüz, hata bildirmenize izin verilmiyor!
+      from_origin: Bu rapor {appUrl} adresinden gönderilmiştir.
+      email:
+        subject: '{appName} tarafından gönderilen rapor'
+        content: Merhaba!<br/><br/> {appUrl} adresinden {userEmail} tarafından {elementName}
+          hakkında bir rapor gönderildi (Veritabanınızdaki id {elementId} olmalıdır)
+          :<br/><br/> {valueLabel}. {comment}<br/><br/> Saygılarımla, {appName} ekibi
+  create: Oluştur
+  cancel: İptal
+  continue: Devam et
+  error: 'Hata: {mesaj}'
+  geolocalize_me: Konumumu coğrafi olarak belirle
+  ok: Tamam
+  registration:
+    geo_error: Bu adresin coğrafi konumunu belirlemek mümkün değil
+    need_address: Yeni eklentiler almak istiyorsanız, bir adres eklemeniz gerekir
+    unallowed: Üzgünüz, bir hesap oluşturmanıza izin verilmiyor.
+  search: Arama
+  send: Gönder
+  send_stay: Gönder ve formda kal
+  submit: Kaydet
+api_ui:
+  _label: API'yi yapılandır
+  api_url: API URL'si
+  include_external: Veritabanı dış kaynaklarını dahil et
+  json: JSON
+  jsonld: JSON-LD (Semantik)
+  title: Bir API aracılığıyla verilere erişin
+  use_bounds: Bir coğrafi bölgeye bağlanın (haritada bir dikdörtgen çizin)
+  use_categories: Kategorilere göre filtrele
+  use_limit: Sonuç sayısını sınırla
+  format: 'Format:'
+  test: Test
+commons:
+  category_placeholder: Belirtin (gerekirse)
+  check_password: Şifrenizi yeniden girin
+  choose_category: '{cat} öğesini seçin'
+  continue_browsing: Siteye göz atmaya devam edebilirsiniz!
+  email: e-posta adresi
+  errors:
+    bad_email: Lütfen geçerli bir e-posta adresi girin
+    bad_url: 'Lütfen şöyle URL girin: http://…'
+    file-too-big: Bu dosya çok büyük, izin verilen maksimum boyut {size} MB
+    too_long: Hata, bu metin biraz fazla uzun!
+    bad_number: Bu bir sayı değil!
+  every:
+    month: Her ay
+    week: Her hafta
+  location: Adresiniz veya şehriniz
+  menu: Menü
+  never: Hiçbir zaman
+  newsletter-explanation: Yakınınızdaki yeni referanslardan haberdar olun!
+  optional: Isteğe bağlı
+  password: Şifre
+  username: Kullanıcı Adı
+  validation: doğrulama
+  register: Hesap oluştur
+  choose_one_option: Lütfen en az bir seçenek seçin
+  click_here: buraya tıklayın
+contributor-login:
+  error:
+    admin_only: Dikkat! Bu özellik yalnızca yöneticiler içindir
+    used_email: Üzgünüz, bu e-posta adresiyle zaten bir hesap var! Lütfen oturum açın
+      veya başka bir adres kullanın!
+    inactive_iframe: Bu özellik bir IFRAME'de mevcut değildir
+    inactive_feature: Bu özellik bu haritada etkin değildir
+    title: Aksiyon imkansız
+    invalid_email: Lütfen geçerli bir e-posta adresi girin
+  login: Oturum aç
+  oauth: Hesabınızla giriş yapın
+  communs: LesCommuns.org
+  _label: Kimlik Doğrulama
+  email: Sadece bir e-posta adresi girin
+  printemps: Eğitim Baharı
+duplicates:
+  controller:
+    marked_long: Öğelerin yinelenmeyen öğeler olduğu onaylandı
+    marked: Yinelenen değil olarak işaretlendi
+    merged: Bu öğe, olası bir kopyayla birleştirildi
+  see_on_map: (OpenStreetMap'te görüntüleyin)
+  subtitle: Benzer öğeler tespit edildi, belki onlardan birini eklemek istemişsinizdir?
+  title: Yinelenen öğe algılama
+  new_element: Hayır, bu yeni bir öğe, devam edelim!
+  duplicated_element: İşte bu kadar!
+  label: Yinelenen öğe algılama
+element:
+  form:
+    admin_section:
+      custom_message: Ayrıntıları değiştirin, bu metin otomatik e-postalarda '{{ customMessage '}} ın yerini alacak
+      recopy_info: Bilgileri yeni bir forma kopyalayın
+      send_mail:
+        add: E-posta göndererek {element} eklendiğini bildirin
+        modify: '{element} değişikliklerini e-posta göndererek bildirin'
+      _label: Doğrulama
+    controller:
+      error_dont_exist: İstenen öğe mevcut değil…
+      error_unauthorized: Bu öğeyi düzenleme izniniz yok, üzgünüz!
+      pending: Katkınız şu anda doğrulanmayı bekliyor
+      pending_collaborative: kolektif moderasyon süreci hakkında daha fazla bilgi
+        edinmek için!
+      success: Hesabınız oluşturuldu! Şimdi <a href="{url}" >profilinizi</a> tamamlayabilirsiniz!
+      thankyou:
+        added: Yardımın için teşekkürler! {name} eklendi
+        edited: Yardımlarınız için teşekkür ederiz! Değişiklikler dikkate alındı!
+      user_contributions: Katkılarınızı <a href="{url}">Katkılarım</a> sayfasında
+        bulun ve değiştirin
+    create_user: Hesabınızı oluşturmak için şifre
+    error_becomeOwner: Üzgünüz, bu öğe zaten birine ait!
+    error_geocode: Bu adresi bulmak imkansız
+    error_missing_adress: En son eklemelerden haberdar olmak için bir adres girmeniz
+      gerekiyor
+    error_username: Bu kullanıcı adı çoktan alınmış!
+    info_saved: Değişiklikler kaydedildi!
+    localize: bul
+    need_help: Yardım?
+    open_hours:
+      add_tooltip: Zaman aralığı ekle
+      days_of_week:
+        "1": Salı
+        "6": Pazar
+        "4": Cuma
+        "0": Pazartesi
+        "2": Çarşamba
+        "3": Perşembe
+        "5": Cumartesi
+      days_of_week_short:
+        "2": Çar
+        "3": Per
+        "4": Cuma
+        "6": Pazar
+        "0": Pzt
+        "1": Salı
+        "5": Cts
+      and: Ve
+      recopy_tooltip: Önceki zamanlamaları kopyala
+      from: -den
+      to: "'e kadar"
+    success_becomeOwner: Artık {name} sahibisiniz!
+    title_add: '{element} ekle'
+    title_edit: Veri düzenleme
+  status:
+    modifications: Değişiklikler
+    more_to_discover: '... ve sitede keşfedilecek {nb} diğerleri!'
+    pending: Beklemede
+    view: Görünüm
+    vote: Oy verin!
+error:
+  "404":
+    text: İstenen sayfa mevcut değil (artık?) …
+  generic:
+    file_line: '{file}, {line} satırında'
+    text: Sorun tekrarlanıyorsa, lütfen tercihen<br><a href="https://framateam.org/gogocarto/channels/town-square"
+      target="blank">GoGoCarto Chatroom</a> veya aşağıda görüntülenen hata mesajı
+      da dahil olmak üzere {email} adresine e-posta göndererek bizi bilgilendirin.
+  header: Hata! Bir şeyler yanlış gitti
+  title: Hata!
+home:
+  admin_interface: Yönetici arayüzü
+  all_projects: Tüm projeler ({length})
+  credits: '{ggc} tarafından desteklenmektedir'
+  documentation: Dokümantasyon
+  pick_category: 'Bir kategori seçin (varsayılan olarak: tümü)'
+  pinned_projects: Sabitlenmiş Projeler
+  search:
+    address: bir adres
+    all: Tümü
+    placeholder: Giriş
+    category: bir kategori
+  search_placeholder: İsme göre, etikete göre arama
+  sort_by_date: Yayın tarihine göre sırala
+  sort_by_points: Puan sayısına göre sırala
+  source_code: Kaynak kodu
+  discover: Keşfedin
+  geolocalize: Konumunuzu coğrafi olarak belirleyin
+  my_space: Benim alanım
+  donate: Bağış Yapın
+  logout: Çıkış Yap
+js:
+  element_form:
+    geocoded_marker_text: Pozisyonu belirtmek için beni taşı<br/>(yapının merkezinde)
+  login:
+    exception: Oturum açmaya çalışırken bir hata oluştu
+    wrong_id: Yanlış kimlik bilgileri
+load_configuration:
+  AboutHeaderTitle: Hakkında
+  AddElementHintText: Veritabanına katkıda bulunun!
+  AppBaseline: gogo ile harita oluşturun
+  ElementFormGeocodingHelp: Noktalama işareti koymayınız. Büyük harflerle yazılan
+    isimler de kabul edilmemektedir. Yerelleştirme işe yaramazsa (bazı adresler tanınmayabilmektedir),
+    en yakın kasaba veya köyün adını girin ve ardından 'Yerelleştir'e tıklayın ve
+    yerelleştirme noktasını manuel olarak girin. Tam adresi metin alanına tekrar girin,
+    'Yerelleştir' düğmesini atlayın ve formu doldurmaya devam edin.
+  PartnerPageTitle: Ortaklar
+  SeeMoreButtonText: Daha fazla bilgi
+  CollaborativeModerationExplanations: " <p> Bir öğe eklendiğinde veya değiştirildiğinde,\
+    \ veriler hemen güncelleştirilmez. Öğe ilk önce haritada 'gri' görünecek ve oturum\
+    \ açmış tüm kullanıcıların değişiklik hakkında yalnızca bir kez ve bir kez oy\
+    \ kullanması mümkün hale gelecektir. Bu oylama bir görüş değil, bilgi paylaşımıdır.\
+    \ Bu öğeyi biliyorsanız veya öğenin mevcut olmadığını biliyorsanız, o zaman bilginizi\
+    \ istiyoruz! </p> <p> Birkaç oylamadan sonra, öğe otomatik olarak doğrulanabilir\
+    \ veya reddedilebilir. Anlaşmazlık durumunda (olumlu ve olumsuz oyların varlığı),\
+    \ bir moderatör mümkün olan en kısa sürede kontrol edecektir. Size güveniyoruz!\
+    \ </p>"
+directory:
+  _label: Harita
+projects:
+  initialize:
+    _label: Bir yönetici hesabı oluşturun
+    email: E-posta adresi
+    plainPassword-1: Şifre
+    plainPassword-2: Şifrenizi yeniden girin
+    username: Kullanıcı adı
+  pitch: GoGo haritaları oluşturun!
+  form:
+    accept_cgu: Genel kullanım şartlarını kabul ediyorum
+    message: Projeniz oluşturuluyor, lütfen bekleyiniz…
+    _label: Bir proje oluşturun
+    contribHints:
+      closed: Sadece yöneticiler katkıda bulunabilir
+      inherit: '{base_url} varsayılan ayarlarını kullanın'
+      intermediate: Tüm kullanıcılar katkıda bulunabilir, ancak katkılar yöneticiler
+        tarafından denetlenmelidir
+      open: Tüm kullanıcılar serbestçe ekleme / düzenleme / silme yapabilir
+    contribOptions:
+      inherit: Varsayılan
+      open: Açık
+      closed: Kapalı
+      intermediate: Orta seviye
+    data-error: Hata, bu ad çok uzun!
+    domaine_name: Domain adı
+    project_name: Proje adı
+    cgu: Kullanım Koşulları
+    contrib: Kamu katkısına açık
+  controller:
+    main_categories: Ana kategoriler
+    main_category: Bir ana kategori
+reports:
+  _label: Raporlarım
+  date: Tarih
+  reportValues:
+    v3: Öğeye birkaç kez atıfta bulunuldu
+    v0: Öğe artık mevcut değil
+    v1: Bilgi yanlış
+    v2: Öğe, tüzüğe uymuyor
+  empty: Henüz herhangi bir hata bildirmediniz. Veritabanımız mükemmel olabilir mi?
+    :P
+  pending_moderation: Moderasyon bekleniyor
+  element: İsim
+  report: Raporlama
+  status: Durum
+my_contributions:
+  my_reports: Raporlarım
+  element: Dosya
+  name: İsim
+  owner: Sahibi
+  show: Göster
+  confirmation: Onayla
+  confirmation_button: Onaylıyorum
+  confirmation_hint: Bir dosyanın sahibi olmak için, yönetim yapısına katılmayı taahhüt
+    etmeniz gerekir
+  edit: Düzenle
+  none: Henüz herhangi bir katkınız yok
+  _label: Katkılarım
+  action: Eylem
+  become_owner: Sahipliği Alın
+  confirmation_cancel: İptal
+  me: Ben
+  my_votes: Oylarım
+  status: Durum
+  date: Tarih
+  element_contributed: Katkıda bulunduğum diğer dosyalar
+  history: Katkılarımın geçmişi
+  my_elements: Dosyalarım
+  type: Türü
+pending-contributions:
+  empty_section: Bekleyen katkınız yok. <a href="{url}">bir dosya eklemekten</a> çekinmeyin!
+  approved: Bu katkı, ortak moderasyon süreci tarafından onaylanmıştır
+  rejected: Bu katkı, ortak moderasyon süreci tarafından reddedildi
+  _label: Bekleyen katkılarım
+  form: Dosya
+project.create:
+  accept_cgu: Genel kullanım şartlarını kabul ediyorum
+  data-error: Hata, bu ad çok uzun!
+  contribHints:
+    open: Tüm kullanıcılar serbestçe ekleme, değiştirme ve silme yapabilir
+    inherit: '{base_url} varsayılan parametrelerini kullan'
+    intermediate: Tüm kullanıcılar katkıda bulunabilir, ancak katkıların yöneticiler
+      tarafından denetlenmesi gerekir
+    closed: Yalnızca yöneticiler katkıda bulunabilir
+  contribOptions:
+    closed: Kapalı
+    open: Açık
+    inherit: Varsayılan
+    intermediate: Orta seviye
+  cgu: Kullanım Koşulları
+  contrib: Kamu katkısına açık
+  domaine_name: Alan (domain) adı
+  message: Projeniz oluşturuluyor, lütfen bekleyiniz…
+  title: Bir proje oluşturun
+  project_name: Proje Adı
+  _label: GoGoCarto –Plenty of Maps
+login:
+  register: Bir hesaba mı ihtiyacınız var? <a href="{url}">Kayıt ol</a>
+  _label: Oturum aç
+  login_with: '{provider} ile oturum açın'
+notifications:
+  import_mapping:
+    content: Merhaba!<br/><br/> İçe aktarma {import}, ilgilenmenizi gerektirebilecek
+      yeni alanlar veya yeni kategoriler içeriyor… <a href="{url}">Eşleşme listesini
+      görüntülemek için burayı tıklayın</a>.
+    subject: '{appname} uygulamasında içe aktarma için işlem gerekli'
+  moderation:
+    subject: '{appname} uygulamasında bazı öğelerin denetlenmesi gerekiyor'
+    content: Merhaba! <br/> <br/> {count, plural, =1 {# {element_singular} requires
+      } other {# {element_plural} require } moderation on the map '{appname}'<br/><br/><a
+      href="{url}">Haritaya erişim</a><br/><br/> Bildirim tercihlerinizi değiştirmek
+      için <a href="{edit_url}">buraya tıklayın</a>.
+  import_error:
+    content: Merhaba!<br/><br/> {import} içe aktarma işlemi bir nedenden dolayı başarısız
+      oldu. <a href="{url}">Anlamaya çalışmak için burayı tıklayın</a>.
+    subject: '{appname} üzerinde içe aktarma sırasında hatalar oluştu'
+my_parameters:
+  _label: Ayarlarım
+  input_location: Adresiniz veya şehriniz
+  unit: kilometre
+  range: 'Arama aralığı:'
+vote:
+  admin:
+    negative: '{element} reddedildi'
+    positive: '{element} doğrulandı'
+  collaborative:
+    negative: '{element} yeterince negatif oy aldı, silinecek.'
+    positive: Tebrikler, {element} onaylanmak için yeterli oyu aldı!
+  pending:
+    admin_validated:
+      positive: Değişiklikler kabul edildi
+      negative: Değişiklikler reddedildi
+    user_validated:
+      negative: Önerilen değişiklik yeterli sayıda olumsuz oy almıştır ve iptal edilmiştir.
+      positive: Tebrikler, değişiklikler onaylanmak için yeterli oyu aldı!
+  vote_added: Katkılarınız için teşekkür ederiz!
+  vote_modified: 'Teşekkürler {kullanıcı}: oyunuz düzenlenmiştir!'
+  user_vote_for_him: Hadi ama, kendi katkınız için oy kullanmayacaktınız, değil mi?
+    Biraz da başkalarına bırakın! <br/> Akıllıların dikkatine, başka bir kişisel adresinizi
+    kullanırsanız onu da görüntüleyebiliyoruz!
+votes:
+  date: Tarih
+  empty: Henüz oy vermediniz! Başlamanız gerekiyor :) <br/>Oylama, ortak moderasyona
+    izin verir!
+  status: Durum
+  vote: Oy
+  _label: Benim Oylarım
+  element: İsim

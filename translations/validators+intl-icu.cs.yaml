@@ -1,0 +1,9 @@
+import:
+  edit_constraints: 'Je zakázáno používat následující slova: new , process, mongo,
+    this, symfony, exec, passthru, shell_exec, system, proc_open, popen, curl_exec,
+    curl_multi_exec, parse_ini_file, show_source, var_dump, print_r... Děkujeme, že
+    jste to nepokazili!'
+configuration:
+  fields_not_shared: 'Některá pole, která se snažíte v šabloně použít, jsou nakonfigurována
+    jako soukromá.  Nemůžete je použít při zobrazení podrobností. Chcete-li toto nastavení
+    změnit, přejděte na stránku:  Další konfigurace / API'

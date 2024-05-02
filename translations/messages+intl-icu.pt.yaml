@@ -1,0 +1,408 @@
+action:
+  element:
+    delete:
+      uncomplete: Existem parâmetros em falta
+      done: Esta entrada foi eliminada
+      unallowed: As nossas desculpas mas não tem autorização para eliminar uma entrada
+    report:
+      unallowed: As nossas desculpas mas não tem autorização para reportar erros
+      done: Obrigado, a sua indicação foi registada!
+      from_origin: Esta indicação foi submetida a partir de {appUrl}.
+      email:
+        subject: Indicação enviada a partir de {appName}
+        content: Olá!<br/><br/>                    Desde {appUrl}, {userEmail} submeteu
+          uma indicação sobre {elementName} (o código de identificação (ID) na tua
+          base de dados seria {elementId}) :<br/><br/> {valueLabel}. {comment}<br/><br/>
+          Cumprimentos, equipa {appName}
+    sendEditLink:
+      done: Um link de edição foi enviado com sucesso para {email}
+      emailContent: <p>Olá<i>'{{ element '}}</i>,</p> <p><a href="'{{ directEditElementUniqueUrl
+        '}}">Clica aqui</a> para atualizar a tua informação</p>
+    sendMail:
+      emailContent: <p>Olá<i>{element}</i>,</p> <p>Recebeste uma mensagem do <a href="mailto:{sender}">{sender}</a><br/>
+        </p> <p><b>Assunto da mensagem</b></p><p> {subject}</p> <p><b>Conteúdo</b></p><p>{content}</p>
+      emailSubject: Mensagem recebida da instância {appName}
+      done: O e-mail foi enviado
+      uncomplete: Existem configurações por preencher
+    stamp:
+      done: Modificação da etiqueta confirmada
+      uncomplete: Existem parâmetros em falta
+      unallowed: Nâo tem autorização para utilizar esta etiqueta
+    subscribe:
+      uncomplete: Existem configurações por preencher
+      email:
+        subject: Receber notificações de alterações à entrada {elementName}
+        content: 'Olá!<br/><br/>                     Desde {appUrl}, irás ser notificado
+          de alterações à entrada « {elementName} ». Para deixares de receber estas
+          notificações clica neste link : {unsubscribeUniqueUrl} <br/><br/> Cumprimentos,
+          Equipa {appName}'
+      done: O pedido de notificação de alterações à entrada "{element}" foi registado
+      already: Já existe registado um pedido de notificação de alterações à entrada
+        "{element}" para este e-mail {email}
+    unsubscribe:
+      done: O cancelamento de notificação de alterações à entrada "{element}" foi
+        registado
+      uncomplete: Existem configurações por preencher
+      already: O e-mail {email} já cancelou as notificações de alterações à entrada
+        "{element}"
+    vote:
+      unallowed: As nossas desculpas, mas não tem autorização para votar
+      uncomplete: Existem parâmetros de voto por preencher
+    not_found: Nenhuma entrada foi encontrada com este código de identificação (ID)
+    resolveReports:
+      done: Moderação da entrada confirmada
+      unallowed: As nossas desculpas mas não tem autorização para moderar esta entrada
+      uncomplete: Existem parâmetros por preencher
+  error: 'Erro: {message}'
+  geolocalize_me: Geolocalizar a minha posição
+  ok: OK
+  registration:
+    need_address: Se quiseres receber novas adições, necessitas de fornecer uma morada
+    geo_error: Não foi possível geolocalizar esta morada
+    unallowed: As nossas desculpas, mas não tem autorização para criar uma conta.
+  cancel: Cancelar
+  continue: Continuar
+  create: Criar
+  submit: Guardar
+  send: Enviar
+  search: Procurar
+  send_stay: Enviar e permanecer no formulário
+api_ui:
+  _label: Configurar API
+  json: JSON
+  jsonld: JSON-LD (Semântica)
+  use_bounds: Vincular a uma zona geográfica (desenhar um retângulo no mapa)
+  use_limit: Limitar o número de resultados
+  include_external: Incluir as fontes externas da base de dados
+  format: 'Formato:'
+  api_url: URL da API
+  test: Testar
+  title: Aceder aos dados através de uma API
+  use_categories: Filtrar por categorias
+commons:
+  choose_category: Escolher {cat}
+  email: E-mail
+  errors:
+    bad_number: Isto não é um número!
+    bad_url: Por favor insere um URL como por exemplo http://…
+    bad_email: Por favor insere um endereço de e-mail válido
+    too_long: Ups, este texto é um bocado longo demais
+    file-too-big: Este ficheiro é demasiado grande, o máximo é {size} MB
+  every:
+    week: Cada semana
+    month: Cada mês
+  location: A tua morada ou cidade
+  menu: Menu
+  newsletter-explanation: Recebe notificações por e-mail de novas entradas perto de
+    ti!
+  optional: Opcional
+  password: Palavra-passe
+  register: Criar conta
+  username: Nome de utilizador
+  validation: Validação
+  category_placeholder: Especificar (se necessário)
+  never: Nunca
+  check_password: Escreve a tua palavra-passe novamente
+  click_here: clique aqui
+  choose_one_option: Escolhe pelo menos uma opção
+  continue_browsing: Podes continuar a explorar o site
+  or: ou
+contributor-login:
+  error:
+    invalid_email: Por favor insira um endereço de e-mail válido
+    inactive_iframe: Esta funcionalidade não está disponível num IFRAME
+    inactive_feature: Esta funcionalidade não é permitida neste mapa
+    admin_only: 'Atenção: esta funcionalidade é exclusiva para administradores'
+    used_email: Já existe uma conta com este endereço de e-mail. Por favor faça login
+      ou utilize um e-mail diferente.
+    title: Não é possível proceder com esta ação
+  _label: Autenticação
+  communs: https://pt.wikipedia.org/wiki/Licen%C3%A7as_Creative_Commons
+  login: Faça login
+  oauth: Entre com a sua conta
+  email: Insira um endereço de e-mail
+directory:
+  _label: Mapa
+duplicates:
+  controller:
+    marked: Sinalizado como não sendo uma entrada duplicada
+    marked_long: As entradas foram confirmadas como não-duplicados
+    merged: Esta entrada foi combinada com um potencial duplicado
+  merged_with_duplicate: As entradas foram combinadas com sucesso Por favor reveja
+    os dados
+  merged_with_new_element: Combinado com uma entrada recentemente criada
+  see_on_map: (Visto em OpenStreetMap)
+  subtitle: Entradas semelhantes foram detetadas, talvez tenhas querido adicionar
+    apenas uma delas?
+  label: Deteção de entradas duplicadas
+  title: Deteção de entradas duplicadas
+  duplicated_element: É isto!
+  new_element: Não, esta é uma nova entrada.
+element:
+  form:
+    admin_section:
+      recopy_info: Copiar a informação para um novo formulário
+      send_mail:
+        add: Notificar {the_element} desta adição através de um e-mail
+        modify: Notificar {the_element} destas alterações através de um e-mail
+      _label: Validação
+      custom_message: Alterar detalhes, este texto vai substituir '{{ customMessage '}} em
+        e-mails automáticos
+    controller:
+      error_dont_exist: A entrada solicitada não existe…
+      error_unauthorized: Não tem autorização para editar esta entrada.
+      success: A tua conta foi criada! Podes agora completar o teu <a href="{url}"
+        >perfil</a>.
+      pending_collaborative: para aprender mais sobre o processo de moderação coletiva!
+      pending: A sua contribuição aguarda validação
+      thankyou:
+        edited: Obrigado pela tua ajuda! As alterações foram tidas em consideração.
+        added: Obrigado pela tua ajuda! {name} foi adicionado
+      user_contributions: Encontra e modifica as tuas contribuições na página <a href="{url}">Minhas
+        Contribuiçãos</a>
+      see_on_map: Ver resultado no mapa
+    create_user: Palavra-passe para criar a tua conta
+    error_becomeOwner: Esta entrada já pertence a alguém.
+    error_geocode: Não é possível localizar esta morada
+    error_missing_adress: Precisa de inserir uma morada para ser notificado de novas
+      entradas
+    error_username: Este nome de utilizador já existe!
+    info_saved: Alterações guardadas!
+    localize: Localizar
+    need_help: Ajuda?
+    open_hours:
+      add_tooltip: Incluir um horário
+      and: E
+      days_of_week:
+        "0": Segunda-feira
+        "1": Terça-feira
+        "3": Quinta-feira
+        "6": Domingo
+        "2": Quarta-feira
+        "4": Sexta-feira
+        "5": Sábado
+      days_of_week_short:
+        "0": 2ªf
+        "1": 3ªf
+        "3": 5ªf
+        "4": 6ªf
+        "2": 4ªf
+        "5": Sáb
+        "6": Dom
+      recopy_tooltip: Copiar os horários anteriores
+      to: para
+      from: De
+    title_add: Adicionar {element}
+    success_becomeOwner: És agora proprietário de {name}!
+    title_edit: Edição de dados
+  status:
+    more_to_discover: '... e outros {nb} para descobrir no site!'
+    pending: Pendente
+    view: Ver
+    modifications: Alterações
+    vote: Vote!
+error:
+  "404":
+    text: A página solicitada (já) não existe…
+  generic:
+    file_line: '{file} na linha {line}'
+    text: Se este problema é recorrente, por favor informe-nos, preferivelmente em
+      <br> <a href="https://framateam.org/gogocarto/channels/town-square" target="blank">GoGoCarto
+      Chatroom</a> ou por e-mail para {email}, incluindo a mensagem de erro indicada
+      em baixo.
+  header: Ups! Alguma coisa correu mal
+  title: Erro!
+home:
+  admin_interface: Interface de administrador
+  all_projects: Todos os projetos ({length})
+  discover: Descobrir
+  documentation: Documentação
+  donate: Doar
+  geolocalize: Geolocaliza a tua posição
+  logout: Sair da conta
+  my_space: O meu espaço
+  pinned_projects: Projetos marcados
+  search:
+    category: uma categoria
+    placeholder: Introduza
+    address: uma morada
+    all: Todos
+  sort_by_date: Ordenar por data de publicação
+  sort_by_points: Ordenar por número de pontos
+  source_code: Código-fonte
+  search_placeholder: Procurar por nome, por etiqueta
+  pick_category: 'Escolhe uma categoria (por defeito: todas)'
+  credits: Powered by {gcc}
+js:
+  element_form:
+    geocoded_marker_text: Move-me para especificar a posição <br/> (no centro do edifício)
+  login:
+    exception: Ocorreu um erro enquanto tentavas fazer log in
+    wrong_id: Credenciais erradas
+  api_ui:
+    categories_placeholder: Escolha as categorias
+load_configuration:
+  AboutHeaderTitle: Sobre
+  AddElementHintText: Contribuir para esta base de dados!
+  ElementFormGeocodingHelp: Não será aceite qualquer pontuação ou nomes apenas com
+    maiúsculas. Se a geolocalização não funcionar (algumas moradas não são reconhecidas),
+    insere o nome da cidade ou localidade mais próxima, clica em "Localizar", e depois
+    podes fazê-lo manualmente. Volta a escrever a morada completa na caixa de texto,
+    ignora o butão "Localizar" e continua a preencher o formulário.
+  PartnerPageTitle: Parceiros
+  SeeMoreButtonText: Mais informação
+  AppBaseline: Criar um mapa gogo
+  CollaborativeModerationExplanations: ' <p> Quando uma entrada é adicionada ou modificada,
+    os dados não atualizam automaticamente. A entrada irá primeiro aparecer com cor
+    cinzenta no mapa, e os utilizadores poderam votar (uma vez apenas) sobre esta
+    alteração. Este voto não se trata de uma opinião mas de partilha de conhecimento.
+    Se conheces esta entrada, ou sabes que esta não existe, então queremos beneficiar
+    do teu conhecimento! </p> <p> Depois de um número de votos, a entrada pode ser
+    então automaticamente validada ou rejeitada. Em caso de disputa (votos positivos
+    e negativos), um moderador irá verificar o caso o mais cedo possível. Contamos
+    contigo! </p>'
+login:
+  _label: Log in
+  login_with: Log in com {provider}
+  register: Precisas de uma conta? <a href="{url}">Inscreve-te</a>
+my_contributions:
+  date: Data
+  edit: Editar
+  element: Ficheiro
+  element_contributed: Outros ficheiros para os quais contribuí
+  history: O meu historial de contribuições
+  me: Eu
+  my_elements: Os meus ficheiros
+  none: Não tens ainda nenhuma contribuição
+  owner: Proprietário
+  status: Estado
+  type: Tipo
+  confirmation: Confirmação
+  confirmation_cancel: Cancelar
+  _label: As minhas contribuições
+  action: Ação
+  become_owner: Assumir autoria
+  confirmation_button: Eu confirmo
+  confirmation_hint: De forma a tornares-te proprietário de um ficheiro, precisas
+    de te comprometer a participar na gestão da estrutura
+  my_reports: Os meus relatos
+  my_votes: Os meus votos
+  name: Nome
+  show: Mostrar
+my_parameters:
+  _label: As minhas configurações
+  input_location: A tua morada ou cidade
+  range: 'Raio de procura:'
+  unit: quilómetros
+notifications:
+  import_error:
+    content: Olá!<br/><br/> A importação {import} parece ter falhado por alguam razão.
+      <a href="{url}">Clica aqui</a> para tentar perceber porquê.
+    subject: Ocorreram erros durante a importação em {appname}
+  import_mapping:
+    content: Olá!<br/><br/> A importação {import} tem novos campos ou categorias,
+      o que pode precisar da tua atenção… <a href="{url}">Clica aqui</a> para exibir
+      a lista de correspondências.
+    subject: Ação requirida para uma importação em {appname}
+  moderation:
+    subject: Algumas entradas requerem moderação em {appname}
+pending-contributions:
+  approved: Esta contribuição foi aprovada pelo processo de moderação colaborativa
+  empty_section: Não tens contribuições pendentes. Está à vontade de <a href="{url}">incluir
+    um ficheiro</a>!
+  rejected: Esta contribuição foi rejeitada pelo processo de moderação colaborativa
+  _label: As minhas contribuições pendentes
+  form: Ficheiro
+project.create:
+  contribHints:
+    inherit: Usar parâmetros base de {base_url}
+    intermediate: Qualquer utilizado pode contribuir, mas as contribuições precisam
+      de ser moderadas pelos administradores
+    closed: Apenas administradores podem contribuir
+    open: Qualquer utilizador podem adicionar, modificar e apagar
+  _label: GoGoCarto - Imensos Mapas
+  accept_cgu: Eu aceito os termos gerais de utilização
+  cgu: Termos de utilização
+  contrib: Aberto a contribuições
+  contribOptions:
+    inherit: Por defeito
+    open: Aberto
+    closed: Fechado
+    intermediate: Intermédio
+  message: O teu projeto está a ser criado, favor aguardar…
+  title: Criar um projeto
+  data-error: Ups, este nome é demasiado longo!
+  project_name: Nome do projeto
+  domaine_name: Nome do domínio
+projects:
+  form:
+    _label: Criar um projeto
+    accept_cgu: Eu aceito os termos gerais de utilização
+    cgu: Termos de utilização
+    contrib: Aberto a contributos
+    contribHints:
+      closed: Apenas administradores podem contribuir
+      inherit: Utilizar configurações base de {base_url}
+      open: Qualquer utilizador pode livremente adicionar/editar/apagar
+      intermediate: Qualquer utilizador podem contribuir, mas as contribuições precisam
+        de ser moderadas pelos administradores
+    contribOptions:
+      closed: Fechado
+      inherit: Por defeito
+      open: Aberto
+      intermediate: Intermédio
+    domaine_name: Nome do domínio
+    message: O teu projeto está a ser criado, favor aguardar…
+    project_name: Nome do projeto
+    data-error: Ups, este nome é demasiado longo!
+  initialize:
+    _label: Criar uma conta de administrador
+    email: E-mail
+    plainPassword-1: Palavra-passe
+    plainPassword-2: Escreve a tua palavra-passe novamente
+    username: Nome de utilizador
+  pitch: Cria mapas GoGo!
+  controller:
+    main_category: Uma categoria principal
+    main_categories: Categorias principais
+reports:
+  _label: Os meus relatos
+  date: Data
+  empty: Ainda não reportaste qualquer erro. Poderá a tua base de dados ser perfeita?
+  pending_moderation: Aguarda moderação
+  report: Relatado
+  reportValues:
+    v0: Esta entrada (já) não existe
+    v1: Informação está errada
+    v2: Esta entrada não respeita as regras
+    v3: Esta entrada é referenciada várias vezes
+  status: Estado
+  element: Nome
+vote:
+  admin:
+    negative: A entrada {element} foi rejeitada
+    positive: a entrada {element} foi validada
+  collaborative:
+    negative: a entrada {element} recebeu suficientes votos negativos e por isso será
+      apagada.
+    positive: Parabéns, a entrada {element} recebeu suficientes votos para ser validada!
+  pending:
+    user_validated:
+      negative: A correção proposta recebeu suficientes votos negativos e por isso
+        será revogada.
+      positive: Parabéns, as alterações receberam votos suficientes para serem validadas!
+    admin_validated:
+      positive: As alterações foram aceites
+      negative: As alterações foram recusadas
+  vote_added: Obrigado pela tua contribuição!
+  vote_modified: 'Obrigado {user}: o teu voto foi editado!'
+  user_vote_for_him: Vá lá, não vais votar na tua própria contribuição pois não? Deixa
+    isso para os outros! <br/>
+votes:
+  _label: Os meus votos
+  date: Data
+  element: Nome
+  empty: Ainda não votaste! Tens de começar :) <br/>Votar é o que permite uma moderação
+    colaborativa!
+  status: Estado
+  vote: Votar

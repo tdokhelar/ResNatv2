@@ -1,0 +1,438 @@
+action:
+  cancel: cancelar
+  continue: Continúa
+  create: Crear
+  element:
+    not_found: No se ha encontrado ningún artículo para este ID
+    delete:
+      done: Confirmación de la eliminación de elementos
+      unallowed: ¡Lo siento, no está permitido borrar un artículo !
+      uncomplete: Parámetros que faltan
+    report:
+      done: ¡Gracias, su informe ha sido guardado!
+      unallowed: Lo sentimos, ¡no está permitido informar de errores!
+      from_origin: Este informe ha sido enviado desde {appUrl}.
+      email:
+        subject: Informe enviado desde {appName}
+        content: Hola! <br/><br/> Desde {appUrl}, se ha enviado un informe por {userEmail}
+          sobre {elementName} (El id en su base de datos debe ser {elementId}) :<br/><br/>
+          {valueLabel}. {comment}<br/><br/> Un saludo, equipo de {appName}
+    resolveReports:
+      done: Confirmación de la moderación de artículos
+      unallowed: Lo sentimos, ¡no puedes moderar este artículo!
+      uncomplete: Parámetros incompletos
+    sendEditLink:
+      done: Se ha enviado con éxito un enlace de edición a {email}
+      emailContent: <p>Hola <i>'{{ element '}}</i>,</p> <p><a href="'{{ directEditElementUniqueUrl
+        '}}">Haga clic aquí</a> para actualizar su información</p>
+    sendMail:
+      done: El email ha sido enviado
+      emailContent: <p>Hola<i>{element}</i>,</p> <p>Ha recibido un mensaje de <a href="mailto:{sender}">{sender}</a><br/>
+        </p> <p><b>Asunto del mensaje</b></p><p> {subject}</p> <p><b>Content</b></p><p>{content}</p>
+      emailSubject: Mensaje recibido de la applicación {appName}
+      uncomplete: Los ajustes están incompletos
+    stamp:
+      done: 'Modificación del sello confirmada'
+      unallowed: 'No está permitido usar este sello'
+      uncomplete: 'Los parámetros están incompletos'
+      do_not_exist: el sello no existe
+    subscribe:
+      already: 'La suscripción a los cambios del elemento "{element}" ya existe para
+        este correo electrónico {email}'
+      uncomplete: 'Los ajustes están incompletos'
+      email:
+        content: 'Hola! <br/><br/> Desde {appUrl}, estás suscrito a los cambios del
+          elemento " {elementName} ". Puede darse de baja siguiendo este enlace :
+          {unsubscribeUniqueUrl} <br/><br/> Un saludo, equipo de {appName}'
+        subject: 'La suscripción {appName} a {elementName} cambia'
+      done: 'La suscripción a los cambios del elemento "{element}" ha sido registrada'
+    unsubscribe:
+      done: 'Se ha registrado la baja de los cambios del elemento "{element}"'
+      already: 'Este correo electrónico {email} ya se ha dado de baja de los cambios
+        del elemento "{element}"'
+      uncomplete: 'Los ajustes están incompletos'
+    vote:
+      unallowed: 'Lo siento, ¡no puedes votar!'
+      uncomplete: 'Los parámetros de la votación están incompletos'
+  ok: 'OK'
+  search: 'Busque en'
+  send: 'Enviar'
+  send_stay: 'Enviar y permanecer en el formulario'
+  submit: 'Guardar'
+  registration:
+    geo_error: 'Imposible geolocalizar esta dirección'
+    need_address: 'Si desea recibir nuevas adiciones, debe proporcionar una dirección'
+    unallowed: 'Lo sentimos, no puedes crear una cuenta.'
+    on_hold: Tu cuenta creada con el correo electrónico "{email}" está esperando la
+      validación del administrador.
+    title: registro
+  error: 'Error: {mensaje}'
+  geolocalize_me: 'Geolocalizar mi posición'
+api_ui:
+  api_url: 'URL DE LA API'
+  format: 'Formato:'
+  include_external: 'Incluir las fuentes externas de la base de datos'
+  json: 'JSON'
+  title: 'Acceder a los datos a través de una API'
+  use_categories: 'Filtrar por categorías'
+  use_limit: 'Limitar el número de resultados'
+  test: 'Prueba'
+  jsonld: 'JSON-LD (Semántico)'
+  use_bounds: 'Vincular a una zona geográfica (dibujar un rectángulo en el mapa)'
+  _label: 'Configurar la API'
+commons:
+  check_password: 'Vuelva a introducir su contraseña'
+  click_here: 'haga clic aquí'
+  optional: 'Opcional'
+  validation: 'Validación'
+  continue_browsing: '¡Puede seguir navegando por el sitio!'
+  every:
+    week: 'Cada semana'
+    month: 'Cada mes'
+  newsletter-explanation: '¡Infórmese por correo electrónico de las nuevas referencias
+    cerca de usted!'
+  choose_category: 'Elige {cat}'
+  password: 'Contraseña'
+  category_placeholder: 'Especifique (si es necesario)'
+  errors:
+    bad_url: 'Por favor, introduzca una URL como http://…'
+    file-too-big: 'Este archivo es demasiado grande, el tamaño máximo permitido es
+      {tamaño} MB'
+    too_long: 'Uy, ¡este texto es demasiado largo!'
+    bad_email: 'Por favor, introduzca una dirección de correo electrónico válida'
+    bad_number: '¡Esto no es un número!'
+  never: 'Nunca'
+  username: 'Nombre de usuario'
+  register: 'Crear una cuenta'
+  email: 'Dirección de correo electrónico'
+  location: 'Su dirección o ciudad'
+  menu: 'Menú'
+  choose_one_option: 'Por favor, elija al menos una opción'
+  or: o
+  confirm: ¿Seguro?
+contributor-login:
+  email: 'Simplemente introduzca una dirección de correo electrónico'
+  error:
+    invalid_email: 'Por favor, introduzca una dirección de correo electrónico válida'
+    inactive_feature: 'Esta función no está activada en este mapa'
+    title: 'Acción imposible'
+    used_email: 'Lo sentimos, ¡ya existe una cuenta con esta dirección de correo electrónico!
+      ¡Inicie sesión o use otra dirección!'
+    admin_only: '¡Atención! Esta función es sólo para administradores'
+    inactive_iframe: 'Esta función no está disponible en un IFRAME'
+  printemps: 'Primavera educativa'
+  communs: 'LesCommuns.org'
+  oauth: 'Inicie sesión con su cuenta'
+  login: 'Acceder'
+  _label: 'Autenticación'
+duplicates:
+  controller:
+    marked: 'Marcado como no duplicado'
+    marked_long: 'Los artículos han sido confirmados como no duplicados'
+    merged: 'Este artículo se ha fusionado con un posible duplicado'
+  new_element: 'No, este es un artículo nuevo, ¡procedamos!'
+  see_on_map: '(Ver en OpenStreetMap)'
+  subtitle: 'Se han detectado elementos similares, ¿quizás querías añadir uno de ellos?'
+  title: 'Detección de duplicados'
+  duplicated_element: '¡Aquí es!'
+  label: 'Detección de duplicados'
+  merged_with_duplicate: Los elementos se han fusionado con éxito. Por favor revise
+    los datos
+  merged_with_new_element: Fusionar con un nuevo elemento creado
+element:
+  form:
+    admin_section:
+      _label: 'Validación'
+      custom_message: Cambiar detalles, este texto sustituirá a '{{ customMessage
+        '}} en los correos electrónicos automáticos
+      send_mail:
+        add: 'Notificar {the_element} de la adición enviando un correo electrónico'
+        modify: 'Notificar {the_element} de los cambios del enviando un correo electrónico'
+      recopy_info: 'Copiar la información en un nuevo formulario'
+    controller:
+      error_unauthorized: 'No puedes editar este artículo, ¡lo siento!'
+      pending: 'Su contribución está pendiente de validación'
+      pending_collaborative: '¡para saber más sobre el proceso de moderación colectiva!'
+      success: '¡Tu cuenta ha sido creada! ¡Ahora puedes completar <a href="{url}"
+        >tu perfil</a>!'
+      thankyou:
+        edited: '¡Gracias por su ayuda! ¡Los cambios se han tenido en cuenta!'
+        added: '¡Gracias por su ayuda! {nombre} ha sido añadido'
+      user_contributions: 'Encuentra y modifica tus contribuciones en la página <a
+        href="{url}">Mis contribuciones</a>'
+      error_dont_exist: 'El artículo solicitado no existe…'
+      see_on_map: Ver resultado en el mapa
+    need_help: '¿Ayudar?'
+    open_hours:
+      days_of_week:
+        "4": 'Viernes'
+        "5": 'Sábado'
+        "6": 'Domingo'
+        "0": 'Lunes'
+        "3": 'Jueves'
+        "1": 'Martes'
+        "2": 'Miércoles'
+      days_of_week_short:
+        "4": 'Vie'
+        "2": 'Mié'
+        "0": 'Lun'
+        "5": 'Sáb'
+        "1": 'Mar'
+        "6": 'Dom'
+        "3": 'Jue'
+      and: 'Y'
+      add_tooltip: 'Añadir franja horaria'
+      from: 'Desde'
+      recopy_tooltip: 'Copiar los horarios anteriores'
+      to: 'a'
+      closed: Cerrado
+    localize: 'Localizar'
+    error_becomeOwner: 'Lo sentimos, ¡este artículo ya pertenece a alguien!'
+    info_saved: '¡Cambios guardados!'
+    title_edit: 'Edición de datos'
+    error_username: '¡Este nombre de usuario ya está tomado!'
+    success_becomeOwner: '¡Ahora eres el dueño de {nombre}!'
+    error_geocode: 'Imposible localizar esta dirección'
+    title_add: 'Añadir {element}'
+    error_missing_adress: 'Es necesario introducir una dirección para ser notificado
+      de las últimas incorporaciones'
+    create_user: 'Contraseña para crear su cuenta'
+    getDataFromLocalStorage:
+      title: Artículo introducido
+      content: <p>Se ha guardado un elemento que se está ingresando. ¿Desea reanudar
+        la entrada de datos?</p><p>Tenga en cuenta que las imágenes y los archivos
+        no se conservan y, por lo tanto, deberán agregarse nuevamente.</p>
+  status:
+    view: 'Ver'
+    vote: '¡Vota!'
+    modifications: 'Modificaciones'
+    more_to_discover: '¡... y {nb} otros para descubrir en el sitio!'
+    pending: 'Pendiente'
+home:
+  all_projects: 'Todos los proyectos ({longitud})'
+  logout: 'Cerrar la sesión'
+  pick_category: 'Elija una categoría (por defecto: todas)'
+  search:
+    address: 'una dirección'
+    all: 'Todo'
+    category: 'una categoría'
+    placeholder: 'Entre en'
+  sort_by_points: 'Ordenar por número de puntos'
+  source_code: 'Código fuente'
+  pinned_projects: 'Proyectos anclados'
+  documentation: 'Documentación'
+  credits: 'Desarrollado por {ggc}'
+  geolocalize: 'Geolocalice su posición'
+  my_space: 'Mi Espacio'
+  donate: 'Donar'
+  discover: 'Descubra'
+  admin_interface: 'Interfaz de administración'
+  sort_by_date: 'Ordenar por fecha de publicación'
+  search_placeholder: 'Búsqueda por nombre, por etiqueta'
+login:
+  login_with: 'Inicie sesión con {provider}'
+  register: '¿Necesitas una cuenta? <a href="{url}">Regístrese</a>'
+  _label: 'Entrar en el sistema'
+  forgotten_password: ¿Has olvidado tu contraseña?
+  remember_me: Recordarme
+  authentication_success: Autenticación correcta con {service}, ¡ya has iniciado la
+    sesión!
+my_contributions:
+  confirmation_hint: 'Para convertirse en propietario de un artículo, tienes que comprometerte
+    a participar en la gestión de la estructura'
+  edit: 'Editar'
+  element: 'Artículo'
+  me: 'Yo'
+  my_reports: 'Mis informes'
+  none: 'Aún no tienes ninguna contribución'
+  status: 'Estatus'
+  action: 'Acción'
+  _label: 'Mis contribuciones'
+  confirmation: 'Confirmación'
+  history: 'Historial de mis contribuciones'
+  element_contributed: 'Otros artículos en los que he contribuido'
+  owner: 'Propietario'
+  type: 'Tipo'
+  my_elements: 'Mis artículos'
+  confirmation_cancel: 'Cancelar'
+  become_owner: 'Asumir la responsabilidad'
+  my_votes: 'Mis votos'
+  name: 'Nombre'
+  date: 'Fecha'
+  show: 'Mostrar'
+  confirmation_button: 'Confirmo'
+notifications:
+  moderation:
+    content: '¡Hola!<br/><br/>{count, plural, =1 {# {element_singular} require } other
+      {# {element_plural} require } } moderation on the map ''{appname}''<br/><br/><a
+      href="{url}">Access el mapa</a><br/><br/> Para cambiar sus preferencias de notificaciones,
+      <a href="{edit_url}">haga clic aquí</a>.'
+    subject: 'Algunos artículos necesitan moderación en {appname}'
+  import_error:
+    content: 'Hola¡ <br/><br/> La importación {import} parece haber fallado por alguna
+      razón. <a href="{url}">Haz clic aquí</a> para intentar resolverlo.'
+    subject: 'Se han producido errores durante la importación en {nombre de la aplicación}'
+  import_mapping:
+    content: 'Hola!<br/><br/> La importación {import} tiene nuevos campos o nuevas
+      categorías, que pueden requerir su atención... <a href="{url}">Haga clic aquí</a>
+      para mostrar la lista de coincidencias.'
+    subject: 'Acción requerida para una importación en {appname}'
+pending-contributions:
+  _label: 'Mis contribuciones pendientes'
+  form: 'Artículo'
+  rejected: 'Esta contribución ha sido rechazada por el proceso de moderación colaborativa'
+  empty_section: 'No tienes contribuciones pendientes. ¡Siéntete libre de <a href="{url}">añadir
+    un artículo</a>!'
+  approved: 'Esta contribución ha sido aprobada por el proceso de moderación colaborativa'
+project.create:
+  contribHints:
+    intermediate: 'Todos los usuarios pueden contribuir, pero las contribuciones deben
+      ser moderadas por los administradores'
+    open: 'Todos los usuarios pueden añadir, modificar y eliminar libremente'
+    closed: 'Sólo los administradores pueden contribuir'
+    inherit: 'Utilizar los parámetros por defecto de {base_url}'
+  contribOptions:
+    closed: 'Cerrado'
+    open: 'Abierto'
+    intermediate: 'Intermedio'
+    inherit: 'Por defecto'
+  data-error: '¡Uy, este nombre es demasiado largo!'
+  domaine_name: 'Nombre de dominio'
+  message: 'Su proyecto se está creando, por favor espere…'
+  project_name: 'Nombre del proyecto'
+  title: 'Crear un proyecto'
+  accept_cgu: 'Acepto las condiciones generales de uso'
+  _label: 'GoGoCarto – Un montón de mapas'
+  contrib: 'Abierto a la contribución del público'
+  cgu: 'Condiciones de uso'
+projects:
+  form:
+    _label: 'Crear un proyecto'
+    contribHints:
+      inherit: 'Utilizar la configuración por defecto de {base_url}'
+      open: 'Todos los usuarios pueden añadir / editar / eliminar libremente'
+      closed: 'Sólo los administradores pueden contribuir'
+      intermediate: 'Todos los usuarios pueden contribuir, pero las contribuciones
+        deben ser moderadas por los administradores'
+    contribOptions:
+      inherit: 'Por defecto'
+      intermediate: 'Intermedio'
+      open: 'Abierto'
+      closed: 'Cerrado'
+    data-error: '¡Uy, este nombre es demasiado largo!'
+    domaine_name: 'Nombre de dominio'
+    message: 'Su proyecto se está creando, por favor espere…'
+    project_name: 'Nombre del proyecto'
+    contrib: 'Abierto a la contribución del público'
+    cgu: 'Condiciones de uso'
+    accept_cgu: 'Acepto las condiciones generales de uso'
+  controller:
+    main_categories: 'Categorías principales'
+    main_category: 'Una categoría principal'
+  initialize:
+    _label: 'Crear una cuenta de administrador'
+    email: 'Dirección de correo electrónico'
+    plainPassword-1: 'Contraseña'
+    plainPassword-2: 'Vuelva a introducir su contraseña'
+    username: 'Nombre de usuario'
+  pitch: '¡Crear mapas GoGo!'
+reports:
+  date: 'Fecha'
+  element: 'Nombre'
+  empty: 'Todavía no ha informado de ningún error. ¿Es posible que nuestra base de
+    datos sea perfecta? :P'
+  pending_moderation: 'Esperando la moderación'
+  report: 'Informes'
+  reportValues:
+    v0: 'El artículo ya no existe'
+    v1: 'La información es errónea'
+    v2: 'El artículo no respeta la carta'
+    v3: 'Se hace referencia al artículo varias veces'
+  status: 'Estatus'
+  _label: 'Mis informes'
+vote:
+  admin:
+    negative: 'el {element} fue rechazado'
+    positive: 'el {element} ha sido validado'
+  collaborative:
+    negative: 'el {element} ha recibido suficientes votos negativos, será eliminado.'
+    positive: '¡Felicitaciones, {element} ha recibido suficientes votos para ser validado!'
+  pending:
+    admin_validated:
+      negative: 'Los cambios han sido rechazados'
+      positive: 'Los cambios han sido aceptados'
+    user_validated:
+      negative: 'La enmienda propuesta ha recibido suficientes votos negativos, por
+        lo que queda revocada.'
+      positive: '¡Felicitaciones, los cambios han recibido suficientes votos para
+        ser validados!'
+  user_vote_for_him: 'Vamos, no ibas a votar por tu propia contribución, ¿verdad?
+    ¡Deja algo para los demás! <br/> Atención listos, si utilizáis otra de vuestras
+    direcciones personales, ¡también lo veremos!'
+  vote_added: '¡Gracias por su contribución!'
+  vote_modified: 'Gracias {usuario}: ¡tu voto ha sido editado!'
+votes:
+  _label: 'Mis Votos'
+  date: 'Fecha'
+  element: 'Nombre'
+  empty: '¡Todavía no has votado! Tienes que empezar :) <br/>¡Votar permite la moderación
+    colaborativa!'
+  status: 'Estatus'
+  vote: 'Vota'
+load_configuration:
+  AboutHeaderTitle: 'Sobre'
+  AppBaseline: 'Crear mapas à gogo'
+  CollaborativeModerationExplanations: ' <p> Cuando se añade o modifica un elemento,
+    los datos no se actualizan inmediatamente. El elemento aparecerá primero "en gris"
+    en el mapa y será posible que todos los usuarios registrados voten una vez y sólo
+    una vez sobre el cambio. Este voto no es una opinión, sino un intercambio de conocimientos.
+    Si conoces este elemento, o sabes que el elemento no existe, ¡entonces queremos
+    tu conocimiento! </p> <p> Después de un número de votos, el artículo puede ser
+    validado o rechazado automáticamente. En caso de disputa (presencia de votos positivos
+    y negativos), un moderador lo revisará lo antes posible. ¡Contamos con usted!
+    </p>'
+  PartnerPageTitle: 'Socios'
+  SeeMoreButtonText: 'Más información'
+  AddElementHintText: '¡Contribuye a la base de datos!'
+  ElementFormGeocodingHelp: 'No pongas ningún signo de puntuación, tampoco se acepta
+    el nombre en mayúsculas. Si la localización no funciona (algunas direcciones no
+    son reconocidas), introduzca el nombre de la ciudad o pueblo más cercano y luego
+    haga clic en ''Localizar'' y ponga el punto de localización manualmente. Vuelva
+    a introducir la dirección completa en el área de texto, omita el botón ''Localizar''
+    y continúe rellenando el formulario.'
+error:
+  generic:
+    file_line: '{archivo} en la línea {línea}'
+    text: 'Si el problema es recurrente, por favor infórmenos, preferiblemente en
+      <br> <a href="https://framateam.org/gogocarto/channels/town-square" target="blank"
+      >GoGoCarto Chatroom</a> o por correo electrónico a {email}, incluyendo el mensaje
+      de error que se muestra a continuación.'
+  title: '¡Error!'
+  header: '¡Uy! Algo salió mal'
+  "404":
+    text: 'La página solicitada no existe (¿ya no?) …'
+my_parameters:
+  input_location: 'Su dirección o ciudad'
+  range: 'Rango de búsqueda:'
+  unit: 'kilómetros'
+  _label: 'Mi configuración'
+  delete_success: Tu cuenta ha sido eliminada correctamente
+  delete: Eliminar mi cuenta
+js:
+  element_form:
+    geocoded_marker_text: 'Muéveme para especificar la posición<br/>(en el centro
+      del edificio)'
+    category_add: Agregar {categoría}
+    category_choose: Elegir {cat}
+    category_drag: Arrástrame para reordenar
+    category_remove: Eliminar
+    category_add_children: Añadir subcategorías
+    category_add_more: Añadir más categorías
+    category_invalid: Elija una subcategoría
+  login:
+    wrong_id: 'Credenciales incorrectas'
+    exception: 'Se ha producido un error al intentar iniciar la sesión'
+  api_ui:
+    categories_placeholder: Seleccionar categorías
+directory:
+  _label: 'El mapa'

@@ -1,0 +1,11 @@
+import:
+  edit_constraints: >-
+    Es ist verboten, die folgenden Wörter zu verwenden: new , process,
+    mongo, this, symfony, exec, passhru, shell_exec, system, proc_open, popen, curl_exec,
+    curl_multi_exec, parse_ini_file, show_source, var_dump, print_r … Bitte machen
+    Sie keine Dummheiten!
+configuration:
+  fields_not_shared: >-
+    Einige Felder, die Sie in der Vorlage verwenden möchten, sind als privat konfiguriert.
+    Sie können sie nicht im Detaildatensatz verwenden. Um die
+    Konfiguration zu ändern, gehen Sie zu: Sonstige Konfiguration / API

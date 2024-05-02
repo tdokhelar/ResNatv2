@@ -1,0 +1,5 @@
+import:
+  edit_constraints: 'Não é permitido utilizar as seguintes palavras: new , process,
+    mongo, this, symfony, exec, passthru, shell_exec, system, proc_open, popen, curl_exec,
+    curl_multi_exec, parse_ini_file, show_source, var_dump, print_r… Obrigado por
+    ter isto em atenção!'

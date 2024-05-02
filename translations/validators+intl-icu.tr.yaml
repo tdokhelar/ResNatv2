@@ -1,0 +1,8 @@
+import:
+  edit_constraints: 'Şu kelimeleri kullanmak yasaktır: new , process, mongo, this,
+    symfony, exec, passthru, shell_exec, system, proc_open, popen, curl_exec, curl_multi_exec,
+    parse_ini_file, show_source, var_dump, print_r… Hata yapmadığınız için teşekkürler!'
+configuration:
+  fields_not_shared: 'Şablonda kullanmaya çalıştığınız bazı alanlar özel olarak yapılandırılmıştır.
+    Ayrıntılar ekranında bunları kullanamazsınız. Bu ayarı değiştirmek için şuraya
+    gidin: Diğer yapılandırma / API'

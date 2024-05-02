@@ -1,0 +1,432 @@
+projects:
+  initialize:
+    email: Posta elektroniko helbidea
+    plainPassword-2: 'Berriro sartu zure pasahitza'
+    username: 'Erabiltzaile-izena'
+    plainPassword-1: 'Pasahitza'
+    _label: 'Administratzaile kontua sortu'
+  form:
+    data-error: 'Ups, zen hau luzeegia da!'
+    domaine_name: 'Domeinu-izena'
+    cgu: 'Erabilera baldintzak'
+    _label: 'Sortu proiektu bat'
+    contribHints:
+      inherit: 'Erabili {base_url} lehenetsitako ezarpenak'
+      open: 'Erabiltzaile guztiek libreki gehitu / editatu / ezabatu dezakete'
+      closed: 'Administratzaileek bakarrik lagundu dezakete'
+      intermediate: 'Erabiltzaile guztiek egin dezakete ekarpena, baina ekarpenak
+        administratzaileek moderatu behar dituzte'
+    contribOptions:
+      inherit: 'Lehenetsia'
+      open: 'Ireki'
+      intermediate: 'Tartekoa'
+      closed: 'Itxita'
+    message: 'Zure proiektua sortzen ari da, itxaron mesedez…'
+    contrib: 'Ekarpen publikora irekita'
+    accept_cgu: 'Erabilera-baldintza orokorrak onartzen ditut'
+    project_name: 'Proiektuaren izena'
+  pitch: 'GoGo mapak sortu!'
+  controller:
+    main_categories: 'Kategoria nagusiak'
+    main_category: 'Kategoria nagusia'
+action:
+  cancel: 'Ezeztatu'
+  continue: 'Jarraitu'
+  create: 'Sortu'
+  element:
+    delete:
+      uncomplete: 'Parametroak eskas'
+      unallowed: 'Barkatu, ez zara baimendua artikulu bat ezabatzeko !'
+      done: 'Artikuluaren ezabatzea baieztatua'
+    report:
+      from_origin: 'Seinalamendu hau {appUrl} -k aurkeztu du.'
+      email:
+        subject: 'Seinalaketa {appName} -k igorria'
+        content: 'Kaixo! <br/><br/>                   {appUrl} -tik, seinalaketa bat
+          igorria izan da {userEmail} -gandik {elementName} -i buruz (zure datu-baseko
+          id -a {elementId} behar litzake)  :<br/><br/> {valueLabel}. {comment}<br/><br/>  Agurrik
+          beroenak, {appName}  taldea'
+      done: 'Eskerrik asko, zure iruzkina gorde egin da!'
+      unallowed: 'Barkatu, ezin duzu akatsik jakinarazi!'
+    resolveReports:
+      done: 'Artikuluaren moderazioa baieztatua'
+      uncomplete: 'Parametroak eskas'
+      unallowed: 'Barkatu, ezin duzu artikulu hau moderatu !'
+    sendMail:
+      emailSubject: '{appName} -ren mezu bat jaso duzu'
+      uncomplete: 'Parametroak osatu gabe daude'
+      done: 'Emaila bidalia izan da'
+      emailContent: '<p>Kaixo<i>{element}</i>,</p> <p>Mezu bat jaso duzu <a href="mailto:{sender}">{sender}</a><br/>
+        </p> <p><b>Mezuaren gaia</b></p><p> {subject}</p> <p><b>Content</b></p><p>{content}</p>'
+    stamp:
+      done: 'Zigiluaren aldaketa baieztatua'
+      unallowed: 'Ez zaude zigilu hau erabiltzeko baimendua'
+      uncomplete: 'Parametroak osatu gabe daude'
+      do_not_exist: Zigilua ez da existitzen
+    vote:
+      unallowed: 'Barkatu, ez zaude onartua bozkatzeko!'
+      uncomplete: 'Bozkatzeko parametroak osatu gabe daude'
+    subscribe:
+      done: '"{element}" elementuaren aldaketen harpidetza gordeak izan dira'
+      already: '"{element}" elementuaren aldaketen harpidetza egina da dagoeneko email
+        honentzat {email}'
+      uncomplete: 'Parametroak osatu gabe daude'
+      email:
+        subject: '{elementName} aldeketeri harpidetua {appName}'
+        content: 'Kaixo!<br/><br/>                     {appUrl} -tik, harpidetua zaude
+          orain « {elementName} » elementuaren aldaketeri. Harpidetza eten dezakezu
+          esketa honetan segituz {unsubscribeUniqueUrl} <br/><br/> Agurrik beroenak,
+          {appName} taldea'
+    unsubscribe:
+      already: 'Email honek {email} dagoeneko gelditu du "{element}" elementuaren
+        aldaketen harpidetza'
+      uncomplete: 'Parametroak osatu gabe daude'
+      done: '"{element}" elementuaren aldaketekiko harpidetzaren gelditzea gordea
+        izan da'
+    sendEditLink:
+      emailContent: '<p>Kaixo  <i>''{{ element ''}}</i>,</p> <p><a href="''{{ directEditElementUniqueUrl
+        ''}}">Klik egin hemen</a>  zure informazioa eguneratzeko</p>'
+      done: '{email} -i editatzeko esteka bat igorria izan zaio'
+    not_found: 'Ez da artikulurik aurkitu ID honentzat'
+  error: 'Errorea: {message}'
+  geolocalize_me: 'Nire posizioa geolokalizatu'
+  ok: 'OK'
+  registration:
+    geo_error: 'Helbidea geolokalizatzea ezinezkoa'
+    unallowed: 'Barkatu, ez duzu kontu berri bat sortzeko baimenik.'
+    need_address: 'Gehigarri berriak jaso nahi badituzu, helbide berri bat eman behar
+      duzu'
+    on_hold: '"{email}" emailarekin sorturiko zure kontua administratzaileen onespenaren
+      zain dago.'
+    title: izen ematea
+  search: 'Bilatu'
+  send: 'Bidali'
+  send_stay: 'Igorri eta forma gorde'
+  submit: 'Gorde'
+pending-contributions:
+  _label: 'Onartu gabe diren nire ekarpenak'
+  empty_section: 'Ez duzu ekarpenik zain. Anima zaitez <a href="{url}">elementu bat
+    gehitzen</a>!'
+  rejected: 'Ekarpen hau moderazio kolaboratiboko prozesuak baztertu du'
+  approved: ''
+  form: 'Elementua'
+api_ui:
+  _label: 'API -a konfiguratu'
+  api_url: 'API URL'
+  test: 'Test'
+  title: 'API baten bitartez datan sartzea'
+  use_bounds: 'Eremu geografiko bati lotu (laukizuzen bat marraztu mapan)'
+  use_categories: 'Kategorien arabera bahetu'
+  format: 'Formatua:'
+  include_external: 'Datu basearen kanpoko iturriak barneratzen ditu'
+  json: 'JSON'
+  jsonld: 'JSON-LD (Semantikoa)'
+  use_limit: 'Emaitza kopurua mugatu'
+commons:
+  continue_browsing: 'Gune hau nabigatzen segitu dezakezu!'
+  email: 'Helbide elektronikoa'
+  errors:
+    bad_email: 'Baliodun helbide elektronikoa sartu'
+    file-too-big: 'Dozierra handiegia da, gehienezko neurria {size} MB -koa da'
+    too_long: 'Ups, testua luzeegia da!'
+    bad_url: 'http://… bezalako URL bat sartu'
+    bad_number: 'Hori ez da zenbaki bat!'
+  every:
+    month: 'Hilabetero'
+    week: 'Astero'
+  register: 'Sortu kontua'
+  category_placeholder: 'Zehaztu (behar bada)'
+  check_password: 'Pasahitza berritz sartu'
+  choose_category: 'Hautatu {cat}'
+  choose_one_option: 'Bederen aukera bat hautatu'
+  location: 'Zure helbidea edo herria'
+  menu: 'Menua'
+  never: 'Inoiz ez'
+  newsletter-explanation: 'Zure hurbileko erreferentzia berrietaz jakinean atxiki
+    emailez !'
+  optional: 'Hautazkoa'
+  password: 'Pasahitza'
+  username: 'Erabiltzaile izena'
+  validation: 'Balidazioa'
+  click_here: 'klikatu hemen'
+  confirm: Segur al zaude ?
+  or: edo
+element:
+  form:
+    open_hours:
+      days_of_week:
+        "2": 'Asteazkena'
+        "0": 'Astelehena'
+        "4": 'Ostirala'
+        "5": 'Larunbata'
+        "3": 'Osteguna'
+        "1": 'Asteartea'
+        "6": 'Igandea'
+      days_of_week_short:
+        "3": 'O1'
+        "5": 'La'
+        "0": 'A1'
+        "4": 'O2'
+        "2": 'A3'
+        "6": 'Ig'
+        "1": 'A2'
+      from: '-tik'
+      and: 'Eta'
+      recopy_tooltip: 'Kopiatu aurreko ordutegiak'
+      to: 'ra'
+      add_tooltip: 'Denbora tartea gehitu'
+      closed: Hetsia
+    controller:
+      thankyou:
+        added: 'Eskerrik asko zure laguntzagatik! {name} gehitu da'
+        edited: 'Eskerrik asko zure laguntzagatik! Aldaketak kontuan hartu dira!'
+      user_contributions: 'Bilatu eta aldatu zure ekarpenak <a href="{url}">My Contributions</a>
+        orrian'
+      error_dont_exist: 'Eskatutako elementua ez da existitzen…'
+      success: 'Zure kontua sortu da! Orain <a href="{url}" >zure profila</a> osa
+        dezakezu!'
+      pending_collaborative: 'moderazio kolektiboaren prozesuari buruz gehiago jakiteko!'
+      error_unauthorized: 'Ezin duzu elementu hau editatzeko baimenik, barkatu!'
+      pending: 'Zure ekarpena balioztatzeko zain dago'
+      see_on_map: Ikusi emaitza mapan
+    create_user: 'Zure kontua sortzeko pasahitza'
+    error_becomeOwner: 'Barkatu, elementu hau norbaitena da dagoeneko!'
+    localize: 'Kokatu'
+    need_help: 'Laguntza?'
+    title_add: 'Gehitu {element}'
+    admin_section:
+      send_mail:
+        add: 'Jakinarazi {the_element} gehiketaren berri mezu elektroniko bat bidaliz'
+        modify: 'Jakinarazi {the_element} aldaketen berrietaz mezu elektroniko bat
+          bidaliz'
+      _label: 'Balioztatu'
+      custom_message: 'Xehetasunak aldatu, testu honek ''{{ customMessage ''}} ordezkatuko
+        du mezu elektroniko automatikoetan'
+      recopy_info: 'Informazioa forma berrian kopiatu'
+    error_geocode: 'Ezinezkoa da helbide hau aurkitzea'
+    success_becomeOwner: '{name}-en jabea zara orain!'
+    info_saved: 'Aldaketak gorde dira!'
+    error_username: 'Erabiltzaile-izen hau dagoeneko hartua dago!'
+    title_edit: 'Datuak editatzea'
+    error_missing_adress: 'Helbide bat sartu behar duzu azken aldaketen berriak jasotzeko'
+    getDataFromLocalStorage:
+      content: <p>Sartzen ari den elementu bat gorde da. Datuak sartzen hasi nahi
+        al duzu?</p><p>Kontuan izan irudiak eta fitxategiak ez direla gordetzen eta,
+        beraz, berriro gehitu beharko direla.</p>
+      title: Elementua sartzen ari da
+  status:
+    pending: 'Zain'
+    more_to_discover: '… eta beste {nb} webgunean ezagutzeko!'
+    vote: 'Bozkatu!'
+    modifications: 'Aldaketak'
+    view: 'Ikusi'
+error:
+  title: 'Errorea !'
+  generic:
+    text: 'Arazoa errepikatzen bada, jakinarazi iezaguzu, ahal izanez gero, <br> <a
+      href="https://framateam.org/gogocarto/channels/town-square" target="blank">GoGoCarto
+      Chatroom</a> edo posta elektronikoz {email} helbidera, behean ikusten den arazo-mezua
+      idatziz.'
+    file_line: '{file} lerroan {line}'
+  header: 'Ups! Zerbait gaizki joan da'
+  "404":
+    text: 'Eskatutako orria ez da existitzen (gehiago?)…'
+login:
+  register: 'Kontu bat behar duzu? <a href="{url}">Eman izena</a>'
+  _label: 'Saioa hasi'
+  login_with: 'Saioa hasi {provider}-rekin'
+  remember_me: Oroit nazazu
+  forgotten_password: Pasahitza ahantzia ?
+  authentication_success: Autentifikazio arrakastatsua {service}-rekin, saioa hasi
+    duzu!
+my_contributions:
+  _label: 'Nire ekarpenak'
+  date: 'Data'
+  none: 'Oraindik ez duzu ekarpenik'
+  owner: 'Jabea'
+  my_elements: 'Nire elementuak'
+  my_votes: 'Nire bozkak'
+  show: 'Erakutsi'
+  status: 'Egoera'
+  history: 'Nire ekarpenen historia'
+  confirmation_button: 'Baieztatzen dut'
+  action: 'Ekintza'
+  confirmation: 'Baieztapena'
+  edit: 'Editatu'
+  element: 'Elementua'
+  become_owner: 'Jabetu'
+  confirmation_hint: 'Elementu baten jabe izateko, egituraren kudeaketan parte hartzeko
+    konpromisoa hartu behar duzu'
+  confirmation_cancel: 'Ezeztatu'
+  element_contributed: 'Lagundu ditudan elementu batzuk'
+  type: 'Mota'
+  me: 'Ni'
+  my_reports: 'Nire erakartzeak'
+  name: 'Izena'
+notifications:
+  import_error:
+    subject: 'Akatsak izan dira inportazio egitean {appname} aplikazioan'
+    content: ''
+  import_mapping:
+    subject: 'Ekintza derrigorrezkoa inportazioa egiteko {appname} aplikazioan'
+    content: ''
+  moderation:
+    subject: ''
+    content: ''
+votes:
+  _label: 'Nire bozkak'
+  date: 'Data'
+  status: 'Egoera'
+  empty: 'Oraindik ez duzu bozkatu! Hasi behar duzu :) <br/>Botoak lankidetzako moderazioa
+    ahalbidetzen du!'
+  element: 'Izena'
+  vote: 'Bozka'
+contributor-login:
+  _label: 'Autentifikazioa'
+  communs: 'LesCommuns.org'
+  login: 'Konektatu'
+  oauth: 'Zure kontuarekin konektatu'
+  error:
+    inactive_iframe: 'Ezaugarri hau ez da IFRAME batean erabiltzeko'
+    used_email: 'Barkatu, jadanik kontu bat dago helbide elektroniko honekin! Otoi
+      konekta zaitez edo beste email bat erabili!'
+    title: 'Ezinezko ekintza'
+    admin_only: 'Kaxu! Ezaugarria administratzaileentzat da bakarrik'
+    invalid_email: 'Otoi sartu baliodun email bat'
+    inactive_feature: 'Ezaugarri hau ez da mapa honetan aktibatua'
+  printemps: 'Hezkuntza primadera'
+  email: 'Sinpleki helbide elektroniko bat sartu'
+home:
+  sort_by_date: 'Sailkatu argitalpen dataren arabera'
+  sort_by_points: 'Puntu kopuruaren arabera sailkatu'
+  source_code: 'Iturri kodea'
+  admin_interface: 'Administratzaile interfazea'
+  search:
+    category: 'kategoria bat'
+    all: 'Dena'
+    address: 'helbide bat'
+    placeholder: 'Sartu'
+  pinned_projects: 'Lotutako proiektuak'
+  documentation: 'Dokumentazioa'
+  search_placeholder: 'Bilatu izenez, etiketaz'
+  pick_category: 'Kategoria bat hautatu (by default: all)'
+  donate: 'Eman'
+  geolocalize: 'Zure posizioa geolokalizatu'
+  credits: '{ggc}-k bultzatua'
+  all_projects: 'Proiektu guztiak ({length})'
+  discover: 'Atxeman'
+  my_space: 'Nire espazioa'
+  logout: 'Saioa amaitu'
+js:
+  element_form:
+    geocoded_marker_text: 'Mugitu nazazu posizioa zehazteko<br/>(eraikinaren erdian)'
+    category_add: Gehitu {cat}
+    category_remove: Kendu
+    category_invalid: Azpi-kategoria bat hautatu
+    category_drag: Bultza nazazu berritz ordenatzeko
+    category_choose: Hautatu {cat}
+    category_add_more: Kategoria gehiago gehitu
+    category_add_children: Azpi-kategoriak gehitu
+  login:
+    exception: 'Arazo bat gertatu da saioa hasten saiatzean'
+    wrong_id: 'Kredentzial okerrak'
+  api_ui:
+    categories_placeholder: Kategoriak hautatu
+load_configuration:
+  AboutHeaderTitle: 'Buruz'
+  AddElementHintText: 'Ekarpena egin datu-basean !'
+  CollaborativeModerationExplanations: ' <p> Elementu bat gehitzen edo aldatzen denean,
+    datuak ez dira berehala eguneratzen. Elementua mapan "grisatuta" agertuko da lehenik
+    eta saioa hasitako erabiltzaile guztiek aldaketari buruz bakarrik behin eta berriz
+    bozkatzea posible izango da. Bozkaketa hau ez da iritzia, ezagutza partekatzea
+    baizik. Elementu hau ezagutzen baduzu edo baldin badakizu elementua ez dela existitzen,
+    orduan zure ezagutza nahi dugu! </p> <p> Hainbat bozka eman ondoren, elementua
+    automatikoki balioztatu edo baztertu daiteke. Eztabaida izanez gero (bozka positibo
+    eta ezezkoen presentzia bada), moderatzaile batek egiaztatuko du ahalik eta lasterren.
+    Zurekin kontatzen dugu! </p>'
+  PartnerPageTitle: 'Bazkideak'
+  SeeMoreButtonText: 'Informazio gehiago'
+  AppBaseline: 'Gogo mapak sortu'
+  ElementFormGeocodingHelp: 'Ez jarri puntuaziorik, izena letra larriz idatzita ere
+    ez da onartzen. Lokalizazioak ez badu funtzionatzen (helbide batzuk ez dira ezagutzen),
+    idatzi hurbilen dagoen herriaren izena, eta egin klik ''Lokalizaty''-n eta jarri
+    lokalizazio-puntua eskuz. Sartu berriro helbide osoa testu-eremuan, saltatu ''Lokalizatu''
+    botoia eta jarraitu formularioa betetzen.'
+vote:
+  admin:
+    positive: '{elementua} balioztatua izan da'
+    negative: '{elementua} ezeztatua izan da'
+  collaborative:
+    negative: '{element} -k bozka negatibo ugari jaso ditu, ezabatuko da.'
+    positive: 'Zorionak, {element}-k nahikoa bozka jaso ditu balioztatua izaiteko!'
+  pending:
+    admin_validated:
+      negative: 'Aldaketak ukatuak izan dira'
+      positive: 'Aldaketak onartuak izan dira'
+    user_validated:
+      negative: 'Proposatutako zuzenketak nahiko ezezko bozka jaso ditu, ezeztatua
+        izanen da.'
+      positive: 'Zorionak, aldaketek balioztatzeko nahiko bozka jaso dituzte!'
+  vote_modified: 'Eskerrik asko {user}: zure bozka editatua izan da!'
+  vote_added: 'Eskerrik asko zure ekarpenagatik!'
+  user_vote_for_him: 'Tira, ez zinuen zure ekarpenaren alde bozkatuko, ezta? Utzi
+    batzuk besteentzat! <br/> Kontuz argiak, beste helbide pertsonal bat erabiltzen
+    baduzu, guk ere ikusiko dugu!'
+duplicates:
+  see_on_map: '(Ikusi OpenStreetMap-en)'
+  label: 'Bikoiztutako detekzioa'
+  new_element: 'Ez, hau elementu berria da, goazen aurrera!'
+  duplicated_element: 'Hau da!'
+  controller:
+    marked: 'Bikoitza ez bezala seinalatua'
+    merged: 'Elementua izan daiteken bikoitz batekin batu da'
+    marked_long: 'Elementuak bikoiztuak ez direla baieztatu da'
+  title: 'Bikoiztutako detekzioa'
+  subtitle: 'Antzeko elementuak detektatu dira, agian horietako bat gehitu nahi duzu
+    ?'
+  merged_with_new_element: Sortu berri den elementu batekin batu da
+  merged_with_duplicate: Elementuak ongi batu dira. Otoi, berrikusi datuak
+directory:
+  _label: 'Mapa'
+reports:
+  pending_moderation: 'Moderazioaren zain'
+  date: 'Data'
+  report: 'Txostenak'
+  reportValues:
+    v1: 'Informazioa gaizki dago'
+    v2: 'Elementuak ez du araudia errespetatzen'
+    v0: 'Elementua ez da gehiago existitzen'
+    v3: 'Elementuari hainbat aldiz erreferentzia egiten zaio'
+  status: 'Egoera'
+  _label: 'Nire txostenak'
+  empty: 'Oraindik ez duzu akatsik jakinarazi. Gure datu-basea perfektua izan al daiteke?
+    :P'
+  element: 'Izena'
+my_parameters:
+  unit: 'kilometroak'
+  input_location: 'Zure helbidea edo herria'
+  range: 'Bilaketa sorta:'
+  _label: 'Nire ezarpenak'
+  delete_success: Zure kontua arrakastaz ezabatu da
+  delete: Nire kontua ezabatu
+project.create:
+  cgu: 'Erabilera baldintzak'
+  contribOptions:
+    closed: 'Itxita'
+    inherit: 'Lehenetsia'
+    intermediate: 'Tartekoa'
+    open: 'Ireki'
+  _label: 'GoGoCarto - Mapa ugari'
+  domaine_name: 'Domeinu izena'
+  contribHints:
+    intermediate: 'Erabiltzaile guztiek egin ditzazkete ekarpenak, baina ekarpenak
+      administratzaileek moderatu behar dituzte'
+    closed: 'Administratzaileek bakarrik lagundu dezakete'
+    inherit: 'Erabili {base_url} lehenetsitako parametroak'
+    open: 'Erabiltzaile guztiek askatasunez gehitu, aldatu eta ezabatu dezakete'
+  project_name: 'Proiektu izena'
+  contrib: 'Ekarpen publikora irekita'
+  message: 'Zure proiektua sortzen ari da, itxaron mesedez…'
+  title: 'Sortu proiektua'
+  data-error: 'Ups, izen hau luzeegia da!'
+  accept_cgu: 'Erabilera-baldintza orokorrak onartzen ditut'

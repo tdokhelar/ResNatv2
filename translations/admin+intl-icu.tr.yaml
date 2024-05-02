@@ -1,0 +1,134 @@
+abouts:
+  _label: Popups
+  fields:
+    content: İçerik
+    name: İsim
+bulk:
+  _label: Toplu eylem
+  analyse: '{first} ile {last} arasındaki öğeleri analiz etme'
+  automaticMerge: Otomatik birleştirme
+  batchDone: Tüm öğeler başarıyla işlendi
+  continue: Devam et ({count} kalan)
+  delete: Raporlanan öğeleri silin
+  deleteElement: '{sayı, çoklu,  =0 {Hiçbir öge silinmedi} =1 {# öge silindi} diğer
+    {# öge silindi} }'
+  detectDuplicatesAction: Yinelenen öğe algılama
+  done: Tüm öğeler başarıyla işlendi
+  duplicateDeleted: Yinelenen öğe silindi
+  duplicateKept: Yinelenen öğe tutuldu
+  errorElement: '{id} öğesi değerlendirilirken hata oluştu: FILE {file}, LINE {line}:
+    {error}'
+  isDuplicateAction: Yinelenen öğe algılama
+  managed: Tespit edilen kopyaları işleyin
+  manualMerge: Olası kopyalar tespit edildi
+  results: Sonuçlar
+  return: Yinelenen işleme geri dön
+  updateUser: '{sayı, çoklu, =0 {güncellenmiş kullanıcı yok} =1 {# güncellenmiş kullanıcı}
+    diğer {# güncellenmiş kullanıcı} }'
+  update_gamification: Puanları güncelleyin (oy sayıları ve kullanıcı başına toplam
+    puan)
+categories:
+  list:
+    empty: Kullanılabilir kategori yok. Lütfen yeni bir kategori grubu oluşturun ve
+      içindeki kategorileri doldurun. Kategoriler GoGoCarto'nun önemli bir unsurudur.
+      Haritanız kullanılabilir kategoriler olmadan hiç çalışmayabilir
+    title: Kategorilerin listesi
+
+js:
+  element_form:
+    geocoded_marker_text: Pozisyonu belirtmek için beni taşı<br/>(yapının merkezinde)
+  admin:
+    categories:
+      list:
+        sort_alpha: Kategorileri alfabetik sıraya göre sıralayın
+      fields:
+        customId: Özel Kimlik
+        descriptionLabel: Açıklama alanı etiketi
+        displayInForm: Formda
+        displayInForm_help: Ne grup ne de kategoriler formda görüntülenecek
+        displayInInfoBar: Bilgi çubuğunda
+        displayInMenu: Menüde
+        displayInMenu_help: Grup adı görüntülenmeyecek, ancak kategoriler görüntülenecektir
+        displaySuboptionsInline: Alt kategorileri tek satırda göster
+        enableDescription: Bir açıklama alanı ekler
+        index: Pozisyon
+        isMandatory: Zorunlu seçim
+        isMandatory_help: Bu gruptan bir kategori seçilmelidir
+        name: Grup ismi
+        nameShort: İsim (kısaltılmış)
+        option:
+          color: Renk
+          icon: Simge
+          index: Pozisyon
+          name: İsim
+          id: Daha fazla opsiyon
+        nameShort_help: Kısa versiyon, genellikle yer sıkıntısı çektiğimiz için menüde
+          kullanılır
+        displayInInfoBar_help: Grup adı görüntülenmeyecek, ancak kategoriler görüntülenecektir
+        parent_placeholder: kök dizin
+        singleOption: Tek opsiyon
+        enableDescription_help: Her kategori için bir açıklama yazmanıza izin verir. Örneğin,
+          Tarım kategorisi 'Pazar bahçeciliği, işlenmiş ürünler…' ile ilişkilendirilebilir
+        parent: Aile kategorisi
+        pickingOptionText: 'Formda görüntülenecek metin: Seçin…'
+        showExpanded: Kategorileri ilk konumda görüntüleyin (yoksa görüntülemek için tıklamanız
+          gerekir)
+        singleOption_help: Bir seferde yalnızca bir kategori seçilebilir
+        unexpandable: Bu kategori gruplarını mümkün olmayan kategoriler yapın
+        unexpandable_help: Bu menüde, bu grup kategorileri her zaman görüntülenir
+      _label: Kategoriler
+      form:
+        groups:
+          secondary: İkincil ekran seçenekleri
+          categories: Bu grubun kategorileri
+          display: Bu grubu göster
+          primary: Ana ayarlar
+charts:
+  collabRefused: Son ortak retler
+  collabResolve:
+    axisTitle: Ortak Doğrulamalar/Redler
+    refused: Ortak redler
+    title: Ortak Doğrulamalar/Redler
+    validate: Ortak Doğrulamalar
+  collabValidated: En son ortak çalışma doğrulamaları
+  contribsResolved:
+    added: Çözülen eklemeler
+    edited: Çözülen değişiklikler
+    resolved: Katkıların çözümü
+    total: Toplam Sayı (başlangıçtan itibaren)
+  empty: Hiçbir öğe bulunamadı
+  showAll: Tümünü göster
+  userInteract:
+    added: Eklentiler
+    modified: Değişiklikler
+    reported: Raporlanan ürünler
+    voted: Oylar
+    subtitle: Bir döneme odaklamak için tıklayın ve sürükleyin
+    title: Kullanıcı etkileşimleri metrikleri
+commons:
+  actual_file: 'Şu anki dosya:'
+  anonymous: Anonim
+  btn_update_and_edit: Güncelleme
+  date_format: g/A/Y
+  date_time_format: g/A/Y h:i a
+  default: Varsayılan
+  more_options: Daha fazla seçenek
+  send: Gönder
+  use_default: Varsayılanı Kullan
+config_api:
+  fields:
+    api.publicApiPrivateProperties: Paylaşmak istemediğiniz kişisel özelliklerin listesi
+    gogo_api_configuration: GoGoCarto konfigürasyonu
+    gogo_api_element_get: Bir öğe (öğe kimliğine göre kimliği değiştirin)
+    gogo_api_elements_from_text: Öğe ara
+    gogo_api_gogocartojs_configuration: GoGoCartoJs Konfigürasyonu
+    gogo_api_semanatic_taxonomy: Semantik taksonomi
+    gogo_api_taxonomy: taksonomi
+    gogo_api_taxonomy_mapping: Karşılık gelen kimlikleriyle birlikte seçeneklerin
+      listesi
+  _label: API'ler
+  config: Konfigürasyon
+  elements: Öğeler
+projects:
+  initialize:
+    plainPassword-1: Şifre

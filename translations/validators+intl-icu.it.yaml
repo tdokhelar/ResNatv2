@@ -1,0 +1,10 @@
+import:
+  edit_constraints: "Non è permesso utilizzare queste parole: new , process, mongo,
+    this, symfony, exec, passthru, shell_exec, system, proc_open, popen, curl_exec,
+    curl_multi_exec, parse_ini_file, show_source, var_dump, print_r… Grazie per l'attenzione!"
+configuration:
+  custom_domain: Devi possedere il nome di dominio personalizzato e non riutilizzare
+    il dominio di default fornito da gogocarto
+  fields_not_shared: 'Alcuni campi che utilizzi nel template sono configurati come
+    privati.  Non puoi utilizzarli nella schermata di dettaglio. Per modificare la
+    configurazione vai a:  Altre configurazioni / API'

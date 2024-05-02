@@ -1,0 +1,19 @@
+configuration:
+  custom_domain: Debe ser el propietario del dominio personalizado, y no reutilizar
+    el dominio por defecto proporcionado por gogocarto
+  fields_not_shared: 'Algunos campos que desea utilizar en la plantilla están configurados
+    como privados. No puede utilizarlos en el registro de detalle. Para cambiar la
+    configuración vaya a: Otra Configuración / API'
+  refresh_needed:
+    inconsistent_refresh_needed_settings: El número máximo de días antes de enviar
+      el segundo correo debe ser mayor que el número máximo de días antes de enviar
+      el primer correo.
+    refresh_needed_unauthorized_value: El número máximo de días antes del envío del
+      primer correo debe ser mayor o igual a 30
+    refresh_much_needed_unauthorized_value: El número máximo de días antes del envío
+      del segundo correo debe ser mayor o igual a 35
+import:
+  edit_constraints: 'No se pueden utilizar las palabras siguientes: new , process,
+    mongo, this, symfony, exec, passthru, shell_exec, system, proc_open, popen, curl_exec,
+    curl_multi_exec, parse_ini_file, show_source, var_dump, print_r… . ¡Gracias por
+    su atención!'

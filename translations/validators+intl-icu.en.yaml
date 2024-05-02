@@ -1,0 +1,21 @@
+import:
+  edit_constraints: >-
+    It is forbidden to use the folllowing words: new , process, mongo, this,
+    symfony, exec, passthru, shell_exec, system, proc_open, popen, curl_exec,
+    curl_multi_exec, parse_ini_file, show_source, var_dump, print_r… Thank you
+    for not messing up!
+configuration:
+  fields_not_shared: >-
+    Some fields you are trying to use in the template are configured as private. 
+    You cannot use them on the details display. To change this setting, go to: 
+    Other configuration / API
+  custom_domain: >-
+    You must own the custom domain, and not reuse the default domain provided by gogocarto
+  refresh_needed:
+    inconsistent_refresh_needed_settings: >-
+      The maximum number of days before sending the second mail must be greater than
+      the maximum number of days before sending the first mail.
+    refresh_needed_unauthorized_value: >-
+      The maximum number of days before sending the first mail must be greater than or equal to 30
+    refresh_much_needed_unauthorized_value: >-
+      The maximum number of days before sending the second mail must be greater than or equal to 35

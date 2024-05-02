@@ -1,0 +1,361 @@
+action:
+  cancel: Avbryt
+  continue: Fortsett
+
+  submit: Lagre
+  send: Send
+  search: Søk
+  ok: OK
+  error: "Feil: {message}"
+  element:
+    sendMail:
+      uncomplete: Ufullstendige innstillinger
+      done: E-post sendt
+      emailSubject: ''
+      emailContent: ''
+    report:
+      done: Takk, din rapport har blitt lagret.
+      from_origin: 'Rapport innsendt fra {appUrl}.'
+      email:
+        subject: 'Rapport sendt fra {appName}'
+        content: ''
+      unallowed: 'Du tillates ikke å innrapportere feil.'
+    delete:
+      done: Sletting av element bekreftet
+      unallowed: 'Du har ikke tilgang til å slette elementer.'
+      uncomplete: 'Manglende parametre'
+    not_found: 'Fant ikke noe element for denne ID-en'
+    resolveReports:
+      unallowed: ''
+      uncomplete: ''
+      done: ''
+    sendEditLink:
+      done: ''
+      emailContent: ''
+    stamp:
+      done: ''
+      unallowed: ''
+      uncomplete: ''
+    vote:
+      unallowed: ''
+      uncomplete: ''
+    subscribe:
+      done: ''
+      already: ''
+      uncomplete: 'Innstillingene er ufullstendige'
+      email:
+        subject: ''
+        content: ''
+    unsubscribe:
+      already: ''
+      done: 'c'
+      uncomplete: ''
+  create: Opprett
+  registration:
+    geo_error: ''
+    need_address: ''
+    unallowed: ''
+  send_stay: ''
+  geolocalize_me: ''
+commons:
+  email: E-postadresse
+  menu: Meny
+  validation: Bekreftelse
+  username: Brukernavn
+  register: Opprett konto
+  password: Passord
+  never: Aldri
+  every:
+    week: Hver uke
+    month: Hver måned
+  errors:
+    bad_number: Dette er ikke et tall.
+    bad_url: ''
+    bad_email: 'Skriv inn en gyldig e-postadresse'
+    file-too-big: ''
+    too_long: ''
+  category_placeholder: ''
+  check_password: 'Skriv inn passordet ditt igjen'
+  choose_category: 'Velg {cat}'
+  choose_one_option: ''
+  click_here: 'klikk her'
+  location: ''
+  newsletter-explanation: ''
+  continue_browsing: ''
+  optional: ''
+contributor-login:
+  error:
+    title: Umulig handling
+    invalid_email: Skriv inn en gyldig e-postadresse
+    used_email: ''
+    inactive_iframe: ''
+    admin_only: ''
+    inactive_feature: ''
+  oauth: Logg inn med kontoen din
+  login: Logg inn
+  email: Skriv inn en e-postadresse.
+  communs: LesCommuns.org
+  _label: ''
+  printemps: ''
+api_ui:
+  format: "Format:"
+  api_url: API-nettadresse
+  _label: Sett opp API
+  test: Test
+  json: JSON
+  title: ''
+  use_bounds: ''
+  use_categories: ''
+  use_limit: ''
+  include_external: ''
+  jsonld: ''
+votes:
+  status: Status
+  element: Navn
+  date: Dato
+  _label: ''
+  empty: ''
+  vote: ''
+reports:
+  status: Status
+  element: Navn
+  date: Dato
+  _label: Mine rapporter
+  pending_moderation: ''
+  reportValues:
+    v3: ''
+    v2: ''
+    v0: ''
+    v1: ''
+  empty: ''
+  report: ''
+projects:
+  initialize:
+    plainPassword-2: Skriv inn passordet ditt igjen
+    plainPassword-1: Passord
+    email: E-postadresse
+    _label: Opprett en administratorkonto
+    username: ''
+  form:
+    project_name: Prosjektnavn
+    contribHints:
+      closed: Kun administratorer kan bidra
+      intermediate: ''
+      open: ''
+      inherit: ''
+    contrib: Åpen for offentlige bidrag
+    cgu: Bruksvilkår
+    _label: Opprett et prosjekt
+    domaine_name: ''
+    contribOptions:
+      intermediate: ''
+      open: ''
+      closed: ''
+      inherit: ''
+    message: ''
+    data-error: ''
+    accept_cgu: ''
+  controller:
+    main_category: En hovedkategori
+    main_categories: Hovedkategorier
+  pitch: ''
+project.create:
+  title: Opprett et prosjekt
+  project_name: Prosjektnavn
+  message: Prosjektet ditt opprettes …
+  domaine_name: Domenenavn
+  contribHints:
+    closed: Kun administratorer kan bidra
+    intermediate: ''
+    inherit: ''
+    open: ''
+  contrib: Åpen for offentlige bidrag
+  cgu: Bruksvilkår
+  accept_cgu: ''
+  contribOptions:
+    open: ''
+    closed: 'Lukket'
+    intermediate: ''
+    inherit: 'Forvalg'
+  data-error: ''
+  _label: ''
+pending-contributions:
+  form: Fil
+  _label: ''
+  empty_section: ''
+  rejected: ''
+  approved: ''
+my_parameters:
+  unit: kilometer
+  _label: Mine innstillinger
+  input_location: 'Din adresse eller by'
+  range: ''
+my_contributions:
+  type: Type
+  status: Status
+  show: Vis
+  owner: Eier
+  name: Navn
+  my_votes: Mine stemmer
+  my_reports: Mine rapporter
+  my_elements: Mine filer
+  element: Fil
+  edit: Rediger
+  date: Dato
+  confirmation_cancel: Avbryt
+  confirmation_button: Jeg bekrefter
+  confirmation: Bekreftelse
+  action: Handling
+  _label: Mine bidrag
+  become_owner: ''
+  confirmation_hint: ''
+  none: 'Du har ingen bidrag enda'
+  history: ''
+  me: ''
+  element_contributed: 'Andre filer jeg har bidratt til'
+login:
+  login_with: Logg inn med {provider}
+  _label: Logg inn
+  register: ''
+load_configuration:
+  SeeMoreButtonText: Mer info
+  PartnerPageTitle: Partnere
+  AddElementHintText: Bidra til databasen.
+  AboutHeaderTitle: Om
+  CollaborativeModerationExplanations: ''
+  ElementFormGeocodingHelp: ''
+  AppBaseline: ''
+home:
+  search:
+    category: en kategori
+    all: Alle
+    address: en adresse
+    placeholder: ''
+  pinned_projects: Festede prosjekter
+  logout: Logg ut
+  donate: Doner
+  documentation: Dokumentasjon
+  discover: Oppdag
+  all_projects: Alle prosjekter ({length})
+  sort_by_date: ''
+  sort_by_points: ''
+  pick_category: ''
+  source_code: ''
+  geolocalize: ''
+  credits: ''
+  admin_interface: ''
+  my_space: ''
+  search_placeholder: ''
+element:
+  status:
+    view: Vis
+    modifications: Endringer
+    more_to_discover: ''
+    vote: ''
+    pending: ''
+  form:
+    title_edit: Redigerer data
+    title_add: Legg til {element}
+    success_becomeOwner: Du eier nå {name}.
+    open_hours:
+      to: til
+      from: Fra
+      days_of_week_short:
+        "6": Søn
+        "5": Lør
+        "4": Fre
+        "3": Tor
+        "2": Ons
+        "1": Tir
+        "0": Man
+      days_of_week:
+        "6": Søndag
+        "5": Lørdag
+        "4": Fredag
+        "3": Torsdag
+        "2": Onsdag
+        "1": Tirsdag
+        "0": Mandag
+      and: Og
+      add_tooltip: ''
+      recopy_tooltip: ''
+    need_help: Hjelp?
+    error_username: Dette brukernavnet er i bruk allerede.
+    create_user: Passord for å opprette kontoen din
+    admin_section:
+      _label: Bekreftelse
+      custom_message: ''
+      recopy_info: ''
+      send_mail:
+        add: ''
+        modify: ''
+    controller:
+      pending: ''
+      pending_collaborative: ''
+      success: ''
+      thankyou:
+        edited: ''
+        added: ''
+      user_contributions: ''
+      error_unauthorized: ''
+      error_dont_exist: ''
+      see_on_map: Vis resultatene på kartet
+    error_becomeOwner: ''
+    localize: ''
+    error_geocode: ''
+    info_saved: ''
+    error_missing_adress: ''
+duplicates:
+  see_on_map: (Vis på OpenStreetMap)
+  label: ''
+  new_element: ''
+  duplicated_element: ''
+  controller:
+    marked: ''
+    marked_long: ''
+    merged: ''
+  title: ''
+  subtitle: ''
+directory:
+  _label: Kartet
+notifications:
+  import_error:
+    subject: ''
+    content: ''
+  import_mapping:
+    subject: ''
+    content: ''
+  moderation:
+    subject: ''
+    content: ''
+vote:
+  admin:
+    positive: ''
+    negative: ''
+  collaborative:
+    negative: ''
+    positive: ''
+  vote_added: ''
+  vote_modified: ''
+  pending:
+    admin_validated:
+      positive: ''
+      negative: ''
+    user_validated:
+      negative: ''
+      positive: ''
+  user_vote_for_him: ''
+js:
+  login:
+    exception: ''
+    wrong_id: ''
+  element_form:
+    geocoded_marker_text: ''
+error:
+  "404":
+    text: ''
+  generic:
+    file_line: ''
+    text: ''
+  title: ''
+  header: ''

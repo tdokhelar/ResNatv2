@@ -1,0 +1,21 @@
+import:
+  edit_constraints: >-
+    Il est interdit d'utiliser les mots suivants : new , process,
+    mongo, this, symfony, exec, passthru, shell_exec, system, proc_open, popen,
+    curl_exec, curl_multi_exec, parse_ini_file, show_source, var_dump, print_r…
+    Merci de ne pas faire de bêtises !
+configuration:
+  fields_not_shared: >-
+    Certains champs que vous utilisez dans le template sont configurés comme privés.  Vous
+    ne pouvez pas les utiliser dans la fiche détail.  Pour changer la configuration
+    allez dans : Autre Configuration / API
+  custom_domain: Vous devez posséder le nom de domaine personnalisé et ne pas réutiliser
+    le domaine par défaut fourni par gogocarto
+  refresh_needed:
+    inconsistent_refresh_needed_settings: >-
+      Le nombre maximum de jours précédant l'envoi du deuxième courrier doit être supérieur
+      au nombre maximum de jours précédant l'envoi du premier courrier.
+    refresh_needed_unauthorized_value: >-
+      Le nombre maximum de jours avant l'envoi du premier courrier doit être supérieur ou égal à 30
+    refresh_much_needed_unauthorized_value: >-
+      Le nombre maximum de jours avant l'envoi du second courrier doit être supérieur ou égal à 35

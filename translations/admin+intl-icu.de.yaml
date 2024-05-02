@@ -1,0 +1,1407 @@
+abouts:
+  _label: Popups
+  fields:
+    content: Inhalt
+    name: Name
+
+bulk:
+  _label: Massen-Bearbeitung
+  analyse: Analysiere Elemente von {first} bis {last}
+  automaticMerge: Automatische Zusammenführung
+  batchDone: Alle Elemente erfolgreich behandelt
+  continue: Weiter zum nächsten Element (noch {count} übrig)
+  delete: Lösche als "nicht mehr existierend" gemeldete Elemente
+  deleteElement: "{count, plural,  =0 {Kein Element gelöscht} =1 {# Element gelöscht}\
+    \ other {# Elemente gelöscht} }"
+  detectDuplicatesAction: Dublettenerkennung
+  done: Alle Elemente erfolgreich bearbeitet
+  duplicateDeleted: Dublette gelöscht
+  duplicateKept: Dublette behalten
+  errorElement: >-
+    Fehler bei der Bearbeitung des Elements {id} : {error} DATEI {file} LINIE
+    {line}
+  isDuplicateAction: Dublettenerkennung
+  managed: Erkannte Dubletten bearbeiten
+  manualMerge: Mögliche Dubletten erkannt
+  results: Ergebnisse
+  return: Zurück zur Dublettenbearbeitung
+  updateUser: "{count, plural, =0 {kein Benutzer aktualisiert} =1 {# Benutzer aktualisiert}\
+    \ other {# Benutzer aktualisiert} }"
+  update_gamification: >-
+    Werte aktualisieren (Zahl der Stimmen, Beiträge, und Gesamtwert pro
+    Benutzer:in)
+
+categories:
+  list:
+    title: Liste der Kategorien
+    empty: >-
+      Kein Kategorien vorhanden. Erstelle eine neue Kategoriengruppe und die
+      dazugehörigen Kategorien. Kategorien sind ein wesentliches Element in
+      GoGoCarto. Deine Karte funktioniert möglicherweise nicht richtig ohne
+      verfügbare Kategorien
+
+charts:
+  collabRefused: Letzte kollaborativen Ablehnungen
+  collabResolve:
+    axisTitle: kollaborative Validierungen/Ablehnungen
+    refused: kollaborative Ablehnungen
+    title: kollaborative Validierungen/Ablehnungen
+    validate: kollaborative Validierungen
+  collabValidated: Letzte kollaborative Validierungen
+  contribsResolved:
+    added: Gelöste Neueinträge
+    edited: Gelöste Änderungen
+    resolved: Erledigte Beiträge
+    total: Gesamtzahl (von Anfang an)
+  empty: Kein Element gefunden
+  showAll: Alle anzeigen
+  userInteract:
+    added: Neue Beiträge
+    modified: Änderungen
+    reported: Gemeldete Elemente
+    subtitle: Klicken & Ziehen um eine Periode zu fokussieren
+    title: Nutzungsstatistiken
+    voted: Stimmen
+
+commons:
+  actual_file: "Aktuelle Datei:"
+  anonymous: Anonym
+  btn_update_and_edit: Aktualisieren
+  date_format: d.M.Y
+  date_time_format: d.M.Y um H:m
+  default: Standard
+  send: Abschicken
+
+  more_options: Weitere Optionen
+  use_default: Standard verwenden
+  time_format: H:m
+  loading: Lädt
+  saving: Wird gespeichert
+  save: Speichern
+config_api:
+  _label: APIs
+  config: Konfiguration
+  elements: Elemente
+  fields:
+    api.publicApiPrivateProperties: Liste der privaten Felder, die ihr nicht teilen
+      wollt
+    apilist:
+    gogo_api_configuration: GoGoCarto Konfiguration
+    gogo_api_element_get: Ein Element (ID mit der id des Elements ersetzen)
+    gogo_api_elements_from_text: Element suchen
+    gogo_api_gogocartojs_configuration: GoGoCartoJs-Konfiguration
+    gogo_api_semanatic_taxonomy: Semantische Taxonomie
+    gogo_api_taxonomy: Taxonomie
+    gogo_api_taxonomy_mapping: Liste der Optionen mit korrespondierender ID
+    gogo_api_taxonomy_show: Eine Kategorie (ID mit der id der Kategorie ersetzen)
+    gogo_api_ui: Grafische Schnittstelle zur Erstellung einer API
+    gogo_element_import_available_options: Liste der Optionen
+    text: ihre_sucheingabe
+  form:
+    groups:
+      apis: Liste der verfügbaren APIs
+      config: Konfiguration
+      config_description: <div class="iframe-container"><iframe height="200" sandbox="allow-same-origin
+        allow-scripts" src="https://peertube.openstreetmap.fr/videos/embed/edaa5adb-3b2e-4166-8ffb-1f839bc74ba3"
+        frameborder="0" allowfullscreen></iframe></div>
+  taxonomy: Taxonomie / Kategorien
+
+config_contributions:
+  _label: Wer kann beitragen?
+  fields:
+    collaborativeModerationExplanations: Erklärungen zur kollaborativen Moderation
+    maxDaysLeavingAnElementPending: >-
+      Zahl der Tage, bevor ein noch nicht validiertes Element als
+      moderierungsbedürftig markiert wird
+    maxOppositeVoteTolerated: Zahl der erlaubten Gegenstimmen
+    minDayBetweenContributionAndCollaborativeValidation: "Mindestzahl der Tage vor\
+      \ einer kollaborativen Überprüfung/Ablehnung"
+    minVoteToChangeStatus: "Zahl der Stimmen um automatisch zu akzeptieren/abzulehnen"
+    minVoteToForceChangeStatus: "Nötige Anzahl Stimmen zum Annehmen / Automatisch\
+      \ ablehnen, ohne den Abstimmungszeitraum abzuwarten"
+  form:
+    groups:
+      addFeature: "Darf ein Element hinzufügen"
+      collaborativeModerationFeature: "Kollaborative Moderation (darf wählen)"
+      collaborativeModerationParameters: "Einstellungen für die kollaborative Moderation"
+      deleteFeature: "Darf ein Element löschen"
+      directModerationFeature: "Direkte Moderation"
+      editFeature: "Darf ein Element bearbeiten"
+      text: "Texte"
+
+config_custom_js_css:
+  _label: "angepasstes CSS / JS"
+  fields:
+    customCSS: "angepasstes CSS"
+    customJavascript: "angepasstes Javascript"
+  form:
+    groups:
+      custom_javascript: "angepasstes Javascript"
+      custom_javascript_hint: "Javascript-Code, der auf allen öffentlichen Seiten\
+        \ ausgeführt wird"
+      custom_style: "angepasstes CSS"
+      custom_style_hint: "CSS, das auf allen öffentlichen Seiten geladen wird"
+
+config_duplicates:
+  _label: "Dublettenverwaltung"
+  fields:
+    duplicates:
+      automaticMergeIfPerfectMatch: "Bei perfekter Übereinstimmung automatisch zusammenführen"
+      detectAfterImport: "Dubletten nach jedem Import erkennen"
+      detectAfterImport_help: "Für jedes beim Import neu hinzugefügte Element wird\
+        \ eine Suche in der gesamten Datenbank durchgeführt, um eventuelle Dubletten\
+        \ zu identifizieren"
+      fieldsToBeUsedForComparaison: "Weitere Felder zur Dublettenermittlung (strikte\
+        \ Suche)"
+      fieldsToBeUsedForComparaison_help: "Nur exakte Übereinstimmungen werden erkannt.\
+        \ Ein Treffer in jedem dieser Felder wird als exakte Übereinstimmung der beiden\
+        \ Elemente interpretiert"
+      rangeInMeters: Maximale Distanz (in Metern) zwischen zwei Dubletten
+      sourcePriorityInAutomaticMerge: "Welche Quelle soll beim Zusammenführen vorrangig\
+        \ erhalten bleiben?"
+      sourcesToDetectFrom: "Suche nach Dubletten in diesen Quellen (leer lassen, um\
+        \ die ganze Datenbank zu durchsuchen)"
+      sourcesToDetectWith: "Und die Quellen (leer lassen, um die ganze Datenbank zu\
+        \ durchsuchen)"
+      useGlobalSearch: "Globale Suche für die Dublettensuche nutzen (flexible Suche\
+        \ in {fields})"
+      useGlobalSearch_help: ""
+      duplicatesByAggregation_help: Duplikate werden in einem neuen Aggregator-Element
+        zusammengefasst. Der Aggregator ist nicht editierbar, wird aber automatisch
+        aktualisiert, wenn eines der aggregierten Elemente aktualisiert wird. Diese
+        Option ist sehr sinnvoll bei der Zusammenführung externer Quellen (dynamische
+        Importe)
+    gogo_bulk_actions_detect_duplicates: "Dubletten erkennen"
+    gogo_duplicates_index: "Gefundene Dubletten verarbeiten"
+  form:
+    groups:
+      configuration: "Konfiguration"
+      fusion: "Dublettenzusammenführung"
+      manualDetection: "Manuelle Erkennung einschränken (optional)"
+
+config_emails:
+  _label: "E-Mails / Newsletter"
+  form:
+    groups:
+      add: ""
+      delete: ""
+      edit: ""
+      infosContributors: "Informationen zu automatischen E-Mails"
+      infosContributors_description: ""
+      infosElements: "Informationen zu automatischen E-Mails"
+      infosElements_description: ""
+      infosNewletter: "Informationen zum Newsletter"
+      infosNewletter_description: ""
+      mailForContributors: "Automatische E-Mails für Mitwirkende"
+      mailForElements: "Automatische E-Mails für {element}"
+      newsletter: "Newsletter - <a href=''{url}'' target='_blank'>TEST</a>"
+      newsletters: "Newsletter"
+      refusal: ""
+      report: ""
+      validation: ""
+
+config_features:
+  fields:
+    active: "Aktiviert"
+    activeInIframe: "Im Iframe aktiviert"
+    allow_role_admin: "Erlaube Moderatoren"
+    allow_role_anonymous: "Erlaube anonyme Bearbeitung"
+    allow_role_user: "Benutzer autorisieren"
+
+config_form:
+  _label: "Formular"
+  fields:
+    elementFormGeocodingHelp: "Hilfetext für die Geolokalisierung"
+    elementFormIntroText: "Einführungstext, der über dem Formular erscheint"
+    elementFormIntroText_placeholder: ""
+    elementFormOwningText: ""
+    elementFormOwningText_placeholder: "Beispiel: Ich bin an der Verwaltung der beschriebenen\
+      \ Struktur beteiligt"
+    elementFormValidationText: ""
+    elementFormValidationText_placeholder: "Beispiel: Ich beteure, dass die Informationen\
+      \ in diesem Formular korrekt sind"
+  form:
+    groups:
+      config: "Konfiguration des Formulars"
+      config_description: ""
+      form: "Formular"
+      other: "Andere Texte und Optionen"
+
+config_general:
+  _label: "Allgemeine Konfiguration"
+  cannot_delete: "Löschen der Konfiguration nicht möglich - diese Aktion ist untersagt,\
+    \ da sie deine Karte zerstören würde"
+  downloadImage: "Ein Bild hoch-/herunterladen"
+  fields:
+    aboutHeaderTitle: "Titel des Abschnitts „Über“"
+    activateAbouts: "Popup-Fenster „Über“ aktivieren"
+    activatePartnersPage: "Die Seite „Partner“ aktivieren"
+    appBaseline: "Beschreibung der Website (Ausgangssituation)"
+    appName: "Name der Website"
+    appTags: "Schlüsselwörter für die Referenzierung (durch ein Komma getrennt)"
+    customDomain: "Einen personalisierten Domainnamen verwenden (z. B. meinekarte.org\
+      \ anstelle von meinekarte.gogocarto.fr)"
+    customDomain_help: "Nachdem Sie den Domainnamen mymap.org gekauft haben, müssen\
+      \ Sie ihn zunächst auf die IP-Adresse des GoGoCarto-Servers umleiten ({ip}).\
+      \ Geben Sie dann Ihren Domainnamen hier ein und warten Sie darauf, dass er von\
+      \ GoGoCarto konfiguriert wird (jede Stunde wird ein Versuch unternommen). GoGoCarto\
+      \ gibt nach 4 Versuchen auf. Wenn nach mehreren Stunden nichts passiert, müssen\
+      \ Sie die Konfiguration der Subdomain zurücksetzen, speichern und dann erneut\
+      \ ausfüllen, um einen neuen Versuch zu starten"
+    dataLicenseUrl: "URL der Lizenz, die Ihre Daten schützt"
+    elementDisplayName: "Name"
+    elementDisplayNameDefinite: "Name mit bestimmtem Artikel"
+    elementDisplayNameIndefinite: "Name mit unbestimmtem Artikel"
+    elementDisplayNamePlural: "Substantiv im Plural"
+    favicon: "Favicon"
+    locale: "Sprache"
+    logo: "Logo"
+    logoInline: "Logo für die Menüleiste"
+    partnerPageTitle: "Titel der Seite „Partner“"
+    publishOnSaasPage: "Dieses Projekt auf {url} sichtbar machen"
+    socialShareImage: "Bild zur Verwendung beim Teilen in Sozialen Netzwerken"
+  form:
+    groups:
+      images: "Allgemeine Bilder"
+      main: "Die Website"
+      main_description: "<div class=\"iframe-container\"><iframe height=\"110\" sandbox=\"\
+        allow-same-origin allow-scripts\" src=\"https://peertube.openstreetmap.fr/videos/embed/54509567-9116-4264-ba86-6c2d20cd360b\"\
+        \ frameborder=\"0\" allowfullscreen></iframe></div>"
+      pages: "Hauptfunktionen"
+      text: ""
+
+      import-export: Konfiguration für Import / Export
+config_home:
+  _label: "Startseite"
+  fields:
+    activateHomePage: "Startseite aktivieren"
+    backgroundImage: "Hintergrundbild (Dateiname darf keine Leerzeichen oder Sonderzeichen\
+      \ enthalten)"
+    backgroundImage_placeholder: "Bereits importiertes Bild auswählen oder neues hinzufügen!"
+    home:
+      addElementHintText: "Text über dem „Element hinzufügen“-Knopf"
+      addElementHintText_placeholder: "Beispiel: „Hilf uns, die Datenbank mit weiteren\
+        \ Elementen anzureichern, indem du eines hinzufügst!“"
+      displayCategoriesToPick: "Hauptkategorien anzeigen, die für die Suche ausgewählt\
+        \ werden können"
+      seeMoreButtonText: "Text, der zum Scrollen einlädt (sofern Startseiten-Banner\
+        \ existiert)"
+      seeMoreButtonText_placeholder: "Beispiel: „Mehr Informationen“"
+
+config_infobar:
+  _label: "Detailansicht"
+  fields:
+    description:
+      _label: "Beschreibung"
+      categories: "Liste der Kategoriennamen des Elements"
+      categoriesFull: "Vollständige Liste der Kategorien, inklusive ID, Name, Beschreibung\
+        \ und Position"
+      colorOptionId: ""
+      createdAt: "Erstellungsdatum in der Datenbank"
+      distance: "Distanz zwischen Punkt und Adresse, wenn eine Adresse eingegeben\
+        \ wurde"
+      images: "Tabelle der URLs der verschiedenen Bilder"
+      isDeleted: "Kürzel für Status = Abgelehnt oder Gelöscht"
+      isPending: ""
+      originalAddress: "Detaillierte Adresse mit PLZ, Stadt, usw."
+      sourceKey: "Name der Quelle dieses Elements (kann leer bleiben)"
+      status: "<ul>\n  <li>-6: Dublette</li>\n  <li>-4: Gelöscht </li>\n  <li>-3:\
+        \ Abgelehnt (Abstimmung) </li>\n  <li>-2: Abgelehnt (Administrator) </li>\n\
+        \  <li>-1: In Bearbeitung (Änderungen) </li>\n  <li> 0: In Bearbeitung (Neu)</li>\n\
+        \  <li> 1: Akzeptiert (Administrator)</li>\n  <li> 2: Akzeptiert (Abstimmung)</li>\n\
+        \  <li> 3: Hinzugefügt von Administrator</li>\n  <li> 4: Bearbeitet von Administrator</li>\n\
+        \  <li> 5: Bearbeitet von Besitzer</li>\n  <li> 6: Bearbeitet per direktem\
+        \ Link</li>\n  <li> 7: Importiert</li>\n</ul>"
+      updatedAt: "Datum der letzten Aktualisierung"
+      isUser: Ob der aktuelle Nutzer angemeldet ist
+      isAdmin: Ob der aktuelle Nutzer Administrator ist
+      isAnonymous: Ob der aktuelle Nutzer nicht angemeldet ist
+      gogoConfig: Gesamte Projektkonfiguration
+    example:
+      categories: ""
+      categoriesFull: ""
+      colorOptionId: ""
+      createdAt: "Erstellt am: '{{ createdAt }}'"
+      distance: ""
+      images: ""
+      isDeleted: ""
+      isPending: "'{% if isPending '%} … '{% endif '%}"
+      originalAddress: ""
+      sourceKey: "'{% if sourceKey == \"Fablab\" '%}Referenziert von http://fablabs.io'{%\
+        \ endif '%}"
+      status: ""
+      updatedAt: "Letzte Aktualisierung: '{{ updatedAt'}}"
+      isUser: "'{% if isUser '%} … '{% endif '%}"
+    exemple: ""
+    infobar:
+      bodyTemplate: "Textkörper"
+      bodyTemplateUseMarkdown: "Markdown Syntax für den Textkörper verwenden (sonst\
+        \ nur Nunjucks Syntax)"
+      headerTemplate: ""
+      headerTemplateUseMarkdown: ""
+      width: "Breite der Detailansicht (in Pixeln, Standard: 540)"
+    label: "Bezeichnung"
+    name: "Feldname"
+    type: "Typ"
+    usage: "Benutzung"
+  fields_list:
+    form: "Liste der im Formular zur Verfügung stehender Felder"
+    other: "Alle anderen Felder in der Datenbank sind auch verfügbar"
+    system: "Vom System bereitgestellte Felder / Variablen"
+  form:
+    groups:
+      automatic_emails: "Informationen zu automatischen E-Mails"
+      automatic_emails_description: ""
+      field_list: "Liste der verfügbaren Felder (Hilfe)"
+      filter_list: "Liste der verfügbaren Filter (Hilfe)"
+      infobar_content: ""
+      infobar_content_description: ""
+      infobar_param: "Sonstige Einstellungen"
+
+config_map:
+  _label: "Karte / Funktionen"
+  fields:
+    customPopupId: ""
+    customPopupShowOnlyOnce: ""
+    customPopupText: "Anzuzeigender Text (Beispiel: \"Diese Website ist noch in der\
+      \ Betaversion!\")"
+    defaultTileLayer: "Standardkartenhintergrund (speichern zur Anzeige des Hintergrunds\
+      \ in der Karte unten)"
+    saveTileLayerInCookies: ""
+    saveViewportInCookies: ""
+    geojsonLayers_help: Sie können Ihre geoJSON-Datei unter "Inhalt / Dateien hochladen"
+      hochladen. Der Parameter "optional" erlaubt dem Nutzer auszuwählen, ob er die
+      Ebene anzeigen will oder nicht.
+    geojsonLayers: GeoJSON Ebene auf der Karte anzeigen (URL zu einer geoJSON-Datei)
+  form:
+    groups:
+      cookies: "Cookies"
+      exportIframeFeature: "Iframe exportieren"
+      favoriteFeature: "Favoriten"
+      features: "Funktionen"
+      layersFeature: ""
+      listModeFeature: ""
+      map: "Die Karte"
+      mapDefaultViewFeature: "Zurück zur Standardansicht"
+      message_config: "Personalisierte Nachricht, die in einer Ecke der Karte erscheint"
+      messages: "Personalisierte Nachricht"
+      params: "Einstellungen der Karte"
+      pendingFeature: ""
+      reportFeature: "Fehler melden"
+      shareFeature: "URL teilen"
+      stampFeature: ""
+
+  subscription:
+    fields:
+      address: Adresse
+      description_more: zusätzliche Beschreibung
+      geo: Geolokalisation
+      openHours: Öffnungszeiten
+      openhours_more_infos: weitere Informationen zu Öffnungszeiten
+      optionsString: Kategorien
+config_marker:
+  _label: "Marker / Popup"
+  fields:
+    marker.displayPopup: "Popup anzeigen"
+    marker.popupAlwaysVisible: ""
+    marker.popupTemplate: "Popup-Inhalt"
+    marker.popupTemplateUseMarkdown: "Nutze Markdown-Syntax für dieses Template (sonst\
+      \ nur Nunjucks-Syntax)"
+    marker.useClusters: "Cluster aktivieren"
+  form:
+    groups:
+      cluster: "Cluster (gruppiere Marker in der unmittelbaren Nähe)"
+      cluster_description: "Über 1000 Marker in der Anzeige ohne Cluster können ein\
+        \ langsames Nutzererlebnis zur Folge haben"
+      popup: "Popup (Inhalt der standardmäßig beim Drüberfahren mit der Maus sichtbar\
+        \ wird)"
+      popup_description: ""
+
+config_menu:
+  _label: "Menu / Filter / Suche"
+  fields:
+    box: ""
+    box_description: ""
+    menu:
+      displayNumberOfElementForEachCategory: ""
+      displayNumberOfElementRoundResults: ""
+      displayNumberOfElementRoundResults_help: "Nur gültig, wenn \"Anzahl der Artikel\
+        \ pro Kategorie anzeigen\" markiert ist"
+      showCheckboxForMainFilterPane: ""
+      showCheckboxForSubFilterPane: ""
+      showCheckboxForSubFilterPane_help: "Nur gültig, wenn \"für jede Hauptkategorie\
+        \ ein Untermenü anzeigen\" markiert ist"
+      showOnePanePerMainOption: ""
+      smallWidthStyle: "Komprimierten Stil verwenden"
+      smallWidthStyle_help: "Etwas verringerte Schriftgröße und Außenabstände. Nützlich\
+        \ bei langen Kategorien-Namen, um Breite zu gewinnen"
+      width: "Menubreite"
+      width_placeholder: "290"
+    searchCategoriesFeature: "Suche in Kategorien"
+    searchElementsFeature: "Suche nach einem Element"
+    searchExcludingWords: "Von der Suche auszuschließende Worte, komma-separiert"
+    searchExcludingWords_title: ""
+    searchGeolocateFeature: "Geolokalisierungsknopf"
+    searchPlaceFeature: "Suche nach einem Ort"
+  form:
+    groups:
+      custom: "Filter im Menu anpassen"
+      general: "Allgemein"
+      menu: "Menu (beinhaltet Filter und Suchbalken)"
+      search: "Suche"
+
+config_mobile:
+  _label: "App"
+  fields:
+    appNameShort: "Kurzname der App (max. 12 Buchstaben)"
+    hideHeaderInPwa: ""
+    packageName: ""
+    sha256CertFingerprints: ""
+  form:
+    groups:
+      progressive: ""
+      progressive_description: ""
+      trusted: ""
+      trusted_description: ""
+
+config_osm:
+  _label: "OpenStreetMap"
+  fields.osm:
+    osmHost: "URL des Servers"
+    osmPassword: "Passwort"
+    osmUsername: "Benutzername"
+  form:
+    groups:
+      account: "Konto der Instanz"
+      account_description: ""
+      host_description: ""
+
+  sync:
+    comment_text: '{action} {name}'
+    comments:
+      add: Hinzufügen
+      delete: Löschen
+      edit: Bearbeiten
+    no_feature: Dieses Element existiert nicht (mehr) auf OSM
+config_saas:
+  _label: "Konfiguration"
+  fields:
+    saas:
+      donationUrl: "Spenden-URL (ein Button wird auf der Startseite hinzugefügt)"
+      endUserLicenceAgreement: "Allgemeine Nutzungsbedingungen"
+      newProjectInstructions: ""
+
+config_style:
+  _label: "Style / Farben / Icons"
+  fields:
+    backgroundColor: "Hintergrundfarbe des Seite"
+    choose_color: "Zum Wählen einer Farbe anklicken"
+    contentBackgroundColor: "Hintergrundfarbe des Seiteninhalts"
+    contentBackgroundElementBodyColor: "Hintergrundfarbe der Detailansicht"
+    disableColor: "Farbe deaktiviert"
+    errorColor: "Fehlerfarbe"
+    fontImport: "Link zum Schrift-CDN"
+    headerColor: "Hintergrundfarbe der Kopfzeile"
+    headerHoverColor: "Hover-Textfarbe der Kopfzeile"
+    headerTextColor: "Textfarbe der Kopfzeile"
+    homeBackgroundColor: "Hintergrundfarbe der Startseite"
+    iconImport: "Link des Icon-CDN (standardmäßig FontAwesome-Icons)"
+    interactiveSectionColor: ""
+    mainFont: "Hauptschriftart"
+    pendingColor: ""
+    primaryColor: "Primärfarbe"
+    searchBarColor: "Farbe des Suchbalkens"
+    secondaryColor: "Sekundärfarbe"
+    textColor: "Textfarbe"
+    textDarkColor: "Dunkle Textfarbe"
+    textDarkSoftColor: "Abgetönte dunkle Textfarbe"
+    textLightColor: "Helle Textfarbe"
+    textLightSoftColor: "Abgetönte helle Textfarbe"
+    theme: "Theme"
+    titleFont: "Titelschrift"
+  form:
+    groups:
+      fontImport: "Andere Schriften und Icons laden"
+      primaryColors: "Hauptfarben"
+      secondaryColor: "Andere Farben"
+      theme: "Theme und Schriften"
+
+config_users:
+  _label: "Konfiguration"
+  fields:
+    user:
+      enableRegistration: "Kontoerstellung erlauben"
+      loginWithFacebook: "Verbindung mit Facebook aktivieren"
+      loginWithGoogle: "Verbindung mit Google aktivieren"
+      loginWithLesCommuns: "Verbindung mit \"LesCommuns.org\" aktivieren"
+      loginWithMonPrintemps: "Verbindung mit MonPrintemps aktivieren"
+      sendConfirmationEmail: "Validieren der Erstellung mittels Bestätigungs-E-Mail"
+
+dashboard:
+  _label: ""
+  confirm: "Diese Aktion kann nicht rückgängig gemacht werden. Das gesamte Projekt\
+    \ wird gelöscht. Wirklich sicher?"
+  delete: "Projekt löschen"
+  errors: ""
+  menu:
+    contents: ""
+    custom: ""
+    data: ""
+    emailing: "E-Mails / Newsletter"
+    other_config: "Sonstige Einstellungen"
+    saas: ""
+    users: "Benutzer"
+  messages: ""
+  sidebar:
+    gogo_directory: ""
+    gogo_element_add: ""
+    gogo_homepage: ""
+    gogo_partners: ""
+  welcome: "<b>Willkommen in Ihrem Administratorbereich!</b><br/> Das Abenteuer fängt\
+    \ für Sie gerade erst an, jetzt müssen Sie mit der Konfiguration Ihrer Website\
+    \ beginnen :)<br/><a target=\"_blank\" href=\"https://doc.gogocarto.fr/\">Sehen\
+    \ Sie sich die Dokumentation</a> an, um Ihnen den Einstieg zu erleichtern! Video-Tutorials,\
+    \ häufig gestellte Fragen…"
+
+duplicates:
+  index:
+    leftDuplicatesToProceedCount: ""
+    merge: "Duplikate zusammenführen"
+    none: "Keine Duplikate zu verarbeiten!"
+    return: "Zurück zum Duplikatemanagement"
+    title: "Duplikatemanagement"
+    wantMore: "Ich will mehr! (Nur noch {count} Duplikate zu verarbeiten)"
+  node:
+    address: "Adresse"
+    deleted: "Dieses Element wurde gelöscht. Das zusammengeführte Element bleibt im\
+      \ Status \"gelöscht\""
+    merge: "Zusammenführen"
+    merge_title: "Die Elemente werden zusammengeführt. Nur das erste Element wird\
+      \ behalten, die Attribute des zweiten werden zum ersten hinzugefügt"
+    non-duplicates: "Keine Duplikate"
+    non-duplicates_title: ""
+
+dynamic_imports:
+  _label: "Dynamischer Import"
+  fields: &ref_1
+    customCode: ""
+    customCodeForExport: ""
+    deletedCount: ""
+    elementsCreatedCount: ""
+    elementsDeletedCount: ""
+    elementsErrorsCount: ""
+    elementsMissingGeoCount: ""
+    elementsMissingTaxoCount: ""
+    elementsNothingToDoCount: ""
+    elementsPreventImportedNoTaxo: ""
+    elementsUpdatedCount: ""
+    fieldToCheckElementHaveBeenUpdated: ""
+    fieldToCheckElementHaveBeenUpdated_help: ""
+    file: ""
+    geocodeIfNecessary: ""
+    idsToIgnore: ""
+    idsToIgnore_help: ""
+    isSynchronized: ""
+    isSynchronized_help_text: "Jede Änderung wird an {sourceType} gesendet"
+    lastRefresh: ""
+    logs: ""
+    manualRefresh: ""
+    moderateElements: ""
+    moderateElements_help: "Die importierten Elemente haben den Status \"Validierung\
+      \ ausstehend\" und müssen manuell validiert werden. Gleiches gilt für Aktualisierungen\
+      \ vorhandener Elemente (Änderung)"
+    needToHaveOptionsOtherThanTheOnesAddedToEachElements: ""
+    needToHaveOptionsOtherThanTheOnesAddedToEachElements_help: ""
+    newOntologyToMap: ""
+    newTaxonomyToMap: ""
+    optionsToAddToEachElement: ""
+    parameters: ""
+    preventImportIfNoCategories: ""
+    preventImportIfNoCategories_help: ""
+    refreshFrequency: ""
+    refreshFrequencyInDays: ""
+    refreshFrequencyInDays_help: ""
+    sourceName: ""
+    sourceType: ""
+    url: ""
+    usersToNotify: ""
+    allowAdd: Neue Elemente erlauben
+  form: &ref_2
+    groups:
+      Historic: ""
+      code: ""
+      code_description: ""
+      customCode: ""
+      customCodeForExportPanel_osm: ""
+      customCodeForExportPanel_osm_description: ""
+      customCodeForExportPanel_gogocarto: ""
+      customCodeForExportPanel_gogocarto_description: ""
+      customCodeForExportTab: ""
+      dynamicList: ""
+      general: ""
+      historic: ""
+      newCategories: ""
+      newFields: ""
+      ontologyMappingPanel: ""
+      ontologyMappingTab: ""
+      otherOptions: ""
+      staticList: ""
+      taxonomyMapping: ""
+      taxonomyMapping2: ""
+  list: &ref_3
+    idsToIgnore: ""
+    refreshFrequencyInDays: ""
+
+elements:
+  _label: ""
+  action:
+    batch:
+      delete: ""
+      editOptions: ""
+      params:
+        dont_send_mail: ""
+        from: ""
+        mail_content: ""
+        mail_subject: ""
+        optionsToAdd: "hinzuzufügende Kategorien"
+        optionsToRemove: ""
+        send_to_element: ""
+        send_to_last_contributor: ""
+      refusal: ""
+      resolveReports: ""
+      restore: ""
+      sendMail: ""
+      softDelete: ""
+      validation: ""
+    edit:
+      editOnSite: ""
+      geocode: ""
+      isPending: ""
+      returnToList: ""
+      send_mail: ""
+      showEdit: ""
+      showOnSite: ""
+      submit: ""
+      submit_accept: ""
+      submit_delete: ""
+      submit_redirect: ""
+      submit_refuse: ""
+      submit_resolve: ""
+      submit_restore: ""
+      updateJSON: ""
+  fields:
+    address:
+      addressCountry: ""
+      addressLocality: ""
+      customFormatedAddress: ""
+      postalCode: ""
+      streetAddress: ""
+    contributionType_choices:
+      "-1": ""
+      "0": ""
+      "1": ""
+      "2": ""
+      "3": ""
+      "4": ""
+      "5": ""
+      "6": ""
+    createdAt: ""
+    email: ""
+    id: ""
+    itemValues_choices:
+      "0": ""
+      "1": ""
+      "2": ""
+      "4": ""
+    moderationState: ""
+    moderationState_choices:
+      "-1": ""
+      "-2": ""
+      "0": ""
+      "1": ""
+      "2": ""
+      "3": ""
+      "4": ""
+    name: ""
+    newsletterFrequency: ""
+    oldId: ""
+    optionValues: ""
+    optionsString: "Kategorien (Beschriftungen)"
+    randomHash: ""
+    reportValues_choices:
+      "0": ""
+      "1": ""
+      "2": ""
+      "4": ""
+    reports: ""
+    sourceKey: ""
+    sourceTypeJSON: ""
+    sourceType_choices:
+      csv: ""
+      json: ""
+      osm: ""
+    status: ""
+    status_choices:
+      "": ""
+      "-1": ""
+      "-2": ""
+      "-3": ""
+      "-4": ""
+      "-5": ""
+      "-6": ""
+      "0": ""
+      "1": ""
+      "2": ""
+      "3": ""
+      "4": ""
+      "5": ""
+      "6": ""
+      "7": ""
+    updatedAt: ""
+    userOwnerEmail: ""
+    userRoles_choices:
+      "0": ""
+      "1": ""
+      "2": ""
+      "3": ""
+      "4": ""
+      "5": ""
+    voteValues_choices:
+      "-1": ""
+      "-2": ""
+      "0": ""
+      "1": ""
+      "2": ""
+  filter:
+    departementCode: ""
+    moderationNeeded: ""
+    moderationState: ""
+    name: ""
+    optionValuesAll: ""
+    optionValuesIn: ""
+    optionValuesNotIn: ""
+    pending: ""
+    postalCode: ""
+    sourceKey: ""
+    valide: ""
+  form:
+    addCustomField: ""
+    duplicateOf: ""
+    groups:
+      customFields: ""
+      general: ""
+      localisation: ""
+      moderation: ""
+      otherInfos: ""
+      pending: ""
+      seeOnOSM: ""
+      show_contributions: ""
+      specialFields: ""
+    seeDuplicate: ""
+  proposedAt: ""
+  proposedBy: ""
+  recent_elements: ""
+
+emails:
+  service:
+    error: ""
+    inactive_config: ""
+    no_automatic_mail: ""
+    no_email: ""
+    no_specific_message: ""
+    no_subject_or_content: ""
+    success: ""
+    unknown: ""
+    unknown_config: ""
+  show_map: ""
+  template:
+    fields:
+      active: ""
+      content: ""
+      subject: ""
+  test:
+    _label: ""
+    custom_message_example: ""
+    done: ""
+    email: ""
+    missing_element: ""
+    missing_email: ""
+    subject: ""
+    submit: ""
+
+files:
+  _label: ""
+  fields:
+    file: ""
+    fileName: ""
+    fileUrl: ""
+  form:
+    customDirectory: ""
+    customDirectory_help: ""
+    customDirectory_placeholder: ""
+    fileName: ""
+    fileName_placeholder: ""
+
+help:
+  _label: "Hilfe"
+  doc: "Ein Problem, eine Frage? Hier entlang: "
+
+images: &ref_0
+  _label: ""
+  fields:
+    externalImageUrl: ""
+    file: ""
+  placeholder: ""
+
+images_conf: *ref_0
+
+images_element: *ref_0
+
+images_partner: *ref_0
+
+importService:
+  automaticMergesCount: ""
+  close: ""
+  dismissLog: ""
+  elementsCreatedCount: ""
+  elementsDeletedCount: ""
+  elementsErrorsCount: ""
+  elementsMissingGeoCount: ""
+  elementsMissingTaxoCount: ""
+  elementsNothingToDoCount: ""
+  elementsPreventImportedNoTaxo: ""
+  elementsUpdatedCount: ""
+  inProgress: ""
+  logError: ""
+  logMessage: ""
+  potentialDuplicatesCount: ""
+  processing: ""
+  total: ""
+  x: ""
+
+imports:
+  _label: ""
+  dynamic: ""
+  edit:
+    clear-elements: ""
+    collect: ""
+    confirm: ""
+    delete: ""
+    import: ""
+    lastRefresh: ""
+    reimport: ""
+    saving: ""
+    submit: ""
+    test_export:
+      no_element: ""
+      see_export: ""
+  fields: *ref_1
+  form: *ref_2
+  import: ""
+  last:
+  list: *ref_3
+  progress:
+    inProgress: ""
+    return_to_import: ""
+    return_to_list: ""
+    title: ""
+  static: ""
+
+  controller:
+    sonata:
+      error:
+        csv: "Stellen Sie sicher, dass die Spalten <b> durch Kommas getrennt sind</b>\
+          \ (und nicht durch Semikolons oder Leerzeichen): <a href='https://help.libreoffice.org/Calc/Importing_and_Exporting_CSV_Files'>\
+          \ Klicken Sie hier, um herauszufinden, wie das geht</a>.  Prüfen Sie auch,\
+          \ ob die <b>Kodierung UTF-8</b> ist."
+js:
+  api:
+    placeholder: ""
+  admin:
+    options:
+      _label: ""
+      fields:
+        add_a_tag: ""
+        color: ""
+        customId: ""
+        customId_help: ""
+        descriptionLabel: ""
+        displayChildrenInForm: ""
+        displayChildrenInInfoBar: ""
+        displayChildrenInMenu: ""
+        displayInForm: ""
+        displayInInfoBar: ""
+        displayInMenu: ""
+        enableDescription: ""
+        enableDescription_help: ""
+        icon: ""
+        index: ""
+        name: ""
+        nameShort: ""
+        nameShort_help: ""
+        osmTags: ""
+        osmTags_help: ""
+        parent: ""
+        pickingOptionText: "Im Formular angezeigter Text: Wähle…"
+        return_to_list: ""
+        showExpanded: ""
+        softColor: ""
+        softColor_help: ""
+        textHelper: ""
+        textHelper_help: ""
+        unexpandable: ""
+        unexpandable_help: ""
+        url: ""
+        url_help: ""
+        useColorForMarker: ""
+        useColorForMarker_help: ""
+        useIconForMarker: ""
+        useIconForMarker_help: ""
+      form:
+        groups:
+          advanced: "Erweiterte Konfiguration"
+          description: ""
+          display: "Kategorie anzeigen"
+          displayChildren: "Untergruppen und Unterkategorien anzeigen"
+          osm: "Link zur OpenStreetMap"
+          osm_help: ""
+          subcategories: "Untergruppen"
+    categories:
+      _label: Kategorien
+      list:
+        sort_alpha: Kategorien alphabetisch sortieren
+        mandatory: Pflichtfeld
+      fields:
+        customId: persönliche ID
+        descriptionLabel: Label für Beschreibungsfeld
+        displayInForm: Im Formular
+        displayInForm_help: Weder die Gruppe noch die Kategorien werden im Formular
+          angezeigt
+        displayInInfoBar: In der Detailansicht
+        displayInInfoBar_help: Kategorien werden angezeigt, der Name der Gruppe nicht
+        displayInMenu: Im Menu
+        displayInMenu_help: Kategorien werden angezeigt, der Name der Gruppe nicht
+        displaySuboptionsInline: Unterkategorien in einer Zeile anzeigen
+        enableDescription: Beschreibung der Kategorien aktivieren
+        enableDescription_help: >-
+          Ermöglicht, der Kategorie eine Beschreibung hinzuzufügen, beispielsweise
+          der
+          Kategorie Landwirtschaft ein 'Gärtnerei, SoLaWi ...'
+        index: Position
+        isMandatory: Pflichtfeld
+        isMandatory_help: Eine Kategorie dieser Gruppe muss ausgewählt werden
+        name: Name der Gruppe
+        nameShort: Name (Kurzversion)
+        nameShort_help: Die Kurzversion wird im Menu angezeigt, da hier oft der Platz
+          fehlt
+        option:
+          color: Farbe
+          icon: Icon
+          id: Weitere Optionen
+          index: Position
+          name: Name
+        parent: Elternkategorie
+        parent_placeholder: Wurzel
+        pickingOptionText: "Text zur Anzeige im Formular: Auswählen…"
+        showExpanded: "Zeige Kategorien in der Ausgangsposition (sonst muss geklickt\
+          \ werden, um sie zu sehen)"
+        singleOption: "Einfachauswahl"
+        singleOption_help: Nur eine Kategorie kann gleichzeitig gewählt werden
+        unexpandable: Diese Kategoriengruppe nicht ausklappbar machen
+        unexpandable_help: In diesem Menu sollen die Kategorien dieser Gruppe immer
+          angezeigt werden
+      form:
+        groups:
+          categories: Kategorien dieser Gruppe
+          display: Diese Gruppe anzeigen
+          primary: Haupteinstellungen
+          secondary: Zweitrangige Anzeigeeinstellungen
+        add_option: Kategorie hinzufügen
+  charts:
+    display: "Anzeigen"
+    field:
+      avg_time_on_page: "Mittlere Zeit auf der Seite (Sekunden)"
+      nb_visits: "Besuchszahlen"
+    last: "Letzte"
+    period:
+      day: "Tag"
+      month: "Monat"
+      week: "Woche"
+      year: "Jahr"
+    reload: "Neu laden"
+    title_visitors: "Besuchsstatistiken"
+  element_form:
+    geocode_error: "Fehler bei der Geolokalisation von \"{address}\""
+    geocoded_marker_text: >-
+      Verschieben Sie mich, um die Position festzulegen<br/>(in der Mitte des Gebäudes)
+  filters_builder:
+    choose_field: "Bitte zu nutzendes Feld auswählen"
+    contracted_field: ""
+    customize_field: ""
+    date_views:
+      day: "Tag"
+      month: "Monat"
+      range: "Zeitraum"
+      week: "Woche"
+      year: "Jahr"
+    default_view: "Standardanzeige"
+    field_end: "Feld für das Enddatum (optional)"
+    field_name: "Zu nutzender Feldname"
+    gogo_date: "Datumsfilter"
+    gogo_number: "Nummernfilter"
+    max: "Maximum"
+    min: "Minimum"
+    multiday: "Mehrere Tage wählbar"
+    options:
+      slider: "Slider"
+      value: "Wert"
+    select_views: "Ansichten (Strg + Klick)"
+    step: "Schritt"
+    taxonomy: "Filterkategorien"
+    type: "Typ"
+    used_field: "Benutztes Feld: {field}"
+  form_builder:
+    accept: "Akzeptierte Dateien"
+    accept_placeholder: ""
+    addOption: "Option hinzufügen"
+    checkbox: "Checkbox"
+    checkboxGroup: ""
+    checked_value: ""
+    class: "Klasse"
+    close: "Schließen"
+    content: "Inhalt"
+    copy_icon: "Duplikat"
+    dateField: "Datumsfeld"
+    defaultvalue: "Ursprünglicher Wert"
+    description: "Hilfetext"
+    edit_icon: "Bearbeiten/Verstecken"
+    errorMsg: "Fehlermeldung"
+    errorMsg_placeholder: "Ups, dieser Text ist ein bisschen lang! // Bitte eine valide\
+      \ E-Mail-Adresse eingeben // …"
+    fields:
+      address: "Adresse (obligatorisch)"
+      address_help: "Pflichtfeld"
+      checkbox: "Checkbox"
+      elements: ""
+      email: ""
+      email_help: ""
+      files: ""
+      images: ""
+      openhours: ""
+      openhours_help: ""
+      separator: ""
+      taxonomy: ""
+      title: ""
+      title_help: ""
+    header: ""
+    icon: ""
+    icon_placeholder: "Icon auswählen"
+    label: ""
+    limitRole: ""
+    mandatory: ""
+    maxlength: ""
+    multiple: ""
+    name: ""
+    number: ""
+    option: ""
+    optionLabelPlaceholder: ""
+    optionValuePlaceholder: ""
+    optional: ""
+    options:
+      filled: ""
+      "no": ""
+      normal: ""
+      "yes": ""
+    paragraph: ""
+    pattern: ""
+    pattern_placeholder: ""
+    placeholder: ""
+    placeholder_className: ""
+    placeholder_email: ""
+    placeholder_label: ""
+    placeholder_password: ""
+    placeholder_placeholder: ""
+    placeholder_text: ""
+    placeholder_textarea: ""
+    placeholder_value: ""
+    propNameOptions: "Existierendes Feld wählen oder neues eingeben"
+    radio: ""
+    radioGroup: ""
+    range: ""
+    remove_icon: ""
+    required: ""
+    reversedBy: ""
+    reversedBy_placeholder: ""
+    richText: ""
+    roles: ""
+    roles_admin: ""
+    roles_owner: ""
+    search: ""
+    searchWeigh: ""
+    select: ""
+    selectOptions: ""
+    style: ""
+    subtype: ""
+    subtype_options:
+      email: ""
+      tel: ""
+      text: ""
+      textarea: ""
+      url: "URL"
+      wysiwyg: ""
+    text: ""
+    textArea: ""
+    timepicker: ""
+    toggle: ""
+    value: ""
+  import:
+    source_this_map: ""
+  mapping_ontology:
+    addressCountry: ""
+    addressLocality: ""
+    categories: "Kategorien (mehrere Felder wählbar)"
+    coreData: ""
+    email: ""
+    files: ""
+    formData: ""
+    fullAddress: ""
+    id: ""
+    images: ""
+    importedData: ""
+    info: ""
+    info_title: ""
+    latitude: ""
+    longitude: ""
+    name: ""
+    openHours: ""
+    osm_opening_hours: ""
+    otherData: ""
+    owner: ""
+    postalCode: ""
+    primary: ""
+    primary_title: ""
+    source: ""
+    specificData: ""
+    streetAddress: ""
+    streetNumber: ""
+  mapping_taxonomy:
+    createTerm: ""
+    selectCategory: ""
+  osm_query_builder:
+    title: ""
+
+  bounds_picker:
+    draw_rectangle: Ein Rechteck auf der Karte zeichnen
+    nomatch: Kein Ergebnis gefunden für {address}
+    search_button: Suchen
+    search_by_address: Nach Adresse suchen
+    search_placeholder: Stadt, Region, Land…
+    title: Geografische Zone der Anfrage
+mapping-ontology:
+  alert: ""
+  arrowTitle: ""
+  clearTitle: ""
+  displayMore: ""
+  mapped: ""
+  original: ""
+
+mapping-taxonomy:
+  alert: ""
+  arrowTitle: ""
+  category-group: ""
+  clearTitle: ""
+  collectedPercent: ""
+  create-missing-categories: ""
+  mapped: ""
+  moreInfos: ""
+  original: ""
+
+monitoring:
+  activeUsersNewsletter: "Newsletterabonnenten"
+  all_elements: ""
+  delete: ""
+  detectDuplicates: ""
+  display: ""
+  display_all: ""
+  duplicates: ""
+  error: ""
+  manageDuplicates: ""
+  moderationNeeded: ""
+  pending: ""
+  title: ""
+  users: "Benutzer"
+
+news:
+  _label: ""
+  fields:
+    content: ""
+    publicationDate: ""
+    status: ""
+    status_choices:
+      draft: ""
+      published: ""
+    title: ""
+  form:
+    groups:
+      list_header: ""
+
+partners:
+  _label: "Partner"
+  form:
+    content: "Inhalt"
+    logo: "Logo"
+    logo_placeholder: "Bereits importiertes Bild wählen, oder neues hinzufügen!"
+    name: "Name"
+    websiteUrl: "URL der Website"
+
+projects:
+  _label: "Projektliste"
+
+  initialize:
+    plainPassword-1: Passwort
+    email: E-Mail-Adresse
+sonata.user.user:
+  _label: "Benutzer"
+  batch:
+    error: "FEHLER: {message}"
+    mailError: "Betreff und Inhalt sind Pflicht. Bitte nochmal von vorn"
+    sendmails: "{count, plural, =1 {# E-Mail verschickt} other {# E-Mails verschickt}\
+      \ }"
+    tooMany: "Zu viele Elemente zu verarbeiten! Nur {limit} sind verarbeitet worden"
+    usersWithoutEmail: "{count, plural =1 {# E-Mail konnte nicht gesendet werden,\
+      \ da keine E-Mail-Adresse angegeben wurde} other {# E-Mails konnten nicht gesendet\
+      \ werden, da keine E-Mail-Adresse angegeben wurde} }"
+  facebook_warning: ""
+  fields:
+    content: "Nachricht"
+    contributionsCount: "Beiträge"
+    createdAt: "Erstellt am"
+    email: "E-Mail"
+    gamification: "Interaktionen"
+    groups: "Gruppen"
+    impersonating:
+    object: "Titel"
+    reportsCount: "Berichte"
+    sendMail: "E-Mail senden"
+    username: "Name"
+    votesCount: "Stimmen"
+    votes: Stimmen
+  forgottedPassword: "Passwort vergessen"
+  form:
+    allowedStamps: "Erlaubte Label"
+    credentialsExpired:
+    enabled: "Aktiviert"
+    expired: "Abgelaufen"
+    groups:
+      general: "Allgemein"
+      roles: "Rollen"
+      security: "Sicherheit"
+      status: "Status"
+      user: "Benutzer"
+    locked: "Gesperrt"
+    main-roles: "Hauptrollen"
+    plainPassword: "Passwort"
+    watchModeration: "Benachrichtigungs-E-Mail bei zu moderierenden Elementen erhalten"
+    watchModerationOnlyWithOptions: ""
+    watchModerationOnlyWithPostCodes: ""
+    watchModerationOnlyWithPostCodes_help: ""
+    watchModerationOnlyWithPostCodes_placeholder: ""
+  role:
+    ROLE_ADMIN: ""
+    ROLE_DIRECTMODERATION_ADD: ""
+    ROLE_DIRECTMODERATION_EDIT_OWN_CONTRIB: ""
+    ROLE_SONATA_ADMIN: ""
+    ROLE_SUPER_ADMIN: ""
+
+stamps:
+  _label: ""
+  fields:
+    isPublic: ""
+    name: ""
+
+tile_layers:
+  _label: "Kartenhintergründe"
+  fields:
+  form:
+    groups:
+
+webhooks:
+  _label: "Webhooks"
+  fields:
+    format: "Format"
+    url: "URL"
+
+  titles:
+    add: HINZUFÜGEN
+    delete: LÖSCHEN
+    edit: BEARBEITEN
+  texts:
+    delete: gelöscht
+    add: hinzugefügt
+    edit: aktualisiert
+  messages:
+    error_sync: Fehler beim Synchronisieren des Elements {element}.
+    error_msg: '(Versuch Nr. {attempts}). Fehlermeldung: {message}'
+    error_osm_auth: Die Anmeldedaten deines OSM-Kontos sind wahrscheinlich falsch.
+    error_send: Fehler beim Senden des webhooks {url} für das Element {element}
+wrappers:
+  _label: "Banner auf der Startseite"
+  fields:
+    backgroundColor: "Hintergrundfarbe"
+    content: "Inhalt des Banners"
+    rawContent: "Reiner HTML-Inhalt (optional)"
+    textColor: "Textfarbe"
+config_import_export:
+  texts:
+    url: URL zu einem anderen gogocarto-Projekt, oder einer JSON-Datei
+    chooseSource: Datenquelle auswählen
+    importOk: Import der Konfiguration abgeschlossen
+    url_placeholder: https://other-project.gogocarto.fr
+    chooseOptions: Was willst du importieren?
+    importConfirmation: Achtung, der Import wird alle Daten der bestehenden Konfiguration
+      löschen!
+    uploadFile: Oder Datei hochladen
+  actions:
+    uploadFile: Durchstöbern
+    importConfirmation: Konfiguration importieren
+    import: Importiere eine Konfiguration
+    export: Bestehende Konfiguration exportieren
+  choices:
+    cbConfiguration: Hauptkonfiguration
+    cbTaxonomies: Kategorien
+    cbKeepExistingTaxonomies: Existierende Kategorien beibehalten
+  errors:
+    noSource: Bitte gib mindestens eine Quelle an (URL oder JSON-Datei)
+    invalidUrl: URL Fehler
+    jsonFile: Bitte lade ein valides JSON-Dokument hoch
+    jsonFormat: JSON Formatfehler
+    noChoiceMade: Bitte wähle mindestens einen Datentypen aus (Konfiguration oder
+      Kategorien)
+config_exports:
+  action:
+    edit:
+      btn_return: Zurück zur Elementliste
+      btn_add_fields: Alle Felder hinzufügen
+      btn_clear_all: Alle Spalten entfernen
+      btn_add_categories: Eine Spalte für jede Kategorie hinzufügen
+  fields:
+    export.exportProperties: Zu exportierende Felder (leer lassen, um alle Felder
+      zu exportieren)
+    name: Name
+    exportProperties: Zu exportierende Spalten (wenn leer, werden alle Felder exportiert)
+      - Drag and Drop zur Änderung der Reihenfolge
+  form:
+    groups:
+      export: Export configuration
+  _label: Exportkonfiguration
+  optgroups:
+    fields: Felder
+    categories: Kategorien
+  legend:
+    field: Feld
+    label: Legende
+    category: Spaltenkategorie
+options:
+  _label: Kategorien
+config:
+  _label: Konfiguration

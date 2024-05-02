@@ -1,0 +1,431 @@
+action:
+  element:
+    delete:
+      uncomplete: Parametri mancanti
+      unallowed: Spiacente, non sei autorizzato per eliminare questo item!
+      done: L'item è stato eliminato
+    report:
+      done: Grazie, la tua segnalazione è stata salvata!
+      unallowed: Spiacenti, non hai i permessi per segnalare errori!
+      from_origin: Questa segnalazione è stata inviata da {appUrl}.
+      email:
+        subject: Segnalazione inviata da {appName}
+        content: "Buongiorno!<br/><br/>                    Dalla carta {appUrl} è
+          stata inviata una segnalazione di {userEmail} riguardo l'elemento {elementName}
+          (identificazione nel tuo database come {elementiId}): <br/><br/> {valueLable}.
+          {comment}<br/><br/> A presto, il team di {appName}"
+    not_found: Nessun item trovato per questo ID
+    sendMail:
+      emailContent: <p>Buongiorno<i>{element}</i>,</p> <p>Hai ricevuto un messggio
+        da <a href="mailto:{sender}">{sender}</a><br/> </p> <p><b>Oggetto del messaggio</b></p><p>
+        {subject}</p> <p><b>Contenuto</b></p><p>{content}</p>
+      uncomplete: I parametri non son completi
+      done: La mail è stata inviata
+      emailSubject: Messaggio ricevuto da {appName}
+    sendEditLink:
+      done: Un link per la modifica è stato inviato con successo a {email}
+      emailContent: <p>Buongiorno <i>'{{ element '}}</i>,</p> <p><a href="'{{ directEditElementUniqueUrl
+        '}}">Clicca qui</a> per aggiornare le tue informazioni</p>
+    resolveReports:
+      unallowed: Spiacenti, non sei autorizzato a moderare questo elemento!
+      uncomplete: Parametri incompleti
+      done: L'elemento è stato moderato
+    stamp:
+      do_not_exist: il timbro non esiste
+      unallowed: Non sei autorizzato ad utilizzare questo timbro
+      uncomplete: I parametri non sono completi
+      done: Modifica del timbro confermata
+    subscribe:
+      uncomplete: Le impostazioni non sono complete
+      already: La sottoscrizione alle modifiche dell'elemento "{element}" per questa
+        email {email} è già presente
+      email:
+        content: "Buongiorno!<br/><br/>                     Da {appUrl}, ora sei iscritto
+          alle modifiche dell'elemento «{elementName}». Puoi disiscriverti cliccando
+          su questo link: {unsubscribeUniqueUrl} <br/><br/> Saluti, {appName} team"
+        subject: Sottoscrizione {appName} a {elementName} aggiornata
+      done: La sottoscrizione alle modifiche dell'elemento "{element}" è stata salvata
+    vote:
+      uncomplete: I parametri del voto non sono completi
+      unallowed: Spiacenti, non hai i permessi di voto!
+    unsubscribe:
+      done: La disiscrizione alle modifiche dell'elemento "{element}" è stata salvata
+      uncomplete: Le impostazioni non sono complete
+      already: Questa mail {email} ha disattivato le notifiche per le modifiche dell'elemento
+        "{element}"
+  create: Crea
+  continue: Continua
+  cancel: Elimina
+  send: Invia
+  send_stay: Invia e resta nel modulo
+  registration:
+    need_address: Se vuoi ricevere nuove aggiunte, devi fornire un indirizzo
+    unallowed: Spiacente, non sei autorizzato a creare un account.
+    geo_error: Impossibile geolocalizzare questo indirizzo
+    on_hold: Il tuo account creato con la mail "{email}" è in attesa di essere confermato
+      dall'amministratore.
+    title: registrazione
+  submit: Salva
+  error: 'Errore: {message}'
+  ok: Ok
+  search: Ricerca
+  geolocalize_me: Geolocalizza la mia posizione
+api_ui:
+  format: 'Formato:'
+  use_limit: Limita il numero dei risultati
+  _label: Configura l'API
+  use_bounds: Definisci un zona geografica (disegna un rettangolo sulla carta)
+  api_url: URL dell'API
+  json: JSON
+  use_categories: Filtra per categorie
+  include_external: Includi il database di fonti esterne
+  jsonld: JSON-LD (Semantico)
+  title: Accedi ai dati tramite API
+  test: Test
+commons:
+  category_placeholder: Specifica (se necessario)
+  click_here: clicca qui
+  check_password: Ripeti la password
+  continue_browsing: Puoi continuare a navigare nel sito!
+  choose_one_option: Scegli almeno una opzione
+  choose_category: Scegli {cat}
+  optional: Facoltativo
+  errors:
+    too_long: Oops, il testo è un po' troppo lungo!
+    file-too-big: Il file è troppo grande, la dimensione massima permessa è {size}
+      MB
+    bad_number: Non è un numero!
+    bad_email: Inserisci un indirizzo mail valido
+    bad_url: Inserire un URL come http://…
+  validation: Conferma
+  never: Mai
+  location: L'indirizzo della tua città
+  username: Nome utente
+  password: Password
+  every:
+    month: Ogni mese
+    week: Ogni settimana
+  confirm: Sei sicuro?
+  register: Crea un account
+  email: Indirizzo email
+  menu: Menu
+  newsletter-explanation: Rimani informato via mail di nuove segnalazioni vicino a
+    te!
+  or: o
+duplicates:
+  controller:
+    merged: Questa segnalazione è stata unita ad un possibile duplicato
+    marked: Marcato come non duplicato
+    marked_long: Le segnalazioni sono state confermate come non duplicate
+  merged_with_new_element: Unito con un elemento nuovo creato
+  merged_with_duplicate: Gli elementi sono stati uniti con successo. Verifica la correzione
+    dei dati
+  new_element: No, è una nuova segnalazione, voglio continuare!
+  label: Segnalazione di duplicato
+  see_on_map: (Vedi su OpenStreetMap)
+  duplicated_element: È questo!
+  title: Ricerca di duplicati
+  subtitle: Sono stati rilevati elementi simili, vuoi aggiungerlo a uno di loro?
+directory:
+  _label: La carta
+contributor-login:
+  printemps: Primavera dell'educazione
+  error:
+    title: Azione impossibile
+    inactive_iframe: Questa funzionalità non è disponibile in un IFRAME
+    used_email: Spiacenti, esiste già un account con questo indirizzo mail! Accedi
+      o usa un altro indirizzo!
+    admin_only: Attenzione! Questa funzione è solo per gli amministratori
+    invalid_email: Inserisci un indirizzo mail valido
+    inactive_feature: Questa funzionalità non è abilitata in questa carta
+  login: Accedi
+  _label: Autenticazione
+  oauth: Accedi con il tuo account
+  email: Semplicemente inserisci un indirizzo mail
+  communs: LesCommuns.org
+js:
+  login:
+    wrong_id: Credenziali errate
+    exception: Si è verificato un errore durante il tentativo di connessione
+  element_form:
+    category_add: Aggiungi {cat}
+    geocoded_marker_text: Spostami per specificare la posizione<br/>(al centro dell'edificio)
+    category_remove: Rimuovi
+    category_invalid: Scegli una sottocategoria
+    category_drag: Trascina per riordinare
+    category_choose: Scegli {cat}
+    category_add_more: Aggiungi altre categorie
+    category_add_children: Aggiungi sottocategorie
+  api_ui:
+    categories_placeholder: Seleziona le categorie
+element:
+  form:
+    open_hours:
+      days_of_week:
+        "1": Martedì
+        "3": Giovedì
+        "5": Sabato
+        "4": Venerdì
+        "2": Mercoledì
+        "6": Domenica
+        "0": Lunedì
+      days_of_week_short:
+        "1": Mar
+        "3": Gio
+        "0": Lun
+        "6": Dom
+        "4": Ven
+        "2": Mer
+        "5": Sab
+      recopy_tooltip: Copia gli orari precedenti
+      to: a
+      and: E
+      add_tooltip: Aggiungi un intervallo orario
+      from: Da
+    admin_section:
+      custom_message: Dettagli della modifica, questo testo sostituirà '{{ customMessage
+        '}} nelle mail automatiche
+      send_mail:
+        add: Informare {the_element} dell'aggiunta con l'invio di una mail
+        modify: Informare {the_element} delle modifiche inviando una mail
+      _label: Conferma
+      recopy_info: Copia le informazioni in un nuovo form
+    controller:
+      pending: Il tuo contributo è attualmente in attesa di conferma
+      user_contributions: Trova e modifica i tuoi contributi nella pagina <a href="{url}">I
+        miei contributi</a>
+      error_unauthorized: Mi spiace, non sei autorizzato alla modifica di questo elemento!
+      thankyou:
+        added: Grazie per il tuo aiuto! {name} è stato aggiunto
+        edited: Grazie per il tuo aiuto! Le modifiche sono state prese in carico!
+      pending_collaborative: per saperne di più sul processo di moderazione collaborativo!
+      error_dont_exist: L'elemento richiesto non esiste…
+      see_on_map: Visualizza il risultato nella carta
+      success: Il tuo account è stato creato! Ora puoi completare <a href="{url}"
+        >il tuo profilo</a>!
+    getDataFromLocalStorage:
+      content: <p>L'elemento inserito è stato aggiunto. Vuoi riepilogare l'invio dei
+        dati?</p><p>
+      title: Elemento inserito
+    title_edit: Modifica dei dati
+    localize: Localizza
+    error_username: Questo username è già utilizzato!
+    create_user: Password per la creazione dell'account
+    info_saved: Modifiche salvate!
+    need_help: Aiuto?
+    error_missing_adress: È necessario inserire un indirizzo per avere le notifiche
+      di nuove aggiunte
+    error_geocode: Impossibile localizzare questo indirizzo
+    success_becomeOwner: Sei proprietario di {name}!
+    title_add: Aggiungi {element}
+    error_becomeOwner: Spiacenti, questo elemento appartiene già a qualcuno!
+  status:
+    modifications: Modifiche
+    more_to_discover: '... e {nb} altri da scoprire sul sito!'
+    pending: In attesa
+    vote: Vota!
+    view: Vedi
+error:
+  "404":
+    text: La pagina richiesta non esiste (più?)…
+  generic:
+    file_line: '{file} alla linea {line}'
+    text: Se il problema persiste, vi chiediamo di informarci, preferibilmente nella
+      <br><a href="https://framateam.org/gogocarto/channels/town-square" target="blank">Chatroom
+      GoGoCarto</a> o via email a {email}, includendo il messaggio di errore visualizzato
+      di seguito.
+  title: Errore!
+  header: Oops! Qualcosa non ha funzionato
+home:
+  search:
+    address: un indirizzo
+    category: una categoria
+    all: Tutti
+    placeholder: Entra
+  pick_category: 'Scegli una categoria (di default: tutte)'
+  all_projects: Tutti i progetti ({length})
+  credits: Powered by {ggc}
+  discover: Scoprire
+  logout: Esci
+  sort_by_points: Ordina per numero di punti
+  admin_interface: Interfaccia di amministrazione
+  documentation: Documentazione
+  sort_by_date: Ordina per data di pubblicazione
+  my_space: Il mio spazio
+  donate: Dona
+  source_code: Codice sorgente
+  geolocalize: Geolocalizza la tua posizione
+  search_placeholder: Cerca per nome, per tag
+  pinned_projects: Progetti fissati
+login:
+  remember_me: Resta connesso
+  _label: Log in
+  login_with: Log in con {provider}
+  forgotten_password: Password persa?
+  authentication_success: L'autenticazione con {service} è andata a buon fine, ora
+    sei connesso!
+  register: Hai bisogno di un account? <a href="{url}">Registrati</a>
+my_contributions:
+  action: Azione
+  my_reports: Le mie segnalazioni
+  confirmation_button: Confermo
+  confirmation: Conferma
+  element: Elemento
+  name: Nome
+  become_owner: Diventa proprietario
+  me: Io
+  none: Non hai ancora nessun contributo
+  my_votes: I miei voti
+  confirmation_cancel: Cancella
+  history: Cronologia dei miei contributi
+  date: Data
+  confirmation_hint: Per diventare proprietario di un elemento, è necessario confermare
+    di partecipare alla gestione della struttura
+  show: Mostra
+  my_elements: I miei elementi
+  _label: I miei contributi
+  element_contributed: Altri elementi a cui ho contribuito
+  edit: Modifica
+  owner: Proprietario
+  type: Tipo
+  status: Stato
+load_configuration:
+  CollaborativeModerationExplanations: " <p>Quando un elemento viene aggiunto o modificato,
+    i dati non vengono aggiornati immediatamente. L'elemento apparirà \"grigio\" sulla
+    carta e sarà quindi possibile per gli utenti registrati votare una e una sola
+    volta questo elemento. Il voto non è una opinione ma una condivisione di conoscenza.
+    Se conosci l'elemento, o sai che l'elemento non esiste, allora la tua conoscenza
+    ci interessa! </p> <p> Dopo un certo numero di voti, l'elemento può essere approvato
+    o rifiutato automaticamente. In caso di disputa (presenza di voti positivi e negativi),
+    un moderatore controllerà appena possibile. Contiamo su di te!</p>"
+  AboutHeaderTitle: A proposito
+  PartnerPageTitle: Partner
+  ElementFormGeocodingHelp: Non inserire la punteggiatura, i nomi in maiuscolo non
+    sono più riconosciuti. Se la localizzazione non funziona (alcuni indirizzi non
+    sono riconosciuti), inserisci il nome della città o del paese più vicino, clicca
+    su "Localizza" e posiziona il punto manualmente. Inserisci nuovamente l'indirizzo
+    completo nel campo di testo e completa il formulario ignorando il bottone "localizza".
+  AppBaseline: Crea una carta a GoGo
+  AddElementHintText: Contribuisci ad arricchire il database!
+  SeeMoreButtonText: Per saperne di più
+my_parameters:
+  _label: Le mie impostazioni
+  delete_success: Il tuo account è stato eliminato correttamente
+  delete: Elimina il mio account
+  range: 'Raggio di ricerca:'
+  input_location: Il tuo indirizzo o la tua città
+  unit: Chilometri
+projects:
+  controller:
+    main_categories: Categorie principali
+    main_category: Una categoria principale
+  initialize:
+    email: Indirizzo email
+    username: Nome utente
+    _label: Crea un account di amministratore
+    plainPassword-1: Password
+    plainPassword-2: Ripeti la tua password
+  form:
+    contribOptions:
+      inherit: Predefinito
+      intermediate: Intermedio
+      closed: Chiuso
+      open: Aperto
+    message: Creazione del tuo progetto, attendi…
+    data-error: Ops, questo nome è troppo lungo!
+    cgu: Termini d'uso
+    contribHints:
+      open: Tutti gli utenti possono aggiungere/modificare/eliminare liberamente
+      inherit: Usa le impostazioni predefinite di {base_url}
+      closed: Possono contribuire solo gli amministratori
+      intermediate: Tutti gli utenti possono contribuire, ma i contributi devono essere
+        moderati dagli amministratori
+    accept_cgu: Accetto i termini d'uso generali
+    contrib: Aperto al contributo pubblico
+    domaine_name: Nome del dominio
+    project_name: Nome del progetto
+    _label: Crea un progetto
+  pitch: Crea carte a GoGo!
+vote:
+  collaborative:
+    negative: '{element} ha ricevuto abbastanza voti negativi e verrà eliminato.'
+    positive: Complimenti, {element} ha ricevuto abbastanza voti per essere confermato!
+  pending:
+    user_validated:
+      positive: Complimenti, le modifiche hanno ricevuto abbastanza voti per essere
+        confermate!
+      negative: La proposta di modifica ha ricevuto sufficienti voti negativi e verrà
+        annullata.
+    admin_validated:
+      negative: Le modifiche sono state respinte
+      positive: Le modifiche sono state accettate
+  admin:
+    negative: '{element} è stato respinto'
+    positive: '{element} è stato approvato'
+  vote_modified: 'Grazie {user}: il tuo voto è stato modificato!'
+  vote_added: Grazie per il tuo contributo!
+project.create:
+  contribHints:
+    closed: Possono contribuire solo gli amministratori
+    inherit: Utilizza i parametri di default di {base_url]
+    intermediate: Tutti gli utenti possono contribuire, ma i contributi sono moderati
+      dagli amministratori
+    open: Tutti gli utenti possono aggiungere, modificare e eliminare liberamente
+  accept_cgu: Accetto i termini d'uso generali
+  _label: GoGoCarto - Un pieno di Carte
+  message: Creazione del tuo progetto, attendi…
+  domaine_name: Nome del dominio
+  contribOptions:
+    inherit: Default
+    intermediate: Intermedio
+    closed: Chiuso
+    open: Aperto
+  data-error: Ops, questo nome è troppo lungo!
+  title: Crea un progetto
+  project_name: Nome del progetto
+  cgu: Termini d'uso
+  contrib: Aperto al contributo pubblico
+votes:
+  vote: Voto
+  _label: I miei voti
+  status: Stato
+  date: Data
+  element: Nome
+  empty: Non hai ancora votato! Puoi cominciare :) <br/>I voti permettono la moderazione
+    collaborativa!
+reports:
+  reportValues:
+    v2: La segnalazione non rispetta la carta
+    v0: La segnalazione non esiste più
+    v1: Le informazioni non sono corrette
+    v3: La segnalazione è riportato più volte
+  report: Notifiche
+  pending_moderation: In attesa di moderazione
+  empty: Non hai ancora segnalato un errore. Il nostro database è perfetto? :P
+  date: Data
+  _label: Le mie notifiche
+  status: Stato
+  element: Nome
+notifications:
+  moderation:
+    content: Buongiorno!<br/><br/>{count, plural, =1 {# {element_singular} è } other
+      {# {element_plural} sono } } da moderare nella carta ‘{appname}’<br/><br/><a
+      href="{url}">Accedi alla carta</a><br/><br/> Per modificare le preferenza di
+      notifica, <a href="{edit_url}">clicca qui</a>.
+    subject: Alcuni elementi devono essere moderati su {appname}
+  import_mapping:
+    subject: Azione richiesta per l'importazione su {appname}
+    content: Buongiorno!<br/><br/> L'importazione {import} ha nuovi campi o nuove
+      categorie che richiedono la tua attenzione... <a href="{url}">Clicca qui</a>
+      per visualizzare l'elenco delle corrispondenze.
+  import_error:
+    content: Buongiorno!<br/><br/> L'importazione {import} è fallita per qualche motivo.
+      <a href="{url}">Clicca qui</a> per provare a risolvere.
+    subject: Errori verificatisi durante l'importazione da {appname}
+pending-contributions:
+  form: Elemento
+  approved: Questo contributo è stato approvato dal processo di moderazione collaborativo
+  _label: I miei contribui in sospeso
+  empty_section: Non hai nessun contributo in sospeso. Sentiti libero di <a href="{url}">aggiungere
+    un elemento</a>!
+  rejected: Questo contributo è stato rifiutato dal processo di moderazione collaborativo

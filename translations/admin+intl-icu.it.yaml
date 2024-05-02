@@ -1,0 +1,542 @@
+config_contributions:
+  form:
+    groups:
+      addFeature: Essere autorizzati ad aggiungere un elemento
+      collaborativeModerationFeature: Moderazione collaborativa (possibilità di votare)
+      deleteFeature: Possibilità di eliminare un elemento
+      editFeature: Capacità di modificare un elemento
+      directModerationFeature: Prevenire l'esigenza di moderazione
+      text: Testo
+      collaborativeModerationParameters: Opzioni moderazione collaborativa
+  fields:
+    minDayBetweenContributionAndCollaborativeValidation: Tempistica prima di una convalida/rifiuto
+      collaborativo
+    minVoteToChangeStatus: Tempistiche per una convalida/rifiuto automatico
+    collaborativeModerationExplanations: Spiegazioni sulla moderazione collaborativa
+    minVoteToForceChangeStatus: Numero di voti da convalidare/rifiutare automaticamente
+      indipendentemente dal tempo di votazione
+    maxDaysLeavingAnElementPending: Tempistiche prima che un elemento ancora in attesa
+      di convalida venga visualizzato come da moderare
+    maxOppositeVoteTolerated: Numero di voti contrari consentiti
+  _label: Chi può contribuire?
+config_api:
+  _label: Le API
+  fields:
+    gogo_api_taxonomy: Tassonomia
+    text: testo_ricercato
+    gogo_api_elements_from_text: Cerca oggetto
+    gogo_api_ui: Interfaccia grafica per costruire un'API
+    gogo_element_import_available_options: Opzioni disponibili
+    gogo_api_taxonomy_show: Una categoria (sostituire ID par con l'id della categoria)
+    gogo_api_configuration: Configurazione di GoGoCarto
+    gogo_api_semanatic_taxonomy: Tassonomia semantica
+    api.publicApiPrivateProperties: Elenco delle proprietà private che non si vogliono
+      condividere
+    gogo_api_gogocartojs_configuration: GoGoCartoJs Configurazione
+    gogo_api_taxonomy_mapping: Elenco delle opzioni con l'ID corrispondente
+    gogo_api_element_get: Un elemento (cambiare l'ID con l'id dell'elemento)
+  taxonomy: Tassonomia / Categorie
+  form:
+    groups:
+      apis: Lista di API disponibili
+      config: Configurazione
+      config_description: <div class="iframe-container"><iframe height="200" sandbox="allow-same-origin
+        allow-scripts" 
+        src="https://peertube.openstreetmap.fr/videos/embed/edaa5adb-3b2e-4166-8ffb-1f839bc74ba3"
+        frameborder="0" allowfullscreen></iframe></div>
+  elements: Oggetti
+  config: Configurazione
+config_custom_js_css:
+  fields:
+    customCSS: CSS personalizzati
+    customJavascript: Javascript personalizzati
+  form:
+    groups:
+      custom_style_hint: Inserire il codice CSS che verrà caricato in tutte le pagine
+        pubbliche e nell'amministrazione
+      custom_style: Stile personalizzato
+      custom_javascript: Javascript personalizzato
+      custom_javascript_hint: Inserire il codice Javascript che verrà caricato in
+        tutte le pagine pubbliche e nell'amministrazione
+  _label: CSS / JS personalizzati
+config:
+  _label: Configurazione
+bulk:
+  delete: Eliminare le voci selezionate
+  return: Torna alla gestione dei duplicati
+  automaticMerge: Accorpamento automatico
+  duplicateDeleted: Duplicato eliminato
+  done: Tutti gli articoli sono stati elaborati con successo
+  analyse: Analizza gli elementi dal {first} a {last}
+  duplicateKept: Duplicato mantenuto
+  continue: Continua ({count} remaining)
+  _label: Azione di massa
+  errorElement: "Errore durante l'esame dell'elemento {id}: FILE {file}, LINEA {line}:
+    {error}"
+  managed: Gestire i duplicati individuati
+  detectDuplicatesAction: Rilevamento dei duplicati
+  update_gamification: Aggiornare i punteggi (vote numbers, and total score per user)
+  isDuplicateAction: Rilevamento dei duplicati
+  results: Risultati
+  deleteElement: '{count, plural,  =0 {Nessun elemento eliminato} =1 {# elemento è
+    stato eliminato} other {# elementi sono stati eliminati} }'
+  manualMerge: Rilevati potenziali duplicati
+  batchDone: Tutte le voci sono state gestite con successo
+  updateUser: '{count, plural, =0 {Nessun utente aggiornato} =1 {# utente aggiornato}
+    other {# utenti aggiornati} }'
+commons:
+  use_default: Utilizzare il valore predefinito
+  more_options: Più opzioni
+  date_time_format: g/M/A o:m a
+  save: Salva
+  loading: Caricamento
+  saving: Salvataggio
+  default: Predefinito
+  btn_update_and_edit: Aggiornamento
+  send: Invia
+  anonymous: Anonimo
+  time_format: o:m a
+  actual_file: 'File attuale:'
+  date_format: g/M/A
+abouts:
+  fields:
+    content: Contenuto
+    name: Nome
+  _label: Popup
+charts:
+  empty: Nessun risultato
+  userInteract:
+    subtitle: Fare clic e trascinare per mettere a fuoco un periodo
+    reported: Articoli segnalati
+    modified: Cambiamenti
+    title: Metriche delle interazioni degli utenti
+    added: Aggiunte
+    voted: Voti
+  contribsResolved:
+    edited: Modifiche risolte
+    resolved: Risoluzione dei contributi
+    added: Aggiunte risolte
+    total: Numero totale (from the beginning)
+  collabResolve:
+    refused: Rifiuti collaborativi
+    validate: Convalida collaborativa
+    title: Convalide/rifiuti collaborativi
+    axisTitle: Convalide/rifiuti collaborativi
+  collabValidated: Ultime convalide collaborative
+  showAll: Mostra tutto
+  collabRefused: Ultimi rifiuti collaborativi
+config_duplicates:
+  fields:
+    duplicates:
+      automaticMergeIfPerfectMatch: Unire in caso di corrispondenza perfetta
+      detectAfterImport: Cercare i duplicati dopo ogni importazione
+      useGlobalSearch: Utilizza la ricerca globale per cercare i duplicati (ricerca
+        soft in {fields})
+      fieldsToBeUsedForComparaison: Altri campi utilizzati per il rilevamento dei
+        duplicati (ricerca pura)
+      duplicatesByAggregation_help: I duplicati saranno aggregati in un nuovo elemento
+        aggregatore. L'aggregatore non sarà modificabile, ma verrà aggiornato automaticamente
+        ogni volta che uno degli elementi aggregati viene aggiornato. Questa opzione
+        ha molto senso quando si uniscono fonti esterne (importazioni dinamiche)
+      duplicatesByAggregation: Unire i duplicati con Agregate
+      rangeInMeters: Distanza massima (in metri) tra i duplicati
+      sourcesToDetectFrom: Cercare i duplicati tra le fonti indicate (lasciare il
+        campo vuoto anche per cercare nell'intero database)
+      sourcePriorityInAutomaticMerge: Desidera principalmente conservare il prodotto?
+      fieldsToBeUsedForComparaison_help: Verranno rilevati solo i valori perfettamente
+        corrispondenti. Una corrispondenza tra uno qualsiasi di questi campi sarà
+        interpretata come una corrispondenza perfetta tra i due elementi
+      detectAfterImport_help: Per ogni nuovo elemento aggiunto durante l'importazione,
+        viene eseguita una scansione completa del database per trovare potenziali
+        duplicati
+      sourcesToDetectWith: E le fonti (lasciare vuoto per cercare nell'intero database)
+      useGlobalSearch_help: 'La ricerca generale è configurata nella personalizzazione
+        del form (scegli quali campi saranno ricercati, come impostazione predefinita
+        verrà scansionato solo il titolo del file). In caso di ricerca veloce, i valori
+        simili verranno considerati validi ("test" troverà "Un TesT"). Una corrispondenza
+        esatta sarà individuata solo se i nomi dei file saranno molto simili: "test"
+        e "Un TesT" non sono un corrispondenza perfetta, invece "test" e "TesT" lo
+        sono'
+    gogo_bulk_actions_detect_duplicates: Rilevare i duplicati
+    gogo_duplicates_index: Gestire i duplicati rilevati
+  _label: Gestione dei duplicati
+  form:
+    groups:
+      fusion: Unire i duplicati
+      configuration: Configurazione
+      manualDetection: Limitare il rilevamento manuale (facoltativo)
+options:
+  _label: Categorie
+categories:
+  list:
+    empty: Non ci sono categorie disponibili. Si prega di creare un nuovo gruppo di
+      categorie e di inserire le categorie al suo interno. Le categorie sono un elemento
+      essenziale di GoGoCarto. La mappa potrebbe non funzionare senza le categorie
+      disponibili
+    title: Albero delle categorie
+config_emails:
+  form:
+    groups:
+      infosContributors: Informazioni sulle e-mail automatiche
+      mailForElements: E-mail automatiche per {element}
+      infosElements: Informazioni sulle e-mail automatiche
+      infosNewletter: Informazioni sulla newsletter
+      delete: Durante una cancellazione - <a href=''{url}'' target='_blank'>TEST</a>
+      report: Quando una relazione viene presa in considerazione - <a href=''{url}''
+        target='_blank'>TEST</a>
+      refusal: In caso di rifiuto - <a href=''{url}'' target='_blank'>TEST</a>
+      validation: Durante la convalida- <a href=''{url}'' target='_blank'>TEST</a>
+      edit: Durante un aggiornamento - <a href=''{url}'' target='_blank'>TEST</a>
+      mailForContributors: E-mail automatiche per i collaboratori
+      add: Durante un'aggiunta - <a href=''{url}'' target='_blank'>TEST</a>
+      newsletters: Newsletter
+      newsletter: Newsletter - <a href=''{url}'' target='_blank'>TEST</a>
+      infosElements_description: "<div class=\"text-and-iframe-container\"> <div class=\"\
+        iframe-container-aside\"> <iframe height=\"200\" sandbox=\"allow-same-origin
+        allow-scripts\" src=\"https://peertube.openstreetmap.fr/videos/embed/994ac8cd-96df-49cf-9620-9f349a769ebc\"\
+        \ frameborder=\\\"0\\\" allowfullscreen></iframe></div> Queste mail sono inviate
+        automaticamente agli {elements} quando i loro file sono aggiunti, modificati
+        o eliminati.<br/> Si possono includere le seguenti variabili nei messaggi
+        (mantenendo le '''{{'}}'''): <br/> <li>'{{element '}} il nome dell'elemento</li>
+        <li>'{{ showUrl '}} l'indirizzo che rimanda alla visualizzazione del file</li>
+        <li>'{{ editUrl '}} l'indirizzo che rimanda alla modifica del file</li> <li>
+        '{{ homeUrl '}} l'indirizzo della home page del sito</li> <li>'{{directEditElementiUniqueUrl
+        '}} l'indirizzo univoco per modificare direttamente l'elemento senza essere
+        amministratori</li> <li>'{{ customMessage '}} il messaggio personalizzato
+        che è stato scritto dagli amministratori (solo in caso di cancellazione)</li><br/>
+        <div> Queste variabili si possono usare nei contenuti speciali dell'editor
+        di testo. Per esempio nel campo URL del popup che si apre quando si clicca
+        su 'aggiungi link'.<br/> <b>Quando il messaggio è salvato</b>, si può cliccare
+        sul tasto <b>TEST</b> per visualizzare il risultato"
+      infosContributors_description: "Queste mail sono inviate automaticamente ai
+        contributori quando i loro contributi sono accettati, rifiutati ecc...<br/>Si
+        possono includere le seguenti variabili nei messaggi (mantenendo le '''{{'}}'''):
+        <br/> <li>'{{ element '}} il nome dell'elemento</li> <li>'{{ user '}} il nome
+        o l'indirizzo mail del contributore</li> <li>'{{ showUrl '}} l'indirizzo che
+        rimanda alla visualizzazione del file</li> <li>'{{ editUrl '}} l'indirizzo
+        che rimanda alla modifica del file</li> <li> '{{ homeUrl '}} l'indirizzo della
+        home page del sito</li> <li>'{{ userContributionsUrl '}} l'indirizzo alla
+        pagina \"I miei contributi\"</li> <li>'{{ customMessage '}} il messaggio personalizzato
+        che è stato scritto dagli amministratori (solo in caso di errori)</li><br/>
+        Queste variabili si possono usare nei contenuti speciali dell'editor di testo.
+        Per esempio nel campo URL del popup che si apre quando si clicca su 'aggiungi
+        link'.<br/> <b>Quando il messaggio è salvato</b>, si può cliccare sul tasto
+        <b>TESTER</b> per visualizzare il risultato"
+      infosNewletter_description: "Questo messaggio è inviato automaticamente agli
+        utenti che hanno sottoscritto. Viene fornito l'elenco degli ultimi elementi
+        aggiunti in una zona geografica specifica e opzionalmente dei nuovi elementi.<br/><br/>
+        <b>Si deve includere la variabile <u>' {{ newElements '}}</u> e/o <u>'{{ pendigElements
+        '}}</u></b> che sarà sostituita rispettivamente dall'elenco dei nuovi elementi
+        e dei nuovi elementi in attesa di validazione<br/><br/>È possibile inserire
+        le seguenti variabili nei messaggi (mantenendo le '''{{'}}''): <br/> <ul>
+        <li>'{{ news '}} le ultime novità pubblicate</li> <li>'{{ user '}} il nome
+        o l'indirizzo mail dell'utente</li> <li>'{{ homeUrl '}} l'indirizzo della
+        home page del sito</li> <li>'{{ userProfileUrl '}} l'indirizzo della pagina
+        «I miei parametri» nello spazio dell'utente</li> <li>'{{ showOnMapBrn '}}
+        un tasto per rinviare verso la carta centrata sulla posizione dell'utente</li>
+        </ul> <br/> <b>Dopo aver salvato il messaggio</b>, è possibile visualizzare
+        l'anteprima della mail cliccando sul tasto <b>TEST</b>"
+  _label: E-mail / newsletter
+config_features:
+  fields:
+    allow_role_admin: Abilitare i moderatori
+    activeInIframe: Abilitato in un Iframe
+    allow_role_anonymous: Abilitare l'anonimato
+    allow_role_user: Abilitare gli utenti
+    active: Attivare
+config_direct_moderation:
+  fields:
+    activeInIframe: Abilitato in un Iframe
+    active: Attivare
+    allow_role_user: Abilitare gli utenti
+    allow_owner: Autorizzare il proprietario dell'elemento
+    allow_role_admin: Abilitare i moderatori
+    allow_role_anonymous: Abilitare l'anonimato
+js:
+  element_form:
+    geocoded_marker_text: Spostami per specificare la posizione<br/>(al centro dell'edificio)
+config_general:
+  fields:
+    activateAbouts: Abilita i popups "About"
+    elementDisplayName: Nome
+    elementDisplayNamePlural: Nome plurale
+    aboutHeaderTitle: Titolo della sezione "About"
+    activatePartnersPage: Attiva la pagina "Partner"
+    partnerPageTitle: Titolo della pagina "Partners"
+    appTags: Parole chiave per i riferimenti (separate da una virgola)
+    customDomain: Utilizza un nome di dominio personalizzato (esempio lamiacarta.org
+      invece che lamiacarta.gogocarto.fr)
+    locale: Lingua
+    socialShareImage: Immagine da visualizzare nella condivisione sui social networks
+    logoInline: Logo per la barra del menu
+    elementDisplayNameIndefinite: Nome con articolo indefinito
+    favicon: Favicon
+    appBaseline: Descrizione del sito (referenze)
+    publishOnSaasPage: Rendi visibile questo progetto su {url}
+    logo: Logo
+    elementDisplayNameDefinite: Nome con articolo definito
+    appName: Nome del sito
+    dataLicenseUrl: URL della licenza che protegge i tuoi dati
+    customDomain_help: "Dopo aver acquistato il nome di dominio lamiacarta.org, bisogna
+      reindirizzarlo all'indirizzo IP del server GoGoCarto ({ip}].     In seguito
+      inserisci il nome di dominio qui, e attendi che sia configurato da GoGoCarto
+      (viene effettuato un tentativo ogni ora).\nGoGoCarto abbandonerà dopo 4 tentativi.
+      Se dopo qualche ora non succede nulla, dovrai azzerare la configurazione del
+      sottodominio,     salvare, poi ricompilare per inviare una nuova richiesta"
+    metaRobotsIndexFollow: Autorizza i motori di ricerca ad indicizzare il progetto
+  _label: Impostazioni generali
+  form:
+    groups:
+      pages: Funzioni principali
+      main_description: <div class="iframe-container"><iframe height="110" sandbox="allow-same-origin
+        allow-scripts" 
+        src="https://peertube.openstreetmap.fr/videos/embed/54509567-9116-4264-ba86-6c2d20cd360b"
+        frameborder="0" allowfullscreen></iframe></div>
+      text: Nome delle entità elencate nella directory
+      images: Immagini generali
+      import-export: Configura l'importazione e l'esportazione
+      main: Il sito
+  downloadImage: Carica/Scarica un'immagine
+  cannot_delete: Impossibile eliminare la configurazione, questa azione è proibita
+    perchè comprometterebbe la tua carta
+config_form:
+  fields:
+    elementFormIntroText_placeholder: 'Esempio: Attenzione non referenziamo questa
+      e questa tipologia di elementi'
+    elementFormOwningText_placeholder: 'Esempio: Sono coinvolto nella gestione della
+      struttura descritta'
+    elementFormGeocodingHelp: Testo di aiuto per la geolocalizzazione
+    elementFormOwningText: Etichetta per chiedere se l'utente è proprietario del file
+      (lascia vuoto per disattivarlo)
+    elementFormIntroText: Testo d'introduzione visualizzato in alto al form
+    elementFormValidationText: Etichetta della checkbox di validazione del form (lascia
+      vuoto per disattivare)
+    elementFormValidationText_placeholder: 'Esempio: Certifico che le informazioni
+      fornite in questo form sono esatte'
+  form:
+    groups:
+      other: Altro testo e opzioni
+      config: Configurazione del form
+      form: Form
+      config_description: <div class='text-and-iframe-container'><div class='iframe-container-aside'><iframe
+        height='200' sandbox='allow-same-origin allow-scripts' 
+        src='https://peertube.openstreetmap.fr/videos/embed/67a8b917-151e-4aab-880b-d65df8c9959a'
+        frameborder='0' allowfullscreen></iframe></div> <b>Il form permette di aggiungere/modificare
+        i dati da un'interfaccia pubblica</b><br/> Se hai importato alcuni dati, puoi
+        aggiungere un campo al form e collegarlo ai campi importati utilizzando \"Nome
+        del campo\"</div>
+  _label: Form
+config_exports:
+  _label: Configurazione dell'esportazione
+  fields:
+    exportProperties: Colonne da esportare (se vuote, tutti i campi saranno esportati)
+      -trascina e rilascia per cambiare l'ordine
+    name: Nome
+  optgroups:
+    fields: Campi
+    categories: Categorie
+  form:
+    groups:
+      export: Configurazione dell'esportazione
+  action:
+    edit:
+      btn_clear_all: Rimuovi tutte le colonne
+      btn_add_fields: Aggiungi tutti i campi
+      btn_add_categories: Aggiungi una colonna per ogni categoria
+      btn_return: Torna all'elenco degli elementi
+  legend:
+    label: Legenda
+    category: Categorie in colonna
+    field: Campo
+  help: La configurazione dell'esportazione permette di scegliere le colonne da esportare
+    dall'<a href="{href}">elenco degli elementi</a>.<br/>La scelta della configurazione
+    da utilizzare si effettua in basso a destra dell'<a href="{href}">elenco degli
+    elementi</a>, accanto al tasto "esporta".
+projects:
+  initialize:
+    plainPassword-1: Password
+config_import_export:
+  texts:
+    chooseSource: Scegli una sorgente dati
+    importConfirmation: Attenzione, l'importazione eliminerà tutti i dati della configurazione
+      attuale!
+    chooseOptions: Cosa vuoi importare?
+    uploadFile: O carica un file
+    importOk: Importazione della configurazione completato
+    url: URL verso un altro progetto gogocarto, o verso un file JSON
+    url_placeholder: https://other-project.gogocarto.fr
+  actions:
+    uploadFile: Naviga
+    export: Esporta la configurazione corrente
+    import: Importa una configurazione
+    importConfirmation: Importa la configurazione
+  choices:
+    cbKeepExistingTaxonomies: Mantieni le categorie esistenti
+    cbTaxonomies: Categorie
+    cbConfiguration: Configurazione principale
+  errors:
+    noChoiceMade: Scegli almeno un tipo di dati (Configurazione o Categorie)
+    jsonFormat: Errore del formato JSON
+    jsonFile: Carica un file JSON valido
+    invalidUrl: Errore dell'URL
+    noSource: Inserisci almeno una sorgente (URL o file JSON)
+config_home:
+  fields:
+    home:
+      displayCategoriesToPick: Visualizza le categorie principali selezionabili per
+        la ricerca
+      seeMoreButtonText: Testo per invitare a scorrere (se esiste il banner in home)
+      seeMoreButtonText_placeholder: 'Esempio: "Altre informazioni"'
+      addElementHintText: Testo sotto il tasto "Aggiungi elemento"
+      addElementHintText_placeholder: 'Esempio: "Aiutaci ad arricchire il database
+        aggiungendo un elemento!"'
+    activateHomePage: Attiva la homepage
+    backgroundImage_placeholder: Seleziona un'immagine già importata, o aggiungine
+      una!
+    backgroundImage: Immagine di sfondo (il nome del file non deve contenere spazi
+      o caratteri speciali)
+  _label: Homepage
+config_infobar:
+  fields:
+    description:
+      _label: Descrizione
+      categories: Elenco dei nomi delle categorie dell'elemento
+      categoriesFull: Elenco completo delle categorie, compreso l'ID, il nome, la
+        descrizione e la posizione
+      isDeleted: Scorciatoia per stato = Rifiutato o Cancellato
+      isAdmin: Se l'utente è un Admin
+      isAnonymous: Se l'utente non è connesso
+      groups: Elenco dei gruppi delle categorie per elemento. È possibile accedere
+        a un gruppo di categorie con il proprio ID o con l'ID personalizzato
+      gogoConfig: Configurazione di tutto il progetto
+      distance: Se è stato inserito un indirizzo, distanzia tra il punto e l'indirizzo
+      status: "<ul>\n  <li>-6: Duplicato</li>\n  <li>-4: Elimnato </li>\n  <li>-3:
+        Rifiutato (voti) </li>\n  <li>-2: Rifiutato (admin) </li>\n  <li>-1: In sospeso
+        (modifiche) </li>\n  <li> 0: In sospeso (aggiunte)</li>\n  <li> 1: Validato
+        (admin)</li>\n  <li> 2: Validato (voti)</li>\n  <li> 3: Aggiunto dall'admin</li>\n\
+        \  <li> 4: Modificato dall'admin</li>\n  <li> 5: Modificato dal proprietario</li>\n\
+        \  <li> 6: Modificato con un link diretto</li>\n  <li> 7: Importato</li>\n\
+        </ul>"
+      colorOptionId: L'ID della categoria che assegna il colore principale a questo
+        elemento
+      createdAt: Data di creazione nel database
+      sourceKey: Nome della fonte di questo elemento (può essere vuoto)
+      updatedAt: Data dell'ultimo aggiornamento
+      isPending: Scorciatoia per stato == In sospeso (modifiche o aggiunte)
+      isUser: Se l'utente corrente è connesso
+      originalAddress: L'indirizzo dettagliato con codice postale, città, ecc.
+      images: Tabella degli URL delle diverse immagini
+    example:
+      categories: "'{% if \"my category\" in categories '%} … '{% endif '%}"
+      updatedAt: "Ultimo aggiornamento: '{{ updatedAt'}}"
+      isPending: "'{% if isPending '%} … '{% endif '%}"
+      gogoConfig: "'{{ gogoConfig.security.userRoles|dump '}}"
+      images: Le immagini sono visualizzate per impostazione predefinita nella descrizione
+        del form e non serve includere questo campo. Puoi sempre usare questa variabile
+        secondo le tue necessità
+      isAnonymous: "'{% if isAnonymous '%} … '{% endif '%}"
+      categoriesFull: "'{% for category in categoriesFull'%}\n  <div>Id: '{{category.id'}}</div>\n\
+        \  <div>Name: '{{category.name'}}</div>\n  <div>Description: '{{category.description'}}</div>\n\
+        \  <div>Position: '{{category.index'}}</div>\n'{% endfor '%}"
+      colorOptionId: "<div class=\"gogo-color-as\" option-id=\"'{{colorOptionId'}}\"\
+        >\n  Testo del colore della categoria principale\n</div> <div class=\"gogo-bg-color-as\"\
+        \ option-id=\"'{{colorOptionId'}}\">\n  Sfondo del colore della categoria
+        principale\n</div> <div class=\"gogo-border-color-as\" option-id=\"'{{colorOptionId'}}\"\
+        >\n  Bordo del colore della categoria principale\n</div> Possono essere utilizzate
+        anche le classi \"gogo-soft-color-as\" e \"gogo-soft-bg-bolor-as\""
+      groups: "'{{ groups[12]|gogo_taxonomy '}}\n'{{ groups[\"products\"]|gogo_taxonomy
+        '}}\n'{% for value in groups[\"produits\"].children '%}\n  <div>Id: '{{ value.optionId
+        '}}</div>\n  <div>Nome: '{{ value.option.name '}}</div>\n  <div>Descrizione:
+        '{{ value.description '}}</div>\n  <div>Posizione: '{{ value.index '}}</div>\n\
+        \  <div>Posizione nel menu: '{{ value.option.index '}}</div>\n'{% endfor '%}"
+      createdAt: "Creato il: '{{ createdAt '}}"
+      status: "'{% if status == 2 '%} … '{% endif '%}"
+      isUser: "'{% if isUser '%} … '{% endif '%}"
+      isAdmin: "'{% if isAdmin '%} … '{% endif '%}"
+      originalAddress: "'{{ originalAddress.streetAddress ~ '' - '' ~ originalAddress.addressLocality
+        ~ '' - '' ~ originalAddress.postalCode ~ '' - '' ~ originalAddress.addressCountry
+        }}"
+      sourceKey: "'{% if sourceKey == \"Fablab\" '%}Riportato da http://fablabs.io'{%
+        endif '%}"
+      distance: "'{% if distance is defined '%} <span>'{{ distance '}}</span> '{%
+        endif '%}"
+      isDeleted: "'{% if isDeleted '%} … '{% endif '%}"
+    infobar:
+      bodyTemplate: Corpo del form
+      headerTemplateUseMarkdown: Usa la sintassi markdown per l'header (in alternativa
+        solo la sintassi Nunjucks)
+      width: 'Larghezza del dettaglio (in pixel, default: 540)'
+      bodyTemplateUseMarkdown: Usa la sintassi markdown per il body (in alternativa
+        solo la sintassi Nunjucks)
+      headerTemplate: Header
+    exemple: Esempio di filtro da utilizzare
+    name: Nome del campo
+    label: Etichetta
+    usage: Uso
+    type: Type
+  _label: Barra informativa
+  form:
+    groups:
+      field_list: Elenco dei campi disponibili (aiuto)
+      automatic_emails: Informazioni sulle email automatiche
+      infobar_param: Altre impostazioni
+      filter_list: Elenco dei filtri disponibili (aiuto)
+      infobar_content: Contenuto del pannello di informazioni (il pannello sarà visualizzato
+        al click su un marker)
+  fields_list:
+    form: Elenco dei campi disponibili nel formulario
+    other: Tutti gli altri campi dei tuoi dati sono disponibili
+    system: Campi/Variabili forniti dal sistema
+config_map:
+  fields:
+    customPopupText: 'Testo da visualizzare (Esempio: "Questo sito è in versione beta!")'
+    customPopupId: Numero della versione del popup (da cambiare quando modifichi il
+      testo)
+    geojsonLayers: Mostra i layers GeoJSON sulla mappa (URL del file geJSON)
+    defaultTileLayer: Sfondo di default della mappa (salva per visualizzare lo sfondo
+      selezionato nella mappa qui sotto)
+    customPopupShowOnlyOnce: Mostra il popup una volta sola (se l'utente lo chiude,
+      non verrà più visualizzato fino a quando non verrà cambiato il numero della
+      versione)
+    geojsonLayers_help: Puoi caricare il file getJSON in "Contenuti/Carica files".
+      Il parametro "opzionale" permette all'utente di scegliere se visualizzare il
+      layer.
+    saveViewportInCookies: Salva la posizione attuale della mappa nei cookies
+    saveTileLayerInCookies: Salva la scelta dello sfondo della mappa da parte dell'utente
+      nei cookies
+    defaultViewPicker: Vista predefinita della mappa (disegna un rettangolo sulla
+      mappa)
+    geocodingBoundsByViewPicker: Definisci un'area disegnando un rettangolo nella
+      mappa
+    subscription.subscriptionProperties: Elenco di campi che inviano una mail se aggiornati
+      (se vuoti, ogni aggiornamento invierà una mail)
+    geocodingBoundsType: Scegli il tipo di definizione dei limiti geografici del geocoding
+    geocodingBoundsByCountryCodes: 'Inserisci un elenco di codici di nazione separati
+      da virgole (esempio: fr,es)'
+  _label: Mappa/Funzionalità
+  geocoding:
+    none: Nessun limite di geocoding
+    defaultView: Usa la visualizzazione predefinita (vedi la scheda "Impostazioni
+      della mappa")
+    countryCodes: Usa un elenco di codici di nazioni
+    viewPicker: Definisci un'area
+    removeSelectionButton: Rimuovi la selezione
+  form:
+    groups:
+      bounds: Limiti geografici del geocoding
+      bounds_description: "<i class='fa fa-warning' style='margin:0 2px 8px 0'></i>
+        Attenzione: gli elementi esterni ai limiti non sono geocodificati."
+      listModeFeature: Modalità elenco
+      cookies: Cookies
+      exportIframeFeature: Esportazione iframe
+      favoriteFeature: Preferiti
+      features: Caratteristiche
+      geocoding: Geocoding
+      layersFeature: Scelta dello sfondo della mappa
+      map: La Carta
+      mapDefaultViewFeature: Ritorna alla visualizzazione predefinita
+      message_config: Messaggio personalizzato da visualizzare in un angolo della
+        carta
+      messages: Messaggio personalizzato
+      params: Impostazioni della carta
+      pendingFeature: Visualizza gli elementi in attesa di validazione

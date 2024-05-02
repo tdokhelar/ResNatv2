@@ -1,0 +1,34 @@
+abouts:
+  fields:
+    name: Izena
+    content: Edukia
+  _label: Popup-ak
+bulk:
+  batchDone: Elementu guztiak ongi tratatu dira
+  duplicateDeleted: Bikoizketa ezabatua
+  managed: Atzemandako kopiak manipulatu
+  results: Emaitzak
+  manualMerge: Bikoizketa potentzialak detektatuak
+  detectDuplicatesAction: Bikoizketa detektatua
+  update_gamification: Puntuazioak eguneratu (boto zenbakiak eta erabiltzaile bakoitzaren
+    guztizko puntuazioa)
+  done: Artikulu guztiak ondo prozesatu dira
+  isDuplicateAction: Bikoizketa detektatua
+  _label: Ekintza masiboa
+  analyse: '{first}-tik {last}-ra elementuak aztertzen'
+  automaticMerge: Batuketa automatikoa
+  delete: Ezabatu jakinarazitako elementuak
+  duplicateKept: Bikoiztuak gordeta
+  continue: Segi ({count} geratzen dira)
+  errorElement: 'Arazo bat gertatu da {id} elementua kontuan hartzean: FILE {file},
+    LINE {line}: {error}'
+  return: Itzuli bikoiztuen kudeaketara
+categories:
+  _label: Kategoriak
+projects:
+  initialize:
+    plainPassword-1: Pasahitza
+    email: Posta elektroniko helbidea
+js:
+  element_form:
+    geocoded_marker_text: Mugitu nazazu posizioa zehazteko<br/>(eraikinaren erdian)

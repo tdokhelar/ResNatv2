@@ -1,0 +1,11 @@
+configuration:
+  fields_not_shared: 'Txantiloian erabili nahi dituzun eremu batzuk pribatu gisa konfiguratzen
+    dira. Ezin dituzu xehetasunen pantailan erabili. Konfigurazio hori aldatzeko,
+    joan hona: Beste konfigurazio bat / API'
+  custom_domain: Domeinu pertsonalizatuaren jabea izan behar duzu, eta ez gogocarto-k
+    emandako arlo lehenetsia berrerabili
+import:
+  edit_constraints: 'Debekatuta dago ondoko hitzak erabiltzea: new , process, mongo,
+    this, symfony, exec, passthru, shell_exec, system, proc_open, popen, curl_exec,
+    curl_multi_exec, parse_ini_file, show_source, var_dump, print_r… Mila esker ez
+    moldatzeagatik!'

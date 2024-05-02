@@ -1,0 +1,12 @@
+abouts:
+  _label: Vyskakovací okna
+  fields:
+    content: Obsah
+    name: Název
+bulk:
+  _label: Hromadná akce
+  analyse: Analýza položek od {first} do {last}
+  automaticMerge: Automatické sloučení
+  delete: Odstranit nahlášené položky
+  batchDone: Všechny položky byly úspěšně zpracovány
+  continue: Pokračovat (zbývá {count})
