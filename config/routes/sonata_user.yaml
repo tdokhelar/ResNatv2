@@ -1,0 +1,24 @@
+gogo_user_register:
+    path: /register/
+    defaults: { _controller: App\Controller\RegistrationController::registerAction }
+
+gogo_user_registration_confirm:
+    path: /register/confirm/{token}
+    defaults: { _controller: App\Controller\RegistrationController::confirmAction }
+    
+gogo_user_register_on_hold:
+    path: /register/on-hold
+    defaults: { _controller: App\Controller\RegistrationController::registerOnHoldAction }
+
+fos_user:
+    resource: "@FOSUserBundle/Resources/config/routing/all.xml"
+
+
+
+sonata_user_admin_security:
+    resource: '@SonataUserBundle/Resources/config/routing/admin_security.xml'
+    prefix: /admin
+
+sonata_user_admin_resetting:
+    resource: '@SonataUserBundle/Resources/config/routing/admin_resetting.xml'
+    prefix: /admin/resetting
