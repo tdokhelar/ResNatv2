@@ -1,0 +1,112 @@
+#search-siret-toggler-wrapper {
+  margin-left: 3rem;
+  display: flex;
+  justify-content: space-between;
+}
+
+#search-siret-toggler {
+  cursor: pointer;
+}
+
+#search-siret-toggler-wrapper i {
+  color: var(--color-primary);
+}
+
+#search-siret-toggler-wrapper span {
+  display: none;
+}
+
+#search-siret-toggler-wrapper span.active {
+  display: inline;
+}
+
+#search-siret-wrapper {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height .5s, padding .2s .4s;
+  border-radius: 3px;
+}
+
+#search-siret-wrapper.open {
+  max-height: 1000px;
+  transition: max-height .5s;
+}
+
+#search-siret-inner-wrapper {
+  margin-top: 1rem;
+  background: var(--color-light-soft);
+  border-radius: 3px;
+  padding: .25rem 1rem .75rem;
+}
+
+.search-siret-address-checkbox-wrapper {
+  margin: 0;
+}
+
+#search-siret-button-wrapper {
+  display: flex;
+  justify-content: center;
+  margin-top: 2rem;
+}
+
+#field-siret {
+  margin-bottom: 2rem;
+}
+
+#search-siret-results-list {
+  margin-top: 1rem;
+  font-size: 80%;
+  line-height: 120%;
+}
+
+#search-siret-results-list .search-siret-result {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: nowrap;
+  margin-bottom: 12px;
+  padding: .5em;
+  border-radius: 4px;
+}
+
+#search-siret-results-list .search-siret-result.selected {
+  background-color: var(--color-light);
+}
+
+#search-siret-results-list .search-siret-result_content {
+  display: flex;
+  flex-direction: column;
+  color: var(--color-text);
+}
+
+#search-siret-results-list .search-siret-result__siret {
+  margin-right: 4px;
+}
+
+#search-siret-results-list .search-siret-result__name {
+  margin-right: 4px;
+}
+
+#search-siret-results-list .search-siret-result__address {
+  margin-right: 4px;
+}
+
+#search-siret-results-list .search-siret-result__select-button {
+  width: 75px;
+  height: unset;
+  padding: 0.5rem;
+  font-size: 13px;
+  line-height: 16px;
+  text-transform: unset;
+}
+
+#search-siret-message {
+  margin-top: -2px;
+  color: var(--color-error);
+}
+
+@media(min-width:500px) {
+  #search-siret-wrapper {
+      margin-left: 3rem;
+  }
+}
