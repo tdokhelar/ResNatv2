@@ -1,0 +1,162 @@
+{% extends 'bundles/SonataAdminBundle/layout.html.twig' %}
+{% trans_default_domain 'admin' %}
+
+{% block sonata_page_content_header %}
+  <div class="sticky-wrapper">
+    <div class="navbar navbar-default">
+      <a class="navbar-brand" href="{{ path('gogo_config_import') }}">{{ 'config_import_export.actions.import'|trans }}</a>
+    </div>
+  </div>
+{% endblock %}
+
+{% block sonata_admin_content %}
+
+  {% for label, messages in app.flashes(['success', 'warning', 'error']) %}
+      {% for message in messages %}
+          <div class="alert alert-{{ label }}">
+              {{ message }}
+          </div>
+      {% endfor %}
+  {% endfor %}
+
+  {{ form_start(form, {'attr': {'id': 'config-import-form'}}) }}
+
+    <div class="box box-primary">    
+
+      <div class="box-header">
+        <h4 class="box-title">{{ 'config_import_export.texts.chooseOptions'|trans }}</h4>
+      </div>
+    
+      <div class="box-body box-body--up">
+        {{ form_row(form.cbConfiguration) }}
+        {{ form_row(form.cbTaxonomies) }}
+        {{ form_row(form.cbKeepExistingTaxonomies) }}
+      </div>
+
+    </div>
+
+    <div class="box box-primary">   
+
+      <div class="box-header">
+        <h4 class="box-title">{{ 'config_import_export.texts.chooseSource'|trans }}</h4>
+      </div>
+      
+      <div class="box-body">
+        {{ form_row(form.url) }}
+        {{ form_row(form.file) }}
+        <div class="file-upload-wrapper-visible input-group">
+          <span class="input-group-btn">
+            <button id="upload-file-button" class="btn btn-primary">
+              {{ 'config_import_export.actions.uploadFile'|trans }}
+            </button>
+          </span>
+          <input type="text" id="file-selected" disabled class="form-control">
+        </div>
+      </div>    
+    </div>  
+
+    <div class="sonata-ba-form-actions well">
+      <div class="alert alert-warning save-warning">
+        <i class="fa fa-exclamation-triangle"></i>
+        {{ 'config_import_export.texts.importConfirmation'|trans }}
+      </div>
+
+      {{ form_widget(form.submit) }}
+    </div>
+  
+  {{ form_end(form) }}
+
+{% endblock %}
+
+{% block stylesheets %}
+  {{ parent() }}
+  <style>
+    .checkbox-wrapper {
+      display: flex;
+      flex-direction: row-reverse;
+      justify-content: flex-end;
+      align-items: center;
+      margin-bottom: 20px;
+    }
+    .checkbox-wrapper-sublevel {
+      margin-left: 35px;
+      margin-bottom: 0;
+      max-height: 0;
+      opacity: 0;
+      transition: max-height .4s, opacity .4s;
+      overflow: hidden;
+    }
+    .checkbox-wrapper-sublevel .icheckbox_square-blue{
+      margin-top: 0 !important;
+    }
+    .checkbox-wrapper-root.checked ~ .checkbox-wrapper-sublevel {
+      margin-bottom: 20px;
+      max-height: 30px;
+      opacity: 1;
+    }
+    .file-upload-wrapper input[type="file"] {
+      display: none;
+    }
+    .file-upload-wrapper > ul > li {
+      color: #dd4b39;
+    }
+    .save-warning {
+      display: none;
+    }
+  </style>
+{% endblock %}
+
+{% block javascripts %}
+  {{ parent() }}
+  <script>
+    let appConfigImport = {
+      initFileUpload: () => {
+        const urlInput = document.querySelector('#config-import-form #form_url');
+        const fileInput = document.querySelector('#config-import-form #form_file');
+        const uploadFileButton = document.querySelector('#config-import-form #upload-file-button');
+        const selectedFileInput = document.querySelector('#config-import-form #file-selected');
+
+        fileInput.addEventListener('change',(event) => {
+          selectedFileInput.value = event.currentTarget.value;
+        });
+        fileInput.addEventListener('click',(event) => {
+          urlInput.value = '';
+        });
+        uploadFileButton.addEventListener('click',(event) => {
+          event.preventDefault();
+          fileInput.click();
+        });
+        urlInput.addEventListener('click',(event) => {
+          fileInput.value = '';
+          selectedFileInput.value = '';
+        });
+      },
+      initCheckbox: () => {
+        const cbTaxonomies =  document.querySelector('#config-import-form #form_cbTaxonomies');
+        const cbTaxonomiesRoot =  cbTaxonomies.closest('.checkbox-wrapper-root');
+        const cbTaxonomiesClickable =  cbTaxonomiesRoot.querySelectorAll('label, ins');
+        cbTaxonomiesClickable.forEach(elt => {
+          elt.addEventListener('click',(event) => {
+            appConfigImport.checkboxCssClassOnRoot(cbTaxonomiesRoot);
+          });
+        })
+        appConfigImport.checkboxCssClassOnRoot(cbTaxonomiesRoot);
+      },
+      initWarning: () => {
+        $('#form_cbConfiguration').on('change', function() {
+          $('.save-warning').toggle($(this).is(':checked'))
+        });
+      },
+      checkboxCssClassOnRoot: (e) => {
+        if ( e.querySelector('.checked') ) {
+          e.classList.add('checked');
+        } else {
+          e.classList.remove('checked');
+        }
+      }
+    }
+    document.addEventListener('DOMContentLoaded', appConfigImport.initFileUpload);
+    document.addEventListener('DOMContentLoaded', appConfigImport.initCheckbox);
+    document.addEventListener('DOMContentLoaded', appConfigImport.initWarning);
+  </script>
+{% endblock %}

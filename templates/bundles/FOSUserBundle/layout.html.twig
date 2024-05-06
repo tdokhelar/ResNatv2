@@ -1,0 +1,17 @@
+{% extends "page-layout.html.twig" %}
+
+{% block body_content %}
+<section>
+	{% block fos_user_content %}
+	{% endblock fos_user_content %}
+</section>
+{% endblock body_content %}
+
+{% block page_stylesheets %}
+  <link rel="stylesheet" href="{{ asset('css/element-form.css?ver=' ~ version) }}">
+  {{ encore_entry_link_tags('element-form') }}
+{% endblock %}
+
+{% block page_javascripts %}
+  {{ encore_entry_script_tags('element-form') }}
+{% endblock %}
