@@ -1,0 +1,70 @@
+{% set element = form.vars.sonata_admin.admin.subject %}
+{% set config = form.vars.sonata_admin.admin.config %}
+{% trans_default_domain 'admin' %}
+
+{% set fields = {
+  'streetNumber': 'elements.fields.address.streetNumber'|trans,
+  'streetAddress': 'elements.fields.address.streetAddress'|trans,
+  'addressLocality': 'elements.fields.address.addressLocality'|trans,
+  'postalCode': 'elements.fields.address.postalCode'|trans,
+  'addressCountry': 'elements.fields.address.addressCountry'|trans,
+  'customFormatedAddress': 'elements.fields.address.customFormatedAddress'|trans
+} %}
+
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.2.0/dist/leaflet.css" />
+
+<div class="table-responsive no-padding">
+  <table class="table">
+  <tbody>
+    {% for key, label in fields %}
+      <tr class="sonata-ba-view-container">
+        <th>{{ label }}</th>
+        <td>
+          <input type="text" class="form-control" id="input-{{ key }}"
+                 name="{{ 'address[' ~ key ~ ']'}}" value="{{ element.address|send(key) }}" 
+                 {% if element.isAggregate() %}
+                   readonly
+                 {% endif %}
+          />
+        </td>
+      </tr>
+    {% endfor %}
+    <tr class="sonata-ba-view-container">
+      <th>{{ 'elements.fields.coordinates'|trans }}</th>
+      <td>{{ element.geo.latitude }}, {{ element.geo.longitude }}</td>
+    </tr>
+  </tbody>
+  </table>
+  <input type="hidden" name="latitude" id="input-latitude" value="{{ element.geo.latitude }}" />
+  <input type="hidden" name="longitude" id="input-longitude"  value="{{ element.geo.longitude }}" />
+
+  {% if not element.isAggregate() %}
+    <center>
+      <button type="button" class="btn btn-default geocode-btn">{{ 'elements.action.edit.geocode'|trans }}</button>
+    </center>
+  {% endif %}
+  
+  <div class="alert alert-danger" id="geocode-error"></div>
+  <div id="address-preview-map"></div>
+</div>
+
+<script>
+    var defaultBounds = {{ config.getDefaultBounds|json_encode|raw }};
+    var defaultTileLayer = {{ config.defaultTileLayer.toJson|raw }};
+    var geocodingBoundsType= '{{ config.geocodingBoundsType }}';
+    var geocodingBoundsByCountryCodes= '{{ config.geocodingBoundsByCountryCodes }}';
+    var defaultBounds= {{ config.getDefaultBounds()|json_encode|raw }};
+    var geocodingBounds= {{ config.getGeocodingBounds()|json_encode|raw }};
+</script>
+
+<style>
+  #address-preview-map {
+    height: 200px;
+  }
+  .geocode-btn {
+    margin: -10px 0 10px 0;
+  }
+  #geocode-error {
+    display: none;
+  }
+</style>

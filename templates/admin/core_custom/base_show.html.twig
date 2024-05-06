@@ -1,0 +1,6 @@
+{% extends '@SonataAdmin/CRUD/base_show.html.twig' %}
+
+{% block javascripts %}
+  {{ parent() }}
+  {% include 'admin/core_custom/scripts/handle_click_contribution.html.twig' %}
+{% endblock %}

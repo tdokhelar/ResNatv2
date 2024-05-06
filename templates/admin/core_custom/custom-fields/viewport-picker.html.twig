@@ -1,0 +1,155 @@
+{% trans_default_domain 'admin' %}
+
+<div class="map-bounds-select-container">
+  <div id="map-bounds-select-{{ form.vars.attr['picker_id'] | raw }}" class="map-bounds-select"></div>
+  <button id="reset-rectangle-{{ form.vars.attr['picker_id'] | raw }}" class="reset-rectangle">
+    {{ 'config_map.geocoding.removeSelectionButton'|trans }}
+  </button>
+</div>
+
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.2.0/dist/leaflet.css" />
+<script src="https://unpkg.com/leaflet@1.2.0/dist/leaflet.js"></script>
+<script src="{{ asset('js/external-pages.js?ver=' ~ version) }}"></script>
+
+<script>
+  let app_{{ form.vars.attr['picker_id'] | raw }} = {
+    
+    map: null,
+    tab: null,
+    resetBounds: false,
+    bounds: {{ form.vars.attr['data-default-bounds'] | raw }},
+    rectange: null,
+    shapes: null,
+
+    initMap: () => {
+      const app = app_{{ form.vars.attr['picker_id'] | raw }};
+      app.setMap(app);
+      app.initEventListeners(app);
+    },
+    
+    setMap: (app) => {
+
+      if (!app.bounds) {
+        app.resetBounds = true;
+      }
+      
+      const mapBoundsSelectId = 'map-bounds-select-{{ form.vars.attr['picker_id'] | raw }}'
+      app.tab = $('#' + mapBoundsSelectId).closest('.tab-pane');
+      app.map = L.map(mapBoundsSelectId, {editable: true});
+    
+      L.tileLayer("{{ form.vars.attr['data-tile-layer'] }}").addTo(app.map);
+      app.map.fitBounds(app.bounds);
+      
+      // Start drawing rectangle
+      let rectangleBounds = null
+      if (app.resetBounds) {
+        app.rectangle = app.map.editTools.startRectangle();
+        app.resetBounds = false;
+      } else {
+        app.rectangle = L.rectangle(app.bounds).addTo(app.map);
+        rectangleBounds = app.rectangle.getBounds();
+      }
+
+      app.shades = new L.LeafletShades({bounds: rectangleBounds});
+      app.shades.addTo(app.map); 
+      app.shades.on('shades:bounds-changed', function(event) {
+        bounds = event.bounds;
+        var digits = 5;
+        app.tab.find('.bounds.SWLat').val(L.Util.formatNum(bounds.getSouthWest().wrap().lat, digits));
+        app.tab.find('.bounds.SWLng').val(L.Util.formatNum(bounds.getSouthWest().wrap().lng, digits));
+        app.tab.find('.bounds.NELat').val(L.Util.formatNum(bounds.getNorthEast().wrap().lat, digits));
+        app.tab.find('.bounds.NELng').val(L.Util.formatNum(bounds.getNorthEast().wrap().lng, digits));
+      });
+    },
+
+    initEventListeners: (app) => {
+      // Reset map when using tabs
+      function resetMap(){
+        setTimeout(function(){
+          app.map.invalidateSize();
+          app.map.fitBounds(app.bounds);
+        }, 200)
+      }
+      $('.nav-tabs a').each((i, tabLink) => {
+        const anchor = tabLink.href.split('#').pop();
+        const tabPane = document.getElementById(anchor);
+        if (tabPane && tabPane.querySelector('.leaflet-container')) {
+          L.DomEvent.on(tabLink, 'click', resetMap);
+        }
+      })
+      // Reset map when using choice field
+      $('.geocoding-bounds-type').change( function(event) {
+        if (event.val === 'viewPicker') {
+          resetMap();
+        }
+      });
+      // Reset map on load
+      resetMap();
+      // Selection reset button
+      $('#reset-rectangle-{{ form.vars.attr['picker_id'] | raw }}').click( function(event) {
+        event.preventDefault();
+        app.bounds = app.map.getBounds();
+        app.resetBounds = true;
+        app.map.off();
+        app.map.remove();
+        app.initMap();
+      });
+    },
+
+  }
+  $(window).on("load", app_{{ form.vars.attr['picker_id'] | raw }}.initMap);
+</script>
+<style>
+  .leaflet-areaselect-shade {
+    position: absolute;
+    background: rgba(0,0,0,0.4);
+    z-index: 400;
+  }
+
+  .leaflet-interactive.leaflet-path-draggable {
+    fill: transparent !important;
+  }
+
+  div.map-bounds-select {
+    height: 400px;
+    margin-top: 1.5rem;
+    border-radius: 2px;
+    z-index: 500;
+  }
+
+  a.leaflet-control-zoom-in {
+      font-size: 18px !important;
+      color: #3d3d3d;
+  }
+
+  a.leaflet-control-zoom-out {
+      font-size: 25px! important;
+      font-weight: normal;
+      color: #3d3d3d;
+      text-indent: 0;
+  }
+  
+  .map-bounds-select-container {
+    position: relative;
+  }
+  
+  button.reset-rectangle  {
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+    z-index: 999;
+    padding: 4px 8px;
+    border: 2px solid rgba(0,0,0,0.2);
+    border-radius: 4px;
+    color: rgb(61, 61, 61);
+    font-weight: 600;
+  }
+  button.reset-rectangle:hover  {
+    background-color: #f4f4f4;
+    color: rgb(20, 20, 20);
+  }
+
+  .leaflet-interactive {
+    fill-opacity: 0;
+  }
+</style>

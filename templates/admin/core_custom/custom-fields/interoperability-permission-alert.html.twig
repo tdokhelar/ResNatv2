@@ -1,0 +1,30 @@
+{% trans_default_domain 'admin' %}
+
+{% set data = form.vars.value %}
+{% set content = '' %}
+{% set osmAdminUrl = path('gogo_core_bundle_config_osm_admin_classname_list') %}
+
+{% if data.isReadyForSynchronization %}
+  {% set icon = 'fa fa-check' %}
+  {% set iconColor = 'color: #008d4c' %}
+  {% if data.sourceType == 'gogocarto' %}
+    {% set content = 'dynamic_imports.interoperability.gogocartoIsReadyForSynchronization'|trans %}
+  {% elseif data.sourceType == 'osm' %}
+    {% set content = 'dynamic_imports.interoperability.osmIsReadyForSynchronization'|trans({'%osmAdminUrl%': osmAdminUrl}) %}
+  {% endif %}
+{% else %}
+  {% set icon = 'fa fa-warning' %}
+  {% set iconColor = '' %}
+  {% if data.sourceType == 'gogocarto' %}
+    {% set content = 'dynamic_imports.interoperability.gogocartoIsNotReadyForSynchronization'|trans %}
+  {% elseif data.sourceType == 'osm' %}
+    {% set content = 'dynamic_imports.interoperability.osmIsNotReadyForSynchronization'|trans({'%osmAdminUrl%': osmAdminUrl}) %}
+  {% endif %}
+{% endif %}
+
+<div style="display:flex; align-items: center; margin: -5px 0 20px 0;">
+  <i class="{{icon}}" style="margin-right: 10px; font-size: 20px; {{iconColor}}"></i>
+  <p style="margin:0">{{ content|raw }}</p>
+</div>
+
+

@@ -1,0 +1,9 @@
+{% trans_default_domain 'admin' %}
+
+<div class="gogo-marker-shape-picker" data-value="{{ form.vars.value }}">
+  <input type="hidden" name="{{ form.vars.full_name }}" id="{{ form.vars.id }}" :value="shape" />
+  <marker-shape-input v-model="shape" :display-text-input="true" />
+</div>
+
+<link rel="stylesheet" href="{{ asset('css/gogocarto.css?ver=' ~ version) }}">
+

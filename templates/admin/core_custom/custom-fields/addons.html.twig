@@ -1,0 +1,112 @@
+{% trans_default_domain 'admin' %}
+
+{% block content %}
+
+    {% for addon in attr.addons %}
+        {% set id = "activeAddons" ~ loop.index %}
+        <div class="addon-wrapper {% if addon.is_active %}addon-active{% endif %}">
+            <div class="addon-header">
+                <img src="/img/gogo-bot.png" class="addon-image">
+                <div class="addon-title-wrapper">
+                    <div class="addon-title">{{ ("addons." ~ addon.name ~ ".title")|trans }}</div> 
+                    <div class="addon-subtitle">{{ ("addons." ~ addon.name ~ ".subtitle")|trans }}</div> 
+                </div>
+                <div class="addon-checkbox-wrapper">
+                    <input type="checkbox" name="activeAddons[]" id="{{ id }}" value="{{ addon.name }}" {% if addon.is_active %}checked{% endif %}>
+                    <label for="{{ id }}" class="btn btn-primary">
+                        <span class="addon-checkbox-enable">Activer</span>
+                        <span class="addon-checkbox-disable">Désactiver</span>
+                    </label> 
+                </div>
+            </div>
+            <div class="addon-text">
+                {% if not addon.is_active and addon.message_before_activation != '' %}
+                    <p class="addon-message">{{ addon.message_before_activation }}</p>
+                {% endif %}
+                {% if addon.message != '' %}
+                    <p class="addon-message">{{ addon.message }}</p>
+                {% endif %}
+                {{ ("addons." ~ addon.name ~ ".text")|trans|raw }}
+            </div>
+        </div>
+    {% endfor %}
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            document.querySelectorAll('.addon-wrapper .addon-checkbox-wrapper label').forEach((button) => {
+                button.addEventListener('click', (e) => {
+                    e.currentTarget.closest('form').submit();
+                })
+            })
+        });
+    </script>
+
+    <style>
+        .sonata-ba-form-actions {
+            display: none;
+        }
+        .addon-wrapper {
+            border: 1px solid rgb(227, 227, 227);
+            border-radius: 4px;
+            padding: 8px;
+            margin: 0 8px 16px;
+            max-width: 1000px;
+        }
+        .addon-wrapper.addon-active {
+            background-color: #b3d4e7;
+        }
+        .addon-wrapper .addon-header {
+            display: flex;
+        }
+        @media(max-width:600px) {
+            .addon-wrapper .addon-header {
+                flex-direction: column-reverse;
+                justify-content: center;
+                align-items: center;
+            }
+        }
+        .addon-wrapper img.addon-image {
+            width: 60px;
+            margin: 8px;
+        }
+        .addon-wrapper .addon-title-wrapper {
+            width: 100%;
+            padding: 0 8px;
+            align-self:  center;
+        }
+        .addon-wrapper .addon-title {
+            font-size: 16px;
+            margin-bottom: 5px;
+            font-weight: 700;
+        }
+        .addon-text {
+            padding: 8px 8px 0;
+        }
+        .addon-text .addon-message {
+            color: #d73925;;
+            font-weight: bold;
+        }
+        .addon-wrapper input {
+            display: none;
+        }
+        .addon-wrapper .addon-checkbox-wrapper div {
+            display: none;
+        }
+        .addon-wrapper .addon-checkbox-wrapper label {
+            cursor: pointer;
+            text-align: right;
+            margin-bottom: 8px;
+        }
+        .addon-wrapper.addon-active .addon-checkbox-wrapper label {
+            background-color: #fff !important;
+            color: #367fa9;
+        }
+        .addon-wrapper.addon-active .addon-checkbox-wrapper .addon-checkbox-enable {
+            display: none;
+        }
+        .addon-wrapper:not(.addon-active) .addon-checkbox-wrapper .addon-checkbox-disable {
+            display: none;
+        }
+    </style>
+
+{% endblock %}

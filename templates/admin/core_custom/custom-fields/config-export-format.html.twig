@@ -1,0 +1,27 @@
+{% trans_default_domain 'admin' %}
+
+<div>
+  <div style="font-weight:bold">{{ 'config_exports.legend.label'|trans }} : </div>
+  <div style="display:flex; flex-wrap:wrap">
+    <div style="display:flex;margin:8px 16px 8px 0">
+      <div style="width:16px;height:16px;margin-right:4px;border:1px solid grey"></div>
+      <span>{{ 'config_exports.legend.field'|trans }}</span>
+    </div>
+    <div style="display:flex;margin:8px 16px 8px 0">
+      <div style="width:16px;height:16px;margin-right:4px;border:1px solid grey;background:rgba(243,156,18,.2)"></div>
+      </span>{{ 'config_exports.legend.category'|trans }}</span>
+  </div>
+</div>
+
+<div style="display:flex; flex-wrap:wrap">
+  <button style="margin:8px 8px 0 0" type="button" class="btn btn-primary" name="btn_add_fields" id="btn_add_fields">
+    <i class="fa fa-plus"></i> {{ 'config_exports.action.edit.btn_add_fields'|trans }}
+  </button>
+  <button style="margin:8px 8px 0 0" type="button" class="btn btn-primary" name="btn_add_categories" id="btn_add_categories">
+    <i class="fa fa-plus" aria-hidden="true"></i> {{ 'config_exports.action.edit.btn_add_categories'|trans }}
+  </button>
+  <button style="margin:8px 8px 0 0" type="button" class="btn btn-primary" name="btn_clear_all" id="btn_clear_all">
+    <i class="fa fa-eraser" aria-hidden="true"></i> {{ 'config_exports.action.edit.btn_clear_all'|trans }}
+  </button>
+</div>
+

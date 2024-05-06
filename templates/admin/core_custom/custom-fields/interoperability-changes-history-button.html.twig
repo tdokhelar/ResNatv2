@@ -1,0 +1,14 @@
+{% trans_default_domain 'admin' %}
+
+{% set import = form.vars.sonata_admin.admin.subject %}
+
+<a href="{{path('gogo_interoperability_changes_history', {'id':import.id})}}" 
+  class="btn btn-sm btn-primary"
+  title="{{ 'authorized_projects.buttons.changesHistory'|trans() }}"
+  style="margin-top: 10px;"
+>
+  <i class="fa fa-history" aria-hidden="true"></i>
+  <span>{{ 'authorized_projects.buttons.changesHistory'|trans() }}</span>
+</a>
+
+

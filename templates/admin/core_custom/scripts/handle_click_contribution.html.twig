@@ -1,0 +1,15 @@
+<script>
+let handle_click_contribution_app = {
+	init: () => {
+		const panelHeadingContributions = document.querySelectorAll('.panel-heading-contribution');
+		panelHeadingContributions.forEach(elt => {
+      elt.addEventListener('click', event => {
+        if (event.target.tagName === 'A') {
+          window.open(event.target.href);
+        }
+      })
+    })
+	},
+}
+document.addEventListener('DOMContentLoaded', handle_click_contribution_app.init);
+</script>

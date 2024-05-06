@@ -1,0 +1,45 @@
+{% extends '@SonataAdmin/CRUD/base_edit.html.twig' %}
+
+{% block javascripts %}
+  {{ parent() }}
+  <script>
+    const admin_element_form_app = {
+      init: () => {
+        function checkCategories() {
+          window.apps.forEach(app => {
+            if (app.$refs.taxonomyPicker) {
+              app.$refs.taxonomyPicker.checkValidity()
+            }
+          })
+        }
+        const submitButtons = document.querySelectorAll(`
+          button[type="submit"][name="submit"],
+          button[type="submit"][name="submit_redirect"],
+          button[type="submit"][name="btn_create_and_edit"],
+          button[type="submit"][name="btn_create_and_create"],
+          button[type="submit"][name="btn_create_and_list"],
+          button[type="submit"][name="submit_editAndKeepPending"]
+        `);
+        submitButtons.forEach(submitButton => {
+          submitButton.addEventListener('click', (event) => {
+            if (!event.target.classList.contains('continue')) {
+              event.preventDefault();
+              checkCategories();
+              var invalidElements = $('.taxonomy-picker .error:visible:not(.flash-message), .taxonomy-picker .invalid:visible');
+              var errorCount = invalidElements.length;
+              if (errorCount === 0) {
+                event.target.classList.add('continue');
+                event.target.click();
+              } else {
+                const yOffset = -108; 
+                const y = invalidElements[0].getBoundingClientRect().top + window.pageYOffset + yOffset;
+                window.scrollTo({top: y, behavior: 'smooth'});
+              }
+            }
+          })
+        })
+      },
+    }
+    document.addEventListener('DOMContentLoaded', admin_element_form_app.init);
+  </script>
+{% endblock %}

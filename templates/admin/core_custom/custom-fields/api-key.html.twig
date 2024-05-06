@@ -1,0 +1,12 @@
+{% trans_default_domain 'admin' %}
+
+{% if form.vars.sonata_admin.admin.subject.id %}
+  
+  <input type="hidden" id="{{ form.vars.id }}" name="{{ form.vars.full_name }}" value="{{ form.vars.value }}">
+  <div>
+    <span style="margin-right: 16px">{{form.vars.sonata_admin.value}}</span>
+    <a class="btn btn-primary" href="{{ path('gogo_new_apikey', {'id': form.vars.sonata_admin.admin.subject.id}) }}">
+      {{ 'authorized_projects.buttons.newApiKey'|trans }}
+    </a>
+  </div>
+{% endif %}
