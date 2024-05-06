@@ -1,0 +1,34 @@
+{% trans_default_domain 'admin' %}
+
+{% if field.label is defined and field.label|striptags not in ["", "undefined"] %}
+  <div class="categories-info neutral-color to-html">{{ field.label|raw }}</div>
+{% endif %}
+
+{# when rendered for admin instead of public element form #}
+{% if not element is defined %}
+  {% set editMode = false %}
+  {% set element = form.vars.sonata_admin.admin.subject %}
+  {% set config = form.vars.sonata_admin.admin.config %}
+  {% set taxonomy = form.vars.sonata_admin.admin.taxonomy %}
+  {% set field = {display: 'floating'} %}
+  {# Load missing stuff not included from admin #}
+  {# Init font size for CSS rem unit #}
+  <style>html { font-size: 13px; }</style>
+  {# Css Variables #}
+  {% include 'gogocarto-css-variables.twig' %}
+  {# Icons #}
+  <link rel="stylesheet" href="{{ asset('fonts/fontawesome-5/css/all.min.css') }}" />
+  {{ config.iconImport|raw }}
+  {# Public translations #}
+  <script src="{{ asset('js/javascripts-translations.js?ver=' ~ version) }}"></script>
+
+  <h4 style="margin-top: 25px;">{{ 'elements.fields.optionValues'|trans }}</h4>
+{% endif %}
+
+<div class="taxonomy-picker-container">
+  <taxonomy-picker ref="taxonomyPicker"
+                   :editing="{{ editMode == "1" ? 'true' : 'false' }}"
+                   :taxonomy="{{ taxonomy }}"
+                   :config="{{ field|json_encode }}"
+                   :initial-option-values="{{ element.optionValues ? element.optionValues.toArray|json_encode : "[]" }}"/>
+</div>

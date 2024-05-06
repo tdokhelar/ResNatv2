@@ -1,0 +1,94 @@
+{% extends 'bundles/SonataAdminBundle/layout.html.twig' %}
+{% block sonata_admin_content %}
+{% trans_default_domain 'admin' %}
+
+  {% block notice %}
+      {% include '@SonataCore/FlashMessage/render.html.twig' %}
+  {% endblock notice %}
+
+  <h2 style="text-align:center; font-weight:bold;">
+
+    <a href={{ path('admin_app_element_showEdit', { id: element.id}) }} class="btn btn-default" style="float: left;">
+      <i class="fa fa-arrow-left"></i>
+      Back
+    </a>
+    <span>Review the data before sending to OSM</span>
+  </h2>
+
+  <p class="hint">
+    This OSM feature has been build reversing the {{ element.source.sourceName }} import.</br>
+    You can adjust the tags manually, or improve the import mapping.</br>
+    "Convert data for export" tab is also available for advanced usage.
+  </p>
+  <form method="post"
+        style="text-align:center; margin-bottom:40px;">
+    <div class="table-responsive no-padding element-data-fields">
+      <table class="table">
+      <tbody>
+        {% for key, value in feature.tags %}
+          <tr class="sonata-ba-view-container">
+            <th>{{ key }}</th>
+            <td>
+              <input type="text" class="form-control" name="{{ 'tags[' ~ key ~ ']'}}" value="{{ value }}" />
+            </td>
+            <td>
+              <i class="btn-remove-field fa fa-times" onclick="$(this).closest('tr').remove()"></i>
+            </td>
+          </tr>
+        {% endfor %}
+        <tr class="sonata-ba-view-container" v-for="(field, key) in newFields" :key="key">
+          <th>
+            <input type="text" class="select-field-key" v-model="newFields[key]"/>
+          </th>
+          <td>
+            <input type="text" class="form-control" :name="`data[${field}]`"/>
+          </td>
+          <td><i class="btn-remove-field fa fa-times" onclick="$(this).closest('tr').remove()"></i></td>
+        </tr>
+      </tbody>
+      </table>
+      <button type="button" class="btn btn-add-field btn-default btn-sm" @click="addField()">
+          {{ 'elements.sync.add_tag'|trans }}
+      </button>
+    </div>
+
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.2.0/dist/leaflet.css" />
+    {{ encore_entry_script_tags('element-form') }}
+
+    <input type="hidden" name="center[latitude]" id="input-latitude" value="{{ element.geo.latitude }}" />
+    <input type="hidden" name="center[longitude]" id="input-longitude"  value="{{ element.geo.longitude }}" />
+
+    <div id="address-preview-map"></div>
+
+    <button type="submit" class="btn btn-primary btn-block">{{ 'elements.action.edit.sendToOsm'|trans }}</button>
+  </form>
+  <script>
+    var defaultBounds = {{ config.getDefaultBounds|json_encode|raw }};
+    var defaultTileLayer = {
+      url: "https://tile.openstreetmap.org/{z}/{x}/{y}.png",
+      attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>',
+      maxZoom: 20
+    }
+	  setTimeout(function() { initMap(); }, 0);
+  </script>
+
+  <style>
+    #address-preview-map {
+      height: 400px;
+      margin-top: 20px;
+      margin-bottom: 20px;
+    }
+    .sonata-ba-view-container th {
+      text-transform: none;
+    }
+    .table {
+      margin-bottom: 10px;
+    }
+    .hint {
+      font-style: italic;
+      text-align: center;
+      margin-top: 10px;
+    }
+  </style>
+{% endblock %}
+

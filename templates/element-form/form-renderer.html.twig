@@ -1,0 +1,74 @@
+{% spaceless %}
+{% for field in config.getElementFormFields %}
+
+  {% if field.name is defined %}
+    {% set elementValue = element.getCustomProperty(field.name) %}
+  {% endif %}
+
+  {% set isHidden = true %}
+  {% set hasAdminRight = is_granted("ROLE_ADMIN") %}
+  {% set hasOwnerRight = isOwner or (app.request.query is defined and app.request.query.all.hash is defined) %}
+
+  {% if not field.access is defined and not field.role is defined %}
+    {% set isHidden = false %}
+  {% endif %}
+  
+  {% if field.access is defined and not field.role is defined and hasAdminRight %} {# old values combination fore role admin #}
+    {% set isHidden = false %}
+  {% endif %}
+  
+  {% if field.role is defined %}
+    {% set roles = field.role|split(',') %}
+    {% if (hasAdminRight and 1 in roles) or (hasOwnerRight and 2 in roles) %}
+      {% set isHidden = false %}
+    {% endif %}
+  {% endif %}
+
+  <div class="field-container field-{{field.type}} {% if field.subtype is defined %}field-{{field.subtype}}{% endif %}" id="field-{{ field.name|default('unknown-name') }}"
+        {% if isHidden %}style="display:none"{% endif %}>
+    {# STANDARD INPUT #}
+    {% if field.type == "text" or field.type == "title" or field.type == "textarea" or field.type == "number" or field.type == "email" or field.type == "image" or field.type == "siret"%}
+      {% include 'element-form/form-partials/text.html.twig' %}
+    {# DATE #}
+    {% elseif field.type == "date" %}
+       {% include 'element-form/form-partials/date.html.twig' %}
+    {# SELECT #}
+    {% elseif field.type == "select" %}
+       {% include 'element-form/form-partials/select.html.twig' %}
+    {# HEADER #}
+    {% elseif field.type == "header" %}
+      <h2 class="to-html">{{ field.label|raw }}</h2>
+    {# PARAGRAPH #}
+    {% elseif field.type == "paragraph" %}
+      <p class="to-html">{{ field.label|raw }}</p>
+    {# CHEKCBOX / RADIO #}
+    {% elseif field.type == "checkbox" %}
+      {% include 'element-form/form-partials/checkbox.html.twig' %}
+    {% elseif field.type == "checkbox-group" or field.type == "radio-group" %}
+      {% include 'element-form/form-partials/checkbox-radio-group.html.twig' %}
+    {# TAXONOMY #}
+    {% elseif field.type == "taxonomy" %}
+      {% include 'element-form/form-partials/taxonomy-field.html.twig' %}
+    {# OPENHOURS #}
+    {% elseif field.type == "openhours" %}
+      {% include "element-form/form-partials/open-hours.html.twig" %}
+    {# IMAGES #}
+    {% elseif field.type == "images" or field.type == "files" %}
+      {% include "element-form/form-partials/files-images.html.twig" %}
+    {# ADDRESS #}
+    {% elseif field.type == "address" %}
+      {% include 'element-form/form-partials/address.html.twig' %}
+    {# ELEMENTS #}
+    {% elseif field.type == "elements" %}
+      {% include 'element-form/form-partials/elements.html.twig' %}
+    {% endif %}
+  </div>
+
+  {# SEPARATOR #}
+  {% if field.type == "separator" %}
+    </section>
+    <div class="divider"></div>
+    <section>
+  {% endif %}
+{% endfor %}
+{% endspaceless %}

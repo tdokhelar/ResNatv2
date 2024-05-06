@@ -1,0 +1,24 @@
+<div id="popup-{{id}}"  class="modal page-modal about-modal custom-scroll-bar-light">
+    <div class="modal-content page-modal-content">
+        <span class="icon btn-back gogo-icon-material-design-icons-1" onclick="$('#popup-{{id}}').closeModal()"></span>
+        <h1>{{ title | raw}}</h1>
+	    	<div class="wysiwyg-content background-dark">{{ content | raw }}</div>  
+		
+		<div class="page-modal-footer">
+			{% if buttons is defined and 'cancel' in buttons %}
+				<button type="button"
+						onclick="$('#popup-{{id}}').closeModal()"  
+						class="btn waves-effect waves-light btn-cancel">
+					{{ 'action.cancel'|trans }}
+				</button>
+			{% endif %}
+			<button type="button"
+					onclick="$('#popup-{{id}}').closeModal()"  
+					class="btn waves-effect waves-light btn-ok">
+				OK!
+			</button>
+		</div>
+
+
+    </div>
+</div>

@@ -1,0 +1,190 @@
+<style>
+  {# Main #}
+  .gogo-load-css #page-content.element-form section { background-color: {{ contentBgd }}; }
+
+  .gogo-load-css .dropdown-content { background-color: {{ contentBgd }}; }
+  .gogo-load-css .dropdown-content li>span { color: {{ textSoft }}; }
+
+  .gogo-load-css .main-options-container label.main-option-radio-label:after
+  {
+    border: 2px solid {{ primary }};
+    background-color: {{ primary }};
+  }
+  .gogo-load-css .main-options-container label.main-option-radio-label:before
+  {
+    border: 2px solid {{ textSoft }};
+  }
+
+  {# Input #}
+  .gogo-load-css #page-content.element-form .field-container:not(.field-taxonomy) input:focus:not(.invalid):not([readonly]):not([type=submit]),
+  .gogo-load-css textarea:focus:not(.invalid):not([readonly]) {
+    border-color: {{ textSoft }} !important;
+    box-shadow: 0 1px 0 0 {{ textSoft }} !important;
+  }
+  .gogo-load-css #page-content.element-form .field-container:not(.field-taxonomy) input.invalid:not([readonly]):not([type=submit]), .gogo-load-css textarea.invalid:not([readonly]) {
+    border-color: {{ error }} !important;
+    box-shadow: 0 1px 0 0 {{ error }} !important;
+  }
+  .gogo-load-css #page-content.element-form .field-container:not(.field-taxonomy) input:not(:focus):not(.invalid):not([type=submit]), .gogo-load-css textarea:not(:focus):not(.invalid) {
+    border-bottom: 1px solid {{ disable }} !important;
+    box-shadow: none !important;
+  }
+
+  .gogo-load-css [type=radio]:not(:checked)+label:before { border-color: {{ disable }}; }
+
+  {% set placeholderFocusColor = disable ~ '!important' %}
+  .gogo-load-css input::-webkit-input-placeholder { color: {{ placeholderFocusColor }}; }
+  .gogo-load-css input::-moz-placeholder { color: {{ placeholderFocusColor }}; }
+  .gogo-load-css input:-ms-input-placeholder { color: {{ placeholderFocusColor }}; }
+  .gogo-load-css input:-moz-placeholder { color: {{ placeholderFocusColor }}; }
+
+  {# Input Label #}
+  .gogo-load-css #page-content.element-form label { color: {{ textSoft }}; }
+  .gogo-load-css label.gogo-form-label { color: {{ disable }} !important }
+  .gogo-load-css .select-input:not(.initialized) { color: {{ disable }} !important }
+  .gogo-load-css input:focus:not(.invalid) + label.gogo-form-label, .gogo-load-css textarea:focus:not(.invalid) + label.gogo-form-label { color: {{ text }} !important; }
+  .gogo-load-css input.invalid + label.gogo-form-label, .gogo-load-css textarea.invalid + label.gogo-form-label { color: {{ error }} !important; }
+  .gogo-load-css input[type=date].invalid+label:after, .gogo-load-css input[type=date]:focus.invalid+label:after, .gogo-load-css input[type=datetime-local].invalid+label:after, .gogo-load-css input[type=datetime-local]:focus.invalid+label:after, .gogo-load-css input[type=email].invalid+label:after, .gogo-load-css input[type=email]:focus.invalid+label:after, .gogo-load-css input[type=number].invalid+label:after, .gogo-load-css input[type=number]:focus.invalid+label:after, .gogo-load-css input[type=password].invalid+label:after, .gogo-load-css input[type=password]:focus.invalid+label:after, .gogo-load-css input[type=search].invalid+label:after, .gogo-load-css input[type=search]:focus.invalid+label:after, .gogo-load-css input[type=tel].invalid+label:after, .gogo-load-css input[type=tel]:focus.invalid+label:after, .gogo-load-css input[type=text].invalid+label:after, .gogo-load-css input[type=text]:focus.invalid+label:after, .gogo-load-css input[type=time].invalid+label:after, .gogo-load-css input[type=time]:focus.invalid+label:after, .gogo-load-css input[type=url].invalid+label:after, .gogo-load-css input[type=url]:focus.invalid+label:after, .gogo-load-css textarea.materialize-textarea.invalid+label:after, .gogo-load-css textarea.materialize-textarea:focus.invalid+label:after {
+    color: {{ error }} !important;
+  }
+
+  .gogo-load-css label.gogo-form-label.active {
+    color: {{ textSoft }} !important;
+  }
+
+  {# Input Icon #}
+  .gogo-load-css .input-field i.prefix { color: {{ disable }}; }
+  .gogo-load-css .input-field i.prefix.active { color: {{ text }}; }
+  .gogo-load-css .input-field i.prefix.valid { color: {{ textSoft }}; }
+  .gogo-load-css .input-field i.prefix.invalid { color: {{ error }}; }
+
+  {# Select 2 #}
+  .gogo-load-css .select2-container--default .select2-selection {
+    border-bottom: 1px solid {{ disable }} !important;
+  }
+  .gogo-load-css .select2-container--default.select2-container--focus .select2-selection {
+    border-bottom: 2px solid {{ textSoft }} !important;
+  }
+  .gogo-load-css .input-field.error .select2-container--default .select2-selection {
+     border-bottom: 2px solid {{ error }} !important;
+  }
+  .gogo-load-css .select2-container--default .select2-selection--multiple .select2-selection__choice {
+    background-color: {{ textSoft }} !important;
+  }
+  .gogo-load-css .select2-container--default .select2-results__option--highlighted {
+    background-color: {{ primary }} !important;
+  }
+
+  {# Checkbox #}
+  .gogo-load-css [type=checkbox]+label:before { border-color: {{ disable }}; }
+  .gogo-load-css [type=checkbox]:checked+label:before {
+    border-right-color: {{ primary }};
+    border-bottom-color: {{ primary }};
+  }
+
+  .gogo-load-css [type=radio]:checked+label:after {
+    border: 2px solid {{ primary }};
+    background-color: {{ primary }};
+  }
+
+  {# Address #}
+  .gogo-load-css .geolocalize-help-text {
+    background-color: {{ contentBgdSoft }};
+    color: {{ text }};
+  }
+  .gogo-load-css .geolocalize-help-text .btn-close {
+    color: {{ text }};
+  }
+
+  {# Open Hours #}
+  .gogo-load-css .gogo-icon-icon-copy-hours, .gogo-load-css .gogo-icon-add-circle, .gogo-load-css .gogo-icon-clear { color: {{ textSoft }}; }
+  .gogo-icon-icon-copy-hours:hover, .gogo-icon-add-circle:hover, .gogo-load-css .gogo-icon-clear:hover { color: {{ primary }}; }
+  .gogo-load-css .timepicker_wrap {
+    background-color: {{ contentBgd }};
+    color: {{ text }};
+  }
+  .gogo-load-css .timepicker_wrap .time, .gogo-load-css .timepicker_wrap .mins, .gogo-load-css .timepicker_wrap .meridian { color: {{ text }}; }
+  .gogo-load-css .timepicker_wrap .prev, .gogo-load-css .timepicker_wrap .next {
+    background-color: white;
+    border: none;
+  }
+  .gogo-load-css .timepicker_wrap .prev:hover, .gogo-load-css .timepicker_wrap .next:hover {
+    background-color: whitesmoke;
+  }
+  .gogo-load-css #page-content.element-form .open-hours-container
+  {
+    padding: .2rem 0 .2rem .5rem;
+    background-color: {{ contentBgdSoft }} !important;
+    margin-bottom: 8px;
+    border-radius: 5px;
+    position: relative;
+  }
+  .gogo-load-css .open-hours-container .day-col,
+  .gogo-load-css .open-hours-container .copy-hours-col,
+  .gogo-load-css .open-hours-container .new-slot-col,
+  .gogo-load-css .open-hours-container .clear-slot-col {
+    color: {{ contentBgd }} !important;
+    z-index:2;
+  }
+  .gogo-load-css .gogo-icon-icon-copy-hours,
+  .gogo-load-css .gogo-icon-add-circle,
+  .gogo-load-css .gogo-icon-clear {
+    color: {{ contentBgdSoft }};
+  }
+  .gogo-icon-icon-copy-hours:hover,
+  .gogo-icon-add-circle:hover,
+  .gogo-load-css .gogo-icon-clear:hover {
+    color: {{ contentBgd }};
+  }
+  .gogo-load-css i.material-icons.openhours-icons { line-height: 2.8rem; }
+  .gogo-load-css .second-line-slot:before
+  {
+    content: "";
+    background-color: {{ textSoft }};
+    position: absolute;
+    width: 8.33%;
+    min-height: 3rem;
+    right: 0;
+    border-radius: 0 5px 5px 0;
+  }
+  .gogo-load-css #page-content.element-form .open-hours-container:before
+  {
+    content: "";
+    background-color: {{ textSoft }};
+    position: absolute;
+    width: 25%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    border-radius: 5px 0 0 5px;
+  }
+  .gogo-load-css #page-content.element-form .open-hours-container:after
+  {
+    content: "";
+    background-color: {{ textSoft }};
+    position: absolute;
+    width: 8.33%;
+    height: 100%;
+    top: 0;
+    right: 0;
+    border-radius: 0 5px 5px 0;
+  }
+
+  {# Wysiwyg #}
+  .gogo-load-css .field-wysiwyg .cke_top { background-color: {{ contentBgdSoft }}; }
+  .gogo-load-css .field-wysiwyg .input-field .prefix ~ .cke {
+    border-color: {{ textSoft }} !important;
+  }
+
+  {# Error #}
+  label .error, .input-field.error .prefix,
+  .gogo-load-css #input-address-field.error:after, #input-address-field.error #input-address:after, h1.error, h2.error, label.error
+   { color: {{ error }} !important; }
+   .mandatory-asterisk:after { color: {{ secondary }}; }
+  .input-field.error.select-input.invalid-required input {
+    border-bottom: 1px solid {{ error }} !important;
+    box-shadow: 0 1px 0 0 {{ error }} !important;
+  }
+  .input-field.error textarea:not(:focus) { border-color: {{ error }}; }
+  #page-content.contributor-login .input-field.error .prefix { color: {{ error }}; }
+</style>

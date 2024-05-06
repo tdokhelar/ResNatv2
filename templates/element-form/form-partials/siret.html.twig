@@ -1,0 +1,32 @@
+<div id="search-siret-toggler-wrapper">
+  <a id="search-siret-toggler">
+    <span class="open active">Utiliser</span>
+    <span class="close">Masquer</span>
+    l'outil de recherche du SIRET</a>
+  <i class="fa fa-question"
+    title="La recherche du SIRET est basé au minimum sur le titre de la fiche.&#x0A;Vous pouvez également préciser l'adresse.&#x0A;Seuls les 10 1ers résulats sont affichés."
+  ></i>
+</div>
+<div id="search-siret-wrapper">
+  <div id="search-siret-inner-wrapper">
+    <div id="search-siret-address-checkbox-wrapper checkbox-container">
+      <input type="checkbox" id="search-siret-address-checkbox" name="search-siret-address-checkbox" checked />
+      <label for="search-siret-address-checkbox">Utiliser le code postal lors de la recherche</label>
+    </div>
+    <div id="search-siret-button-wrapper">
+      <button id="search-siret-button" class="btn btn-neutral">Lancer la recherche</button>
+    </div>
+    <ul id="search-siret-results-list">
+      <li class="search-siret-result template" style="display:none">
+        <div class="search-siret-result_content">
+          <span class="search-siret-result__siret"></span>
+          <span class="search-siret-result__name"></span>
+          <span class="search-siret-result__address"></span>
+        </div>
+        <button class="search-siret-result__select-button btn btn-neutral">Utiliser ce&nbsp;SIRET</button>
+      </li>
+    </ul>
+    <div id="search-siret-message"></div>
+  </div>
+</div>
+
