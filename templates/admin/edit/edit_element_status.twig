@@ -1,0 +1,12 @@
+{% trans_default_domain 'admin' %}
+
+{% if element.status < 1 %}
+    <p style="font-size: 1.5rem">
+        {% include 'admin/partials/display_choice_status.html.twig' with {'value': element.status, 'object': element} %}
+    <p>
+{% endif %}
+
+{# Moderation state #}
+<p style="font-size: 1.2rem">
+    {% include "admin/partials/display_choice_moderation.html.twig" with {'value': element.moderationState, 'object': element} %}
+</p>

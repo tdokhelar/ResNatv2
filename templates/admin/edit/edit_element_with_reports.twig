@@ -1,0 +1,16 @@
+{% trans_default_domain 'admin' %}
+
+{% if element.getUnresolvedReports|length > 0 %}
+  <div class="box box-danger" style="background-color: #ff57221a">
+      <div class="box-header">
+          <h4 class="box-title">
+              {{ 'elements.fields.reports'|trans }}
+          </h4>
+      </div>
+      <div class="box-body">
+          {% for key, item in element.getUnresolvedReports %}
+              {% include "admin/partials/display_vote_report_item.html.twig" with {'labelClass': 'label-danger'} %}
+          {% endfor %}
+      </div>
+  </div>
+{% endif %}

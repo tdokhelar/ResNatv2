@@ -1,0 +1,101 @@
+{% trans_default_domain 'admin' %}
+
+{% extends 'admin/core_custom/base_edit.html.twig' %}
+
+{% block javascripts %}
+{{ parent() }}
+
+<script type="text/javascript">
+let appAdminExport = {
+    select2Data: [],
+    init: () => {
+      appAdminExport.initSelect2Data();
+      appAdminExport.refreshChoicesStyle();
+      appAdminExport.initEventListeners();
+      appAdminExport.initDropdownMutationObserver();
+      appAdminExport.initChoicesMutationObserver();
+    },
+    initSelect2Data: () => {
+      if (appAdminExport.select2Data.length === 0) {
+        const scriptContent = $('.select2-container').parent().children('script').text();
+        const startIndex = scriptContent.indexOf('[{"label"');
+        const lastIndex = scriptContent.lastIndexOf(']);') + 1;
+        appAdminExport.select2Data = JSON.parse(scriptContent.substring(startIndex, lastIndex));
+      }
+    },
+    initEventListeners: () => {
+      $('#btn_clear_all').click( () => { 
+          const $input = $('.select2-container').parent().children('input[type="hidden"]');
+          $input.val(null).trigger('change');
+      });
+      $('#btn_add_fields').click( () => { 
+        appAdminExport.addOptions('field');
+      });
+      $('#btn_add_categories').click( () => { 
+        appAdminExport.addOptions('category');
+      });
+    },
+    addOptions: (type) => {
+      const $input = $('.select2-container').parent().children('input[type="hidden"]');
+      const currentValues = $input.val().split(',').filter(value => value !== '');
+      
+      let options = appAdminExport.select2Data.filter(record => ! currentValues.includes(record.data));
+      if (type === 'category') {
+        options = options.filter(record =>record.attr['data-type'] === 'category');
+      } else {
+        options = options.filter(record => record.attr['data-type'] !== 'category');
+      }
+      const values = currentValues.concat(options.map(option => option.data).join(','));
+      $input.val(values).trigger('change');
+    },
+    initDropdownMutationObserver: () => {
+      const select = document.querySelector('.select2-results');
+      const optgroup_fields = appAdminExport.newOptgroup('{{ 'config_exports.optgroups.fields'|trans }} :');
+      const optgroup_categories = appAdminExport.newOptgroup('{{ 'config_exports.optgroups.categories'|trans }} :');
+      const observer = new MutationObserver(mutationsList => {
+        const options = select.querySelectorAll('.select2-result');
+        let areOptgroupsDisplayed = false;
+        options.forEach((option, index) => {
+          option.classList.replace('select2-results-dept-0', 'select2-results-dept-1');
+          const data = appAdminExport.select2Data.find(record => record.label === option.textContent);
+          if (!areOptgroupsDisplayed && data.attr['data-type'] === 'category') {
+            select.insertBefore(optgroup_categories, options[index]);
+            areOptgroupsDisplayed = true;
+          }
+        })
+        observer.disconnect();
+        select.insertBefore(optgroup_fields, options[0]);
+        observer.observe(select, { childList: true });
+      });
+      observer.observe(select, { childList: true });
+    },
+    initChoicesMutationObserver: () => {
+      const select = document.querySelector('.select2-choices');
+      const observer = new MutationObserver(mutationsList => {
+        appAdminExport.refreshChoicesStyle();
+      });
+      observer.observe(select, { childList: true });
+    },
+    refreshChoicesStyle: () => {
+      const select = document.querySelector('.select2-choices');
+      const options = select.querySelectorAll('.select2-search-choice');
+      options.forEach(option => {
+        if (option.querySelector('div')) {
+          const data = appAdminExport.select2Data.find(record => record.label === option.querySelector('div').textContent);
+          if (data.attr['data-type'] === 'category') {
+            option.style.backgroundColor = 'rgba(243, 156, 18, .2)';
+          }
+        }
+      })
+    },
+    newOptgroup: (label) => {
+      const optgroup = document.createElement("li");
+      optgroup.classList = 'select2-results-dept-0 select2-result select2-disabled';
+      optgroup.textContent = label;
+      optgroup.style.fontWeight = '600';
+      return optgroup;
+    }
+}
+document.addEventListener('DOMContentLoaded', appAdminExport.init);
+</script>
+{% endblock %}

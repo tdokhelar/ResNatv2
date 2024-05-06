@@ -1,0 +1,10 @@
+{% trans_default_domain 'admin' %}
+
+{% if element.duplicateOf %}
+  <div class="alert alert-info">
+  	{{ 'elements.form.see_duplicate_hint'|trans }}
+    <a href={{ path('admin_app_element_showEdit', {'id': element.duplicateOf})  }} target="_blank">
+      {{ 'elements.form.see_duplicate'|trans }}
+    </a>
+  </div>
+{% endif %}

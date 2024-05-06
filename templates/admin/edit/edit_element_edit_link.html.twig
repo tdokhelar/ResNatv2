@@ -1,0 +1,12 @@
+{% extends '@SonataAdmin/CRUD/base_show_field.html.twig' %}
+{% trans_default_domain 'admin' %}
+
+{% set id = field_description.options["option"]["id"] %}
+{% set email = field_description.options["option"]["email"] %}
+{% block field %}
+    {% if not email is empty %}
+        <a href="/interact/sendEditLink/{{id}}">{{ ('elements.fields.editLink.content'|trans) }} <strong>{{ email }}</strong></a>
+    {% else %}
+        <span>{{ ('elements.fields.editLink.noEmail'|trans) }}</span>
+    {% endif %}
+{% endblock field %}

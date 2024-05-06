@@ -1,0 +1,42 @@
+{% extends 'admin/core_custom/base_edit.html.twig' %}
+{% trans_default_domain 'admin' %}
+
+{% block stylesheets %}
+    {{ parent() }}
+    {% if admin.baseCodeRoute == "admin.config_map" %}
+      <style type="text/css">
+        .geojsonlayers .sonata-collection-row .sonata-ba-field > div:first-child { display: flex }
+        .geojsonlayers .sonata-collection-row .sonata-ba-field .form-group { margin-right: 10px; width: 100% }
+        .geojsonlayers .sonata-collection-row .sonata-ba-field .form-group:last-child { margin-right: 10px; width: 20% }
+        .geojsonlayers .sonata-collection-row .sonata-ba-field .form-group .checkbox { margin: 0 }
+        .geojsonlayers .sonata-collection-row .sonata-ba-field .form-group .checkbox label { 
+          display: flex;
+          flex-direction: column-reverse;
+          max-width: unset; 
+          width: 100%;
+          padding: 0;
+          margin: 0;
+        }
+        .geojsonlayers .sonata-collection-row .sonata-ba-field .form-group .checkbox label .icheckbox_square-blue { margin-top: 5px }
+        .geojsonlayers .sonata-collection-row .sonata-ba-field .form-group .checkbox label .control-label__text {
+          white-space:nowrap;
+          overflow:hidden;
+          text-overflow:ellipsis;
+        }
+      </style>
+    {% endif %}
+{% endblock %}
+
+{% block actions %}
+{% endblock %}
+
+{% block sonata_form_actions %}
+  {% if admin.hasroute('edit') and admin.isGranted('EDIT') %}
+      <button class="btn btn-success" type="submit" name="btn_update_and_edit"><i class="fa fa-save" aria-hidden="true"></i>{{ 'commons.btn_update_and_edit'|trans }}</button>
+  {% endif %}
+  {% block other_actions %}{% endblock %}
+{% endblock %}
+
+
+
+

@@ -1,0 +1,55 @@
+{% trans_default_domain 'admin' %}
+
+{% if element.isPending and element.currcontribution %}
+  <div class="box box-warning" style="background-color: #ff57221a">
+    <div class="box-header">
+      <h4 class="box-title">
+        {% if element.isPendingModification %}{{ 'elements.action.edit.isPendingEdit'|trans }}
+        {% else %}{{ 'elements.action.edit.isPendingAdd'|trans }}{% endif %}
+      </h4>
+    </div>
+    <div class="box-body">
+
+      {# Contrib metadata #}
+      {% set contrib = element.currcontribution %}
+      <p class="last-contribution">
+        {% include 'admin/partials/show_one_contribution_proposed_by.html.twig' with {'value': contrib} %}
+      </p>
+      
+      {# Changeset, for pending modification #}
+      {% if element.isPendingModification and contrib.changeset is defined and contrib.changeset is iterable %}
+        {% include "admin/partials/show_contrib_changeset.html.twig" with {'contrib': contrib} %}
+      {% endif %}
+
+      {# votes #}
+      {% if contrib.votes|length > 0 %}
+        <b style="line-height: 3.5rem;">{{ 'sonata.user.user.fields.votes'|trans }}</b>
+        <div style="margin-bottom: 2rem;">
+        {% for key, vote in contrib.votes %}
+            {% if vote.value is defined %}
+              {% set labelClass = vote.value >= 0 ? 'label-success' : 'label-danger' %}
+              {% include "admin/partials/display_vote_report_item.html.twig" with {'item': vote} %}
+            {% endif %}
+        {% endfor %}
+        </div>
+      {% endif %}
+
+      {# Validation/Refuse buttons #}
+      <button type="submit" class="btn btn-sm btn-success outside-form" name="submit_accept">
+        <i class="fa fa-thumbs-up" aria-hidden="true"></i>
+        {{ 'elements.action.edit.submit_accept'|trans }}
+      </button>
+
+      <button type="submit" class="btn btn-sm btn-danger outside-form" name="submit_refuse">
+        <i class="fa fa-thumbs-down" aria-hidden="true"></i>
+        {{ 'elements.action.edit.submit_refuse'|trans }}
+      </button>
+    </div>
+  </div>
+{% endif %}
+
+<script>
+  $('button[type=submit].outside-form').on('click', function() {
+    $(`form button[type=submit][name=${$(this).attr('name')}]`).click()
+  })
+</script>

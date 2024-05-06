@@ -1,0 +1,44 @@
+{% trans_default_domain 'admin' %}
+
+{% if element.isExternalReadOnly %} 
+  <div class="alert alert-info">{{ 'elements.form.externalReadOnly'|trans }}</div>
+{% else %}
+  {% if element.isSynchedWithExternalDatabase %}
+  
+    {% set sourceType = element.getSource.getSourceType %}
+    {% set sourceLabel = sourceType %}
+    {% if sourceType == 'gogocarto' %}
+      {% set gogocartoBaseUrl = element.getSource.getUrl|replace({'/api/elements.json': ''}) %}
+      {% set sourceLabel = '<a href="' ~ gogocartoBaseUrl ~ '" target="_blank">' ~ gogocartoBaseUrl ~ '</a>' %}
+    {% endif %}
+    {% if sourceType == 'osm' %}
+      {% set sourceLabel = 'OSM' %}
+    {% endif %}
+    {% set sourceLabel = '<strong>' ~ sourceLabel ~ '</strong> ' %}
+    
+    {% set lastRefresh = element.getSource.lastRefresh() %}
+    {% set today = "now" %}
+    {% set diff = date(today).diff(date(lastRefresh))|date('%d') %}
+    {% set formatedLastRefreshDate = '<strong>' ~ lastRefresh|date('commons.date_format'|trans) ~ '</strong>' %}
+  
+    <div class="alert alert-warning">
+      <i class="fa fa-warning" style="margin-right: 3px;"></i>
+      <span>{{ 'elements.form.isSynchedWithExternalDatabase'|trans({'%source%':sourceLabel})|raw}}</span>
+    </div>
+
+    {% if diff > 7 %}
+      <div class="alert alert-warning">
+        <i class="fa fa-warning" style="margin-right: 3px;"></i>
+        <span>{{ 'elements.form.isSynchedWithExternalDatabase_refreshNeeded'|trans({'%lastRefresh%':formatedLastRefreshDate})|raw }}</span>
+      </div>
+    {% endif %}
+    
+    {% if element.needsToBeSynchronizedSinceLastRestoration %}
+      <div class="alert alert-warning">
+        <i class="fa fa-warning" style="margin-right: 3px;"></i>
+        <span>{{ 'elements.form.needsToBeSynchronizedSinceLastRestoration'|trans }}</span>
+      </div>
+    {% endif %}
+    
+  {% endif %}
+{% endif %}

@@ -1,0 +1,95 @@
+{% extends 'admin/core_custom/base_edit.html.twig' %}
+{% trans_default_domain 'admin' %}
+
+{% block stylesheets %}
+  {{ parent() }}
+  <style type="text/css">
+      @media (max-width:767px) {
+        .select2-drop {
+          left: 16px !important;
+          right: 16px !important;
+          width: unset !important;
+        }
+      }
+      @media (min-width:768px) {
+        .select2-result {
+          max-width: 60vw !important;
+        }
+      }
+      @media (min-width:992px) {
+        .select2-result {
+          max-width: 50vw !important;
+        }
+      }
+  </style>
+{% endblock %}
+
+{% block formactions %}
+  {% include "admin/edit/edit_element_actions.html.twig" %}
+{% endblock formactions %}
+
+{%- block actions -%}
+    <li><a href="{{ admin.generateUrl('create') }}" class="">
+       <i class="fa fa fa-plus-circle" aria-hidden="true"></i>
+       <span>{{ 'link_action_create'|trans({}, 'SonataAdminBundle') }}</span>
+    </a></li>
+    <li><a href="{{ admin.generateUrl('list') }}" class="" title="{{ 'elements.action.edit.returnToList'|trans }}">
+       <span>{{ 'elements.action.edit.returnToList'|trans }}</span>
+       <i class="fa fa-arrow-right" aria-hidden="true"></i>
+    </a></li>
+{%- endblock -%}
+
+{% use '@SonataAdmin/CRUD/base_edit_form.html.twig' with form as parentForm %}
+{% import '@SonataAdmin/CRUD/base_show_macro.html.twig' as show_helper %}
+
+{% block form %}
+    {% set element = object %}
+    {{ sonata_block_render_event('sonata.admin.show.top', { 'admin': admin, 'object': object }) }}
+    <div class="nav-tabs-custom">
+        <ul class="nav nav-tabs" role="tablist">
+            <li class="active"><a href="#tab_form" data-toggle="tab">{{ 'elements.tabs.item'|trans }}</a></li>
+            <li><a href="#tab_history" data-toggle="tab">{{ 'elements.tabs.changeHistory'|trans }}</a></li>
+            <li><a href="#tab_other" data-toggle="tab">{{ 'elements.tabs.other'|trans }}</a></li>
+        </ul>
+
+        <div class="refresh-needed-icons-wrapper">
+          {% include "admin/partials/icon_element_refresh_needed.html.twig" with {'element': element} %}
+        </div>
+
+        <div class="tab-content">
+            <div class="tab-pane fade in active" id="tab_form">
+                {# Some top alerts depending on the element #}
+                {% include 'admin/edit/edit_element_status.twig' %}
+                {% include 'admin/edit/edit_element_pending.twig' %}
+                {% include 'admin/edit/edit_element_external.twig' %}
+                {% include 'admin/edit/edit_element_with_reports.twig' %}
+                {% include 'admin/edit/edit_element_aggregate.twig' %}
+                {% include 'admin/edit/edit_element_duplicate_of.twig' %}
+                {% include 'admin/edit/edit_element_osm.twig' %}
+
+                {# Form as defined in ElementAdminShowEdit.php #}
+                {{ block('parentForm') }}
+            </div>
+            <div class="tab-pane fade" id="tab_history">
+                {% include 'admin/edit/edit_element_tab_history.twig' %}
+            </div>
+            <div class="tab-pane fade" id="tab_other">
+                {# Render show view as defined in ElementAdminShowEdit.php #}
+                {{ show_helper.render_groups(admin, object, elements, admin.showtabs.default.groups, false) }}
+            </div>
+        </div>
+                
+    </div>
+    {{ sonata_block_render_event('sonata.admin.show.bottom', { 'admin': admin, 'object': object }) }}
+
+    <style>
+        .nav-tabs-custom { position: relative; }
+        .nav-tabs-custom .refresh-needed-icons-wrapper {
+          position: absolute;
+          top: 12px;
+          right: 15px;
+        }
+    </style>
+{% endblock %}
+
+

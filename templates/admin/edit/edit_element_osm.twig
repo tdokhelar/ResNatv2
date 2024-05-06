@@ -1,0 +1,30 @@
+{% trans_default_domain 'admin' %}
+
+{% if element.isFromOsm or element.isFromGogocarto %}
+  {% set sourceType = element.getSource.getSourceType %}
+  {% if element.isFromOsm %}
+    {% set externalUrl = element.getProperty('osm_url') %}
+  {% else %}
+    {% set externalUrl = element.getSource.getGoGoCartoBaseUrl ~ '/map#/fiche/element/' ~ element.oldId %}
+  {% endif %}
+  <div style="margin-bottom: 20px">
+    <a href={{ externalUrl }} class="btn btn-default" target="_blank">
+      <i class="fas fa-external-link-alt" aria-hidden="true"></i>
+      {% if element.isFromOsm %}
+        {{ ('elements.form.see_on_osm')|trans }}
+      {% else %}
+        {{ ('elements.form.see_on_gogocarto')|trans({'url':element.getSource.getGoGoCartoBaseUrl}) }}
+      {% endif %}
+    </a>
+    {% if element.isSynchedWithExternalDatabase %}
+      <a href={{ url('gogo_element_test_export', {id: element.id}) }} class="btn btn-default" target="_blank">
+        <i class="fa fa-eye" aria-hidden="true"></i>
+        {% if element.isFromOsm %}
+          {{ ('elements.form.preview_osm_export')|trans }}
+        {% else %}
+          {{ ('elements.form.preview_gogocarto_export')|trans({'url':element.getSource.getGoGoCartoBaseUrl}) }}
+        {% endif %}
+      </a>
+    {% endif %}
+  </div>
+{% endif %}

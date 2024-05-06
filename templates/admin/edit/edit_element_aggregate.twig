@@ -1,0 +1,29 @@
+{% trans_default_domain 'admin' %}
+
+{% if element.isAggregate %}
+  <div class="alert alert-warning">{{ 'elements.form.aggregate'|trans }}</div>
+  <p>
+    <label>{{ 'elements.form.aggregate_link'|trans }}</label>
+    {% for aggregated in element.aggregatedElements %}
+      <a href="{{ admin.generateObjectUrl('showEdit', aggregated) }}">
+        {{ aggregated.name }}
+      </a>
+    {% endfor %}
+  </p>
+{% elseif element.isAggregated %}
+  <div class="alert alert-danger">{{ 'elements.form.aggregated'|trans }}</div>
+  <p>
+    {% if element.aggregate %}
+      <label>{{ 'elements.form.aggregated_link'|trans }}</label>
+      <a href="{{ admin.generateObjectUrl('showEdit', element.aggregate) }}">
+        {{ element.aggregate.name }}
+      </a>
+    {% else %}
+      <div class="alert alert-danger">
+        This item is aggregated but no aggregate element is there. This is likely to be a bug,
+        please contact a developper
+      </div>
+    {% endif %}
+
+  </p>
+{% endif %}
