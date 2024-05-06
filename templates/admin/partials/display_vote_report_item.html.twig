@@ -1,0 +1,30 @@
+{% trans_default_domain 'admin' %}
+
+<div {% if not loop.last and not itemContainer|default(true) %}class="item-container"{% endif %}>
+	<div style="margin-bottom:5px">
+    {% set transKey = item.type == 3 ? 'itemValues_choices.' : 'voteValues_choices.' %}
+    <span class="label {{ labelClass }}">{{ ('elements.fields.' ~ transKey ~ item.value)|trans }}</span> 
+    <span>{{ 'elements.proposedBy'|trans }}</span>
+    <span>{{ item.userEmail ? item.userEmail : 'commons.anonymous'|trans }}</span>
+    <span class="label label-default" style="margin-left:5px">{{ ('elements.fields.userRoles_choices.' ~ item.userRole)|trans({}, 'admin') }}</span> 
+    <span>{{ 'elements.proposedAt'|trans ~ ' ' ~ item.createdAt|date('commons.date_time_format'|trans) }}</span>
+    <span><i>{{ item.comment }}</i></span>
+  </div>
+  <div>
+    {% if item.resolvedBy %}
+      <span>{{ 'elements.resolvedBy'|trans ~ ' ' ~ item.resolvedBy }}</span>
+      <span>{{ 'elements.proposedAt'|trans ~ ' ' ~ item.updatedAt|date('commons.date_time_format'|trans) }}</span>
+      {% if item.resolvedMessage %}<span style="margin-left: 5px"><i>{{ item.resolvedMessage}}</i></span>{% endif %}
+    {% endif %}    
+  </div>  	
+</div>
+
+	
+<style>
+.item-container
+{
+	border-bottom: 1px dashed grey;
+  padding-bottom: 5px;
+  margin-bottom: 5px;
+}
+</style>

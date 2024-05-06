@@ -1,0 +1,19 @@
+{% trans_default_domain 'admin' %}
+{% if value.isMadeBy('GoGoBot') and element.source and not value.isAddToOsm %}
+  <span>{{ 'elements.proposedBy'|trans }}</span>
+  <span class="label label-default">{{ 'imports._label'|trans }} {{ element.source.sourceName }}</span>
+{% else %}
+  {% if not value.getExternalOperator %}
+    <span>{{ 'elements.proposedBy'|trans }}</span>
+    <span>{{ value.getUserDisplayName }}</span>
+    {% set transKey = value.userRole %}
+    {% if value.element.userOwnerEmail is defined and value.element.userOwnerEmail == value.userEmail %}
+        {% set transKey = 'owner' %}
+    {% endif %}
+    <span>({{ ('elements.fields.userRoles_choices.' ~ transKey)|trans|lower }})</span>
+  {% else %}
+    {{ 'elements.proposedFrom'|trans }} <a href="{{ value.getExternalOperator }}/map" target="_blank">{{ value.getExternalOperator }}</a>
+  {% endif %}
+{% endif %}
+
+<span>{{ 'elements.proposedAt'|trans ~ ' ' ~ value.createdAt|date('commons.date_time_format'|trans) }}</span>

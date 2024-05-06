@@ -1,0 +1,79 @@
+{% trans_default_domain 'admin' %}
+
+{% set dm = helper.dm %}
+
+{% if element.isRefreshNeeded(dm) %}
+
+  {% set isAdmin = admin is defined %}
+  {% set config = helper.config %}
+  {% set refreshNeededDelay = config.getRefreshNeededMail().getActive() ? config.getMaxDaysBeforeSendingRefreshNeededMail(): 0 %}
+  {% set refreshMuchNeededDelay = config.getRefreshMuchNeededMail().getActive() ? config.getMaxDaysBeforeSendingRefreshMuchNeededMail(): 0 %}
+
+  {% set refreshDelay = refreshNeededDelay %}
+  {% set refreshNeededColor = 'text-warning' %}
+  {% if element.isRefreshMuchNeeded(dm) %}
+    {% set refreshDelay = refreshMuchNeededDelay %}
+    {% set refreshNeededColor = 'text-danger' %}
+  {% endif %}
+
+  {% set lastMailSentInfo = '' %}
+  {% if element.getLastRefreshNeededMailSent() is defined and element.getLastRefreshNeededMailSent() != null %}
+    {% set lastMailSentDate = element.getLastRefreshNeededMailSent()|date('commons.date_format'|trans) %}
+    {% set lastMailSentInfo = 'config_emails.tooltips.refreshNeeded_lastMailSent'|trans({'%date%': lastMailSentDate}) %}
+  {% endif %}
+
+  {% set tooltip_lastUpdate = 'config_emails.tooltips.refreshNeeded_lastUpdate'|trans({
+    '%refreshDelay%': refreshDelay,
+    '%nbDaysSinceLastUpdate%': element.getNbDaysSinceLastUpdate()
+  }) %}
+  {% if isAdmin %}
+    {% set tooltip = 'config_emails.tooltips.refreshNeeded'|trans({
+      '%refreshNeeded_lastUpdate%': tooltip_lastUpdate,
+      '%lastMailSentInfo%': lastMailSentInfo,
+    }) %}
+  {% else %}
+    {% set tooltip = 'config_emails.tooltips.refreshNeeded_mySpace'|trans({
+      '%refreshNeeded_lastUpdate%': tooltip_lastUpdate,
+    }) %}
+  {% endif %}
+  
+  <ul class="refresh-needed-icons">
+    <li><i class="fa fa-hourglass-half refresh-needed-icon animate__jello {{ refreshNeededColor }}" title="{{ tooltip }}"></i></li>
+  </ul>
+  
+  <style>
+    ul.refresh-needed-icons {
+      list-style-type: none;
+      padding-inline-start: 0px;
+    }
+		i.refresh-needed-icon {
+			font-weight: bold;
+		}
+    {% if not isAdmin %}
+      i.refresh-needed-icon.text-warning {
+        color: var(--color-secondary);
+      }
+      i.refresh-needed-icon.text-danger {
+        color: var(--color-error);
+      }
+    {% endif %}
+
+		@keyframes jello {
+			from, 11.1%, to { transform: translate3d(0, 0, 0); }
+			22.2% { transform: skewX(-12.5deg) skewY(-12.5deg); }
+			33.3% { transform: skewX(6.25deg) skewY(6.25deg); }
+			44.4% { transform: skewX(-3.125deg) skewY(-3.125deg); }
+			55.5% { transform: skewX(1.5625deg) skewY(1.5625deg); }
+			66.6% { transform: skewX(-0.78125deg) skewY(-0.78125deg); }
+			77.7% { transform: skewX(0.390625deg) skewY(0.390625deg); }
+			88.8% { transform: skewX(-0.1953125deg) skewY(-0.1953125deg); }
+		}
+		.animate__jello {
+			animation-name: jello;
+			transform-origin: center;
+			animation-delay: .2s;
+			animation-duration: 1s;
+		}
+	</style>
+  
+{% endif %}

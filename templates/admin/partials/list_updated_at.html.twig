@@ -1,0 +1,23 @@
+{% trans_default_domain 'admin' %}
+{% extends admin.getTemplate('base_list_field') %}
+
+{% block field %}
+{% spaceless %}
+
+	<div class="updated-at-field">
+		<span class="updated-at-field__value">{{value|date('commons.date_format'|trans)}}</span>
+		{% include "admin/partials/icon_element_refresh_needed.html.twig" with {'element': object} %}
+	</div>
+
+	<style>
+		.updated-at-field {
+			display: flex;
+			flex-wrap: nowrap;
+		}
+		.updated-at-field__value {
+			margin-right: 8px;
+		}
+	</style>
+
+{% endspaceless %}
+{% endblock %}

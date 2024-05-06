@@ -1,0 +1,12 @@
+{% extends "admin/core_custom/list_choice_base.html.twig" %}
+{% trans_default_domain 'admin' %}
+
+{% block display_value %}
+     {% if object.data[field_description.options.field] is defined %}
+          {% if object.data[field_description.options.field] is not iterable %}
+               {{ object.data[field_description.options.field] }}
+          {% else %}
+               {{ object.data[field_description.options.field]|json_encode() }}
+          {% endif %}
+     {% endif %}
+{% endblock %}

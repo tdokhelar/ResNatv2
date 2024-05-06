@@ -1,0 +1,11 @@
+{% extends "admin/list/base_list_custom_batch.html.twig" %}
+{% trans_default_domain 'admin' %}
+
+{% block list_header %}
+  <p>
+    <h4 style="margin: 0 0 20px 10px">{{ 'imports.form.groups.dynamicList'|trans }}</h4>
+    {# TODO translation videos links should be localized #}
+    <div style="float: left;margin-right: 30px;"><iframe height="150" sandbox="allow-same-origin allow-scripts" src="https://peertube.openstreetmap.fr/videos/embed/48cd4b3e-31ee-4391-9ab8-b6cd5dba3bd0" frameborder="0" allowfullscreen></iframe></div>
+    <div><iframe height="150" sandbox="allow-same-origin allow-scripts" src="https://peertube.openstreetmap.fr/videos/embed/9fd37ddd-0aab-4ce3-bff5-7118dc81adc4" frameborder="0" allowfullscreen></iframe></div>
+  </p>
+{% endblock %}

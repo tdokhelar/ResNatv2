@@ -1,0 +1,74 @@
+{% extends 'admin/core_custom/base_show.html.twig' %}
+{% trans_default_domain 'admin' %}
+
+{% set labelClass = 'label-danger' %}
+
+{% set currentPath = path(app.request.attributes.get('_route'), app.request.attributes.get('_route_params')) %}
+{% set rows = app.request.query.get('maxRows')|default(50) %}
+{% if rows > 500 %}
+  {% set rows = 500 %}
+{% endif %}
+{% set maxRows = 50 %}
+{% if rows == 50 %}
+  {% set maxRows = 500 %}
+{% endif %}
+
+{% block title %}
+  <title>{{ 'authorized_projects.buttons.changesHistory'|trans() }}</title>
+{% endblock %}
+
+{% block navbar_title %}
+  <div style="line-height: 22px">
+    <span>{{ 'authorized_projects.title.lastChanges'|trans({'rows': rows}) }}</span>
+    <br>
+    {% if (object.sourceType is defined and object.sourceType == 'osm') %}
+      {{ 'authorized_projects.title.to'|trans() }} <strong>OSM</strong>
+    {% else %}
+      {% if object.Url is defined %}
+        {% if admin.baseCodeRoute == "admin.authorized_projects" %}
+          {{ 'authorized_projects.title.fromProject'|trans() }}
+        {% else %}
+          {{ 'authorized_projects.title.toProject'|trans() }}
+        {% endif %}
+        <strong>{{ object.Url|replace({'/api/elements.json':''}) }}</strong>
+      {% endif %}  
+    {% endif %}
+  </div>
+{% endblock %}
+
+{%- block actions -%}
+  {% if admin.baseCodeRoute == "admin.authorized_projects" %}
+    {% if (object.id is defined) %}
+      {% set href = path('gogo_authorized_project_changes_history_export', {'id': object.id}) %}
+    {% else %}
+      {% set href = path('gogo_authorized_projects_changes_history_export') %}
+    {% endif %}
+  {% else %}
+    {% set href = path('gogo_interoperability_changes_history_export', {'id': object.id}) %}
+  {% endif %}
+  <li><a class="sonata-action-element" href="{{currentPath}}?maxRows={{maxRows}}"><i class="fa fa-eye" aria-hidden="true"></i>
+    <span>{{ 'authorized_projects.buttons.maxRows'|trans({'maxRows': maxRows}) }}</span>
+  </a></li>
+  <li><a class="sonata-action-element" href="{{ href }}"><i class="fa fa-share-square-o" aria-hidden="true"></i>
+    <span>{{ 'authorized_projects.buttons.export'|trans }}</span>
+  </a></li>
+  <li><a class="sonata-action-element" href="{{backLink.url}}"><i class="fa fa-arrow-right" aria-hidden="true"></i>
+    <span>{{backLink.label}}</span>
+  </a></li>
+{%- endblock -%}
+
+{% block show %}
+  <div class="panel-group" style="margin:0" id="accordion" role="tablist" aria-multiselectable="true">
+    {% for contribution in contributions %}
+      <div class="panel panel-default" style="border-top: 10px solid #ecf0f5;margin-top:0">
+        {% include "admin/partials/show_one_contribution.html.twig" with {'value': contribution, 'element': contribution.element} %}
+      </div>
+    {% endfor %}
+  </div>
+
+  <style>
+    .navbar-brand {height: unset }
+    .panel-default>.panel-heading { background-color:white}
+    .panel-default>.panel-heading.body-content:hover { background-color:#f5f5f5; cursor:pointer;}
+  </style>
+{% endblock %}

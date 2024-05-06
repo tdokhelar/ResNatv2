@@ -1,0 +1,22 @@
+{% trans_default_domain 'admin' %}
+
+<div class="btn-group">
+  <a class="btn btn-sm btn-default" href="{{ path('admin_app_import_delete', {'id': object.id}) }}">
+    <i class="fa fa-times" aria-hidden="true"></i>{{ 'imports.list_actions.delete'|trans }}
+  </a>
+  <button type="button" class="btn btn-sm btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+    <span class="caret"></span>
+    <span class="sr-only">Toggle Dropdown</span>
+  </button>
+  <ul class="dropdown-menu">
+    <li><a href="{{ path('admin_app_import_delete', {'id': object.id}) }}">{{ 'imports.list_actions.delete'|trans }}</a></li>
+    <li><a href="{{ path('admin_app_import_delete-and-keep-elements', {'id': object.id}) }}">{{ 'imports.list_actions.deleteAndKeepElements'|trans }}</a></li>
+  </ul>
+</div>
+
+<style>
+    .sonata-ba-list-field.sonata-ba-list-field-actions,
+    .box-body.table-responsive {
+        overflow: visible
+    }
+</style>

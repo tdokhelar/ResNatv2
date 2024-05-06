@@ -1,0 +1,47 @@
+{% extends base_template %}
+{% trans_default_domain 'admin' %}
+
+{% block navbar_title %}
+    {{ 'categories.list.title'|trans }}
+{% endblock %}
+
+{% block show %}
+  <script src="{{ asset('js/spectrum.min.js') }}" type="text/javascript"></script>
+  <link rel="stylesheet" href="{{ asset('css/spectrum.css') }}" />
+
+  <link rel="stylesheet" href="{{ asset('fonts/fontawesome-5/css/all.min.css') }}" />
+  <script src="{{ asset('js/fontawesome-iconpicker.js') }}"></script>
+  <link rel="stylesheet" href="{{ asset('css/fontawesome-iconpicker.css') }}" />
+
+  {{ config.iconImport|raw }}
+
+  {# For markers we need to load gogocarto.css #}
+  <link rel="stylesheet" href="{{ asset('css/gogocarto.css?ver=' ~ version) }}">
+  
+  <div id="taxonomy-tree" data-default-marker-shape="{{ config.marker.defaultShape }}">
+    <div v-if="mainOption == null" class="loading">{{ 'commons.loading'|trans }}</div>
+    <div v-else>
+      <option-form-modal ref="optionModal"></option-form-modal>
+      <category-form-modal ref="categoryModal"></category-form-modal>
+
+      <button type="button" class="btn btn-success" @click="save">{{ 'commons.save'|trans }}</button>
+      <div style="margin: 1rem 0">
+        <OptionComponent key="root" :depth="-1" :option="mainOption" :root="true"></OptionComponent>
+        <p v-if="mainOption.subcategories && mainOption.subcategories.length == 0">
+          {{ 'categories.list.empty'|trans }}
+        </p>
+      </div>
+      <button type="button" class="btn btn-success" @click="save">{{ 'commons.save'|trans }}</button>
+      <div class="save-overlay" :class="{show: saving}">
+        <div class="save-overlay-content">
+          <p>{{ 'commons.saving'|trans }}</p>
+          <i class="loading-icon fa fa-spinner fa-spin"></i>
+        </div>
+      </div>
+
+      <input class="fake-input" ref="iconInput"/>
+    </div>
+  </div>
+{% endblock %}
+
+

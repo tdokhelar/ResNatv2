@@ -1,0 +1,84 @@
+{% trans_default_domain 'admin' %}
+
+<div class="bs-callout {{ automaticMerge ? 'bs-callout-success' : 'bs-callout-warning' }} bulk-duplicate">
+
+    <h4>{{ automaticMerge ? 'bulk.automaticMerge'|trans : 'bulk.manualMerge'|trans }}</h4>
+    
+    {% if (config.duplicates.duplicatesByAggregation) and automaticMerge %}
+    
+      {% set aggregate = duplicates[0] %}
+      {% set aggregatedElements = aggregate.aggregatedElements %}
+      
+      <li>
+        <a class="duplicate-name" href="{{ path('admin_app_element_showEdit', { 'id': aggregate.id }) }}" target="_blank"><b>
+          {{ aggregate.name }} 
+          {% if aggregate.sourceKey %}<i> ({{ aggregate.sourceKey }})</i>{% endif %}
+        </b></a>
+        <span class="label label-success">{{ ('elements.fields.status_choices.' ~ aggregate.status)|trans({}, 'admin') }}</span>
+      </li>
+
+      {% for aggregatedElement in aggregatedElements %}
+        <li>
+          <a class="duplicate-name" href="{{ path('admin_app_element_showEdit', { 'id': aggregatedElement.id }) }}" target="_blank"><b>
+            {{ aggregatedElement.name }} 
+            {% if aggregatedElement.sourceKey %}<i> ({{ aggregatedElement.sourceKey }})</i>{% endif %}
+          </b></a>
+
+          <span class="label label-default">{{ ('elements.fields.status_choices.' ~ aggregatedElement.status)|trans({}, 'admin') }}</span>
+          {% for prop in config.duplicates.fieldsInvolvedInDetection %}
+            {% if prop != 'name' %}
+              {% set value = duplicate.getProperty(prop) %}
+              {% if value %}
+                <span class="field-name">{{ prop }}</span>
+                <span class="field-value"> : {{ value }}</span>
+              {% endif %}
+            {% endif %}
+          {% endfor %}
+        </li>
+      {% endfor %}
+    
+    {% else %}
+
+      {% for duplicate in duplicates %}
+          <li>
+              <a class="duplicate-name" href="{{ path('admin_app_element_showEdit', { 'id': duplicate.id }) }}" target="_blank"><b>
+                {% if duplicate.isAggregate() %}
+                  <span class="label label-success">{{ ('elements.fields.status_choices.' ~ duplicate.status)|trans({}, 'admin') }}</span>
+                {% endif %}
+                {{ duplicate.name }} 
+                {% if duplicate.sourceKey %}<i> ({{ duplicate.sourceKey }})</i>{% endif %}
+              </b></a>
+
+              {% if automaticMerge %}
+                {% if loop.first %}
+                  <span class="label label-success">{{ 'bulk.duplicateKept'|trans }}</span>
+                {% else %}
+                  <span class="label label-default">{{ 'bulk.duplicateDeleted'|trans }}</span>
+                {% endif %}
+              {% endif %}
+
+              {% for prop in config.duplicates.fieldsInvolvedInDetection %}
+                {% if prop != 'name' %}
+                  {% set value = duplicate.getProperty(prop) %}
+                  {% if value %}
+                    <span class="field-name">{{ prop }}</span>
+                    <span class="field-value"> : {{ value }}</span>
+                  {% endif %}
+                {% endif %}
+              {% endfor %}
+          </li>
+      {% endfor %}
+    
+    {% endif %}
+    
+  </ul>
+
+</div>
+
+<style>
+  .field-name {
+    text-decoration: underline;
+    margin-left: 10px;
+    margin-right: 0;
+  }
+</style>

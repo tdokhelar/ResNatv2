@@ -1,0 +1,36 @@
+{% trans_default_domain 'admin' %}
+
+{% if post.completeAt %}
+  <div class="text-green">
+    {% if post.webhook %}
+      {{ 'config_osm.sync.dispatched_webhook_at'|trans({date: post.completeAt|date('commons.date_time_format'|trans)}) }}
+      {{ post.webhook.url }}
+    {% else %}
+      {{ post.message }} | {{ post.completeAt|date('commons.date_time_format'|trans) }}
+    {% endif %}
+  </div>
+{% else %}
+  <div class="text-orange">
+  {% if post.webhook %}
+    {{ 'config_osm.sync.dispatch_pending_webhook'|trans }}
+    {{ post.webhook.url }}
+  {% else %}
+    {% if element.isFromOsm() %}
+      {{ 'config_osm.sync.dispatch_pending_osm'|trans }}
+    {% endif %}
+    {% if element.isFromGogocarto() %}
+      {{ 'dynamic_imports.interoperability.dispatch_pending_gogocarto'|trans({'%project%': element.getSource().getGoGoCartoBaseUrl()}) }}
+    {% endif %}
+  {% endif %}
+  </div>
+  {% if post.numAttempts > 0 %}
+    <div class="text-red">{{ post.message }}</div>
+    <div><u>{{ 'config_osm.sync.attempts_number'|trans }}:</u> {{ post.numAttempts }} |
+    {% if post.numAttempts >= helper.maxWebhookAttempts %}
+      {{ 'config_osm.sync.attemps_max'|trans }}
+    {% else %}
+      <u>{{ 'config_osm.sync.attemps_next'|trans }}:</u> {{ post.nextAttemptAt|date('commons.date_time_format'|trans) }}
+    {% endif %}
+    </div>
+  {% endif %}
+{% endif %}

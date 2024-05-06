@@ -1,0 +1,6 @@
+{% trans_default_domain 'admin' %}
+
+<a href="{{ path('gogo_authorized_project_changes_history', {'id': object.id}) }}" class="btn btn-sm btn-default view_link">
+      <i class="fa fa-history" aria-hidden="true"></i>
+      {{ 'authorized_projects.buttons.changesHistory'|trans }}
+</a>

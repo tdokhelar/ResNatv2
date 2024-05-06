@@ -1,0 +1,48 @@
+{% macro displayValue(field, value) %}
+  {% if field in ['openHours', 'optionValues', 'images'] and is_string(value) %}
+    {% set value = value|json_decode %}
+  {% endif %}
+  
+  {% if field == 'optionValues' %}
+    {% for ov in value %}
+      {% if ov.optionId is defined %}
+        {% set option = helper.findOption(ov.optionId) %}
+        {% set optionName = option.name is defined ? option.__toString : ( ov.optionId ~ ' (Catégorie supprimée)' ) %}
+        <div>{{ optionName }} {% if ov.description %} ({{ ov.description }}){% endif %}</div>
+      {% endif %}
+    {% endfor %}
+  {% elseif field == 'images' %}
+    {% for image in value %}
+      {% if image.fileUrl is defined %}
+        {% set url = image.fileUrl ? image.fileUrl : image.externalImageUrl %}
+        <a href="{{ url }}" target="_blank">
+          <img src="{{ url }}" class="thumbnail"/>
+        </a>
+      {% endif %}
+    {% endfor %}
+  {% elseif value is iterable %}
+    {% for key, subvalue in value %}
+      <div><b>{{ key }}</b> : <span>{{ is_string(subvalue) ? subvalue : subvalue|json_encode }}</span></div>
+    {% endfor %}
+  {% else %}
+    {{ is_string(value) ? value : value|json_encode }}
+  {% endif %}
+{% endmacro %}
+
+{% import _self as self %}
+
+<div class="table-responsive no-padding element-data-fields">
+  <table class="table">
+    <tbody>      
+      {% for field, values in contrib.changeset %}
+        <tr>
+          <th>{{ field }}</th>
+          <td>{{ self.displayValue(field, values[0]) }}</td>
+          <td><i class="fa fa-arrow-right"></i></td>
+          <td>{{ self.displayValue(field, values[1]) }}</td>
+        </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+</div>
+
